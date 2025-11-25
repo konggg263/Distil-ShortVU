@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+
+# macOS
+.DS_Store
+
+# PyTorch / ML
+/checkpoints/
+/checkpoints/*
+*.pt
+*.pth
+*.bin
+
+# Hugging Face cache
+~/.cache/huggingface/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Logs
+*.log
+
+# Secrets
+.env
+*.pem

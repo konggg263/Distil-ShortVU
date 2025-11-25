@@ -1,0 +1,31 @@
+name: timechat
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pytorch::pytorch
+  - pytorch::torchvision
+  - pytorch::torchaudio
+  - pip
+  - pip:
+    - transformers==4.37.0
+    - accelerate
+    - sentencepiece
+    - protobuf
+    - decord
+    - opencv-python
+    - pillow
+    - numpy
+    - scipy
+    - scikit-learn
+    - pandas
+    - tqdm
+    - pyyaml
+    - einops
+    - timm
+    - webdataset
+    - iopath
+    - omegaconf
+    - salesforce-lavis

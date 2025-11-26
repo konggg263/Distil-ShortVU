@@ -1,0 +1,62 @@
+name: timechat-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Core System & Python
+  - python=3.9
+  - pip
+  - ffmpeg
+  - git
+  - numpy=1.25.2
+  - pandas=2.1.1
+  - scikit-learn
+  - scipy
+  - matplotlib
+  - pyyaml
+  - tqdm
+  - pillow
+  - requests
+  - typing_extensions
+  
+  # Pip dependencies
+  - pip:
+    - iopath==0.1.10
+    - importlib_metadata
+    # Deep Learning Core (Mac MPS compatible)
+    - torch
+    - torchvision
+    - torchaudio
+    - transformers==4.34.0
+    - accelerate==0.23.0
+    - peft==0.5.0
+    - bitsandbytes==0.37.0
+    - eva-decord==0.6.1
+    - sentencepiece
+    - protobuf
+    - einops==0.7.0
+    - timm==0.6.13
+    - safetensors
+    
+    # NLP & Text Processing
+    - sentence-transformers==2.2.2
+    - spacy==3.5.1
+    - nltk==3.8.1
+    - tokenizers
+    
+    # Web & API
+    - gradio==3.24.1
+    - fastapi
+    - uvicorn
+    - wandb
+    
+    # Utilities
+    - omegaconf==2.3.0
+    - webdataset==0.2.48
+    - pycocotools==2.0.6
+    - opencv-python
+    - pydantic==1.10.13
+    - joblib
+    - click
+    - fsspec
+    - huggingface-hub

@@ -45,8 +45,6 @@ from tqdm import tqdm
 
 from transformers.trainer_pt_utils import IterableDatasetShard
 
-from longvu.utils import get_torch_device
-
 # pyre-fixme[3]: Return type must be annotated.
 # pyre-fixme[2]: Parameter must be annotated.
 def load_parquet(parquet_file):
@@ -151,6 +149,16 @@ class EvalDataset(torch.utils.data.IterableDataset):
         return self.data[i]
 
 
+def get_device():
+    """Get preferred device: MPS (macOS) > CUDA > CPU"""
+    if torch.backends.mps.is_available():
+        return torch.device("mps")
+    elif torch.cuda.is_available():
+        return torch.device("cuda")
+    else:
+        return torch.device("cpu")
+
+
 def train(args) -> None:
     dist.init_process_group(backend="nccl", timeout=datetime.timedelta(hours=8))
     
@@ -167,7 +175,7 @@ def train(args) -> None:
     )
     model.get_model().config.drop_threshold = 0.65
     model.config.use_cache = True
-    device = get_torch_device()
+    device = get_device()
     model.to(device)
     dataset = EvalDataset(
         data_path=args.data_path,

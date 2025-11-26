@@ -21,7 +21,6 @@ import webdataset as wds
 import numpy as np
 import torch
 from torch.utils.data.dataset import IterableDataset
-from longvu.utils import get_torch_device
 
 from timechat.common.registry import registry
 from timechat.datasets.datasets.base_dataset import ConcatDataset
@@ -83,7 +82,7 @@ def apply_to_sample(f, sample):
 
 def move_to_cuda(sample):
     def _move_to_cuda(tensor):
-        return tensor.to(get_torch_device())
+        return tensor.cuda()
 
     return apply_to_sample(_move_to_cuda, sample)
 

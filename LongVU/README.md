@@ -1,28 +1,3 @@
-# LongVU (local copy)
-
-This is a local copy of the LongVU repository (Vision-CAIR). The workspace has been prepared for a macOS/MPS environment with device selection and MPS→CPU fallback enabled.
-
-What I changed locally (non upstream):
-- Prefer MPS on macOS devices, then CUDA, then CPU via `longvu.utils.get_torch_device()`.
-- Set `PYTORCH_ENABLE_MPS_FALLBACK=1` at package import time so unimplemented MPS ops fall back to CPU (may be slower).
-- Replaced some CUDA-only checks with device-agnostic logic.
-
-How to push this repo to GitHub
-1. Option A (recommended): use GitHub CLI (gh). If you have it installed and authenticated, run:
-
-   gh repo create <YOUR_GITHUB_USERNAME>/<REPO_NAME> --public --source=. --remote=origin --push
-
-   Replace `<YOUR_GITHUB_USERNAME>` and `<REPO_NAME>` accordingly.
-
-2. Option B: create a repo on github.com manually and then run these commands locally:
-
-   git remote add origin https://github.com/<YOUR_GITHUB_USERNAME>/<REPO_NAME>.git
-   git branch -M main
-   git push -u origin main
-
-If you'd like, I can try to create the repo programmatically from this environment (requires the GitHub CLI `gh` to be installed & authenticated, or a remote URL). Tell me which approach you prefer.
-
-License: follow upstream license files. This copy does not change the upstream license.
 # LongVU
 
 > **LongVU: Spatiotemporal Adaptive Compression for Long Video-Language Understanding [ICML 2025]**

@@ -4,19 +4,16 @@ from transformers import AutoConfig
 
 
 def get_torch_device():
-    """Return the best available torch.device: cuda > mps > cpu."""
-    # Prefer MPS on macOS (if available), then CUDA, else CPU.
-    try:
-        if getattr(torch.backends, "mps", None) is not None and torch.backends.mps.is_available():
-            return torch.device("mps")
-    except Exception:
-        pass
-    try:
-        if torch.cuda.is_available():
-            return torch.device("cuda")
-    except Exception:
-        pass
-    return torch.device("cpu")
+    """
+    Get the preferred torch device for the current system.
+    Prefers: MPS (macOS) > CUDA (NVIDIA GPU) > CPU
+    """
+    if torch.backends.mps.is_available():
+        return "mps"
+    elif torch.cuda.is_available():
+        return "cuda"
+    else:
+        return "cpu"
 
 
 def auto_upgrade(config):

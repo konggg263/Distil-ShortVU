@@ -20,7 +20,6 @@ import shutil
 import warnings
 
 import torch
-from longvu.utils import get_torch_device
 from longvu.constants import (
     DEFAULT_IM_END_TOKEN,
     DEFAULT_IM_START_TOKEN,
@@ -45,25 +44,15 @@ def load_pretrained_model(
     load_8bit=False,
     load_4bit=False,
     device_map="auto",
-    device=None,
+    device="cuda",
     use_flash_attn=False,
     model_args=None,
     **kwargs,
 ):
     kwargs = {"device_map": device_map, **kwargs}
 
-    # Resolve device: prefer CUDA, then MPS, else CPU
-    if device is None:
-        device_torch = get_torch_device()
-    else:
-        # allow passing string or torch.device
-        device_torch = device if isinstance(device, torch.device) else torch.device(str(device))
-
-    device_name = device_torch.type if isinstance(device_torch, torch.device) else str(device_torch)
-
-    if device_name != "cuda":
-        # set device_map to a single-device mapping to avoid trying to use CUDA when unavailable
-        kwargs["device_map"] = {"": device_name}
+    if device != "cuda":
+        kwargs["device_map"] = {"": device}
 
     if load_8bit:
         kwargs["load_in_8bit"] = True
@@ -225,7 +214,7 @@ def load_pretrained_model(
             except ValueError:
                 # ClipVisionTower doesn't support loading with device_map 'auto'
                 vision_tower.load_model()
-                vision_tower.to(device=device_torch, dtype=torch.float16)
+                vision_tower.to(device="cuda", dtype=torch.float16)
         if device_map != "auto":
             vision_tower.to(device=device_map, dtype=torch.float16)
         image_processor = vision_tower.image_processor
@@ -245,7 +234,7 @@ def load_pretrained_model(
         for vision_tower_aux in vision_tower_aux_list:
             if not vision_tower_aux.is_loaded:
                 vision_tower_aux.load_model(device_map=device_map)
-            vision_tower_aux.to(device=device_torch, dtype=torch.float16)
+            vision_tower_aux.to(device=device, dtype=torch.float16)
 
         image_processor = [
             vision_tower_aux.image_processor

@@ -46,16 +46,26 @@ class Blip2Base(BaseModel):
     @classmethod
     def init_Qformer(cls, num_query_token, vision_width, cross_attention_freq=2):
         encoder_config = BertConfig.from_pretrained("bert-base-uncased")
+        # Ensure hidden_size is set (some local BertConfig loads may miss this field)
+        hidden_size = getattr(encoder_config, "hidden_size", None)
+        try:
+            if hidden_size is None:
+                raise ValueError("hidden_size is None")
+            hidden_size = int(hidden_size)
+        except Exception:
+            # default to a common BERT hidden size if it's missing or invalid
+            hidden_size = 768
+        encoder_config.hidden_size = hidden_size
         encoder_config.encoder_width = vision_width
         # insert cross-attention layer every other block
         encoder_config.add_cross_attention = True
         encoder_config.cross_attention_freq = cross_attention_freq
         encoder_config.query_length = num_query_token
         Qformer = BertLMHeadModel(config=encoder_config)
-        query_tokens = nn.Parameter(
-            torch.zeros(1, num_query_token, encoder_config.hidden_size)
-        )
-        query_tokens.data.normal_(mean=0.0, std=encoder_config.initializer_range)
+        # Use the local variable directly to avoid any property getter issues
+        query_tokens = nn.Parameter(torch.zeros(1, num_query_token, hidden_size))
+        initializer_range = getattr(encoder_config, "initializer_range", 0.02)
+        query_tokens.data.normal_(mean=0.0, std=initializer_range)
         return Qformer, query_tokens
 
     @classmethod

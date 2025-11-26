@@ -4,11 +4,20 @@ import math
 from io import BytesIO
 
 import torch
-from longvu.utils import get_torch_device
 from longvu.constants import IMAGE_TOKEN_INDEX
 from PIL import Image
 
 from transformers import StoppingCriteria
+
+
+def get_device():
+    """Get preferred device: MPS (macOS) > CUDA > CPU"""
+    if torch.backends.mps.is_available():
+        return torch.device("mps")
+    elif torch.cuda.is_available():
+        return torch.device("cuda")
+    else:
+        return torch.device("cpu")
 
 
 def select_best_resolution(original_size, possible_resolutions):
@@ -219,7 +228,7 @@ def process_images(images, image_processor, model_cfg):
     new_images_aux_list = [
         list(batch_image_aux) for batch_image_aux in zip(*new_images_aux_list)
     ]
-    device = get_torch_device()
+    device = get_device()
     new_images_aux_list = [
         torch.stack(image_aux).half().to(device) for image_aux in new_images_aux_list
     ]

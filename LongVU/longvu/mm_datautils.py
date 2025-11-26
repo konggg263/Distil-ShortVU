@@ -10,11 +10,20 @@ import numpy as np
 import tokenizers
 
 import torch
-from longvu.utils import get_torch_device
 
 import transformers
 
 from longvu import conversation as conversation_lib
+
+
+def get_device():
+    """Get preferred device: MPS (macOS) > CUDA > CPU"""
+    if torch.backends.mps.is_available():
+        return torch.device("mps")
+    elif torch.cuda.is_available():
+        return torch.device("cuda")
+    else:
+        return torch.device("cpu")
 
 from longvu.constants import (
     DEFAULT_IM_END_TOKEN,
@@ -292,7 +301,7 @@ def process_images(images, image_processor, model_cfg):
         new_images_aux_list = [
             list(batch_image_aux) for batch_image_aux in zip(*new_images_aux_list)
         ]
-        device = get_torch_device()
+        device = get_device()
         new_images_aux_list = [
             torch.stack(image_aux).half().to(device) for image_aux in new_images_aux_list
         ]

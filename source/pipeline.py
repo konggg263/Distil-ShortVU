@@ -12,10 +12,22 @@ from PIL import Image
 from decord import VideoReader, cpu
 from transformers import CLIPModel, CLIPProcessor
 import types
+import warnings
 
-# --- Cấu hình Device (Mac ARM) ---
-DEVICE = "mps" if torch.backends.mps.is_available() else "cpu"
-print(f"Running on: {DEVICE}")
+# --- CẤU HÌNH SUPPRESS WARNINGS (GIẢI QUYẾT TRIỆT ĐỂ LOG RÁC) ---
+# Tắt warning về CUDA autocast vì ta đang chạy trên MPS
+warnings.filterwarnings("ignore", message="User provided device_type of 'cuda'")
+# Tắt warning về tham số meshgrid cũ
+warnings.filterwarnings("ignore", message="torch.meshgrid: in an upcoming release")
+# Tắt warning về checkpoint
+warnings.filterwarnings("ignore", category=UserWarning, module="torch.utils.checkpoint")
+
+# --- Cấu hình Device ---
+# TimeChat & InternVideo dùng MPS (Nhanh)
+# DOVER bắt buộc dùng CPU (Do lỗi Conv3D trên MPS)
+DEVICE = "mps" if torch.backends.mps.is_available() else "cuda" if torch.cuda.is_available() else "cpu"
+CPU_DEVICE = "cpu"
+print(f"Main Device: {DEVICE} | Fallback: {CPU_DEVICE}")
 
 # --- Hack để bypass lỗi Flash Attention trên Mac ---
 # Nhiều model VLM yêu cầu flash_attn, ta tạo module giả để nó fallback về attention thường
@@ -29,93 +41,8 @@ sys.path.append(os.path.join(PROJECT_ROOT, "third-party", "DOVER"))
 sys.path.append(os.path.join(PROJECT_ROOT, "third-party", "ImageBind"))
 sys.path.append(os.path.join(PROJECT_ROOT, "third-party", "InternVideo"))
 
-# # ==============================================
-# # 1. WRAPPER CHO TIMECHAT (FIXED FP32)
-# # ==============================================
-# class TimeChatWrapper:
-#     def __init__(self, checkpoint_path="checkpoints/timechat_7b.pth"):
-#         from timechat.models import TimeChat
-#         from timechat.processors import Blip2ImageEvalProcessor
-#         from timechat.conversation.conversation_video import Chat, default_conversation
-        
-#         self.processor = Blip2ImageEvalProcessor(image_size=224)
-#         self.default_conversation = default_conversation
-#         self.Chat = Chat
-        
-#         print(f"[TimeChat] Loading from {checkpoint_path}...")
-#         model_config = {
-#             "arch": "timechat",
-#             "model_type": "pretrain_vicuna",
-#             "llama_model": "lmsys/vicuna-7b-v1.5", 
-#             "ckpt": checkpoint_path,
-#             "image_size": 224,
-#             "num_query_token": 32,
-#             "vit_model": "https://storage.googleapis.com/sfr-vision-language-research/LAVIS/models/BLIP2/eva_vit_g.pth",
-#             "vit_precision": "fp32",
-#             "freeze_vit": True,
-#             "freeze_qformer": True,
-#             "low_resource": False, 
-#             "device_8bit": 0,
-#             "lora_r": 0,
-#             "q_former_model": "https://storage.googleapis.com/sfr-vision-language-research/LAVIS/models/BLIP2/blip2_pretrained_flant5xxl.pth"
-#         }
-        
-#         self.model = TimeChat.from_config(model_config)
-#         print("[TimeChat] Converting to Float32 on CPU...")
-#         self.model = self.model.float()
-#         print(f"[TimeChat] Moving to {DEVICE}...")
-#         self.model = self.model.to(DEVICE).eval()
-        
-#         self.chat_wrapper = self.Chat(self.model, self.processor, device=DEVICE)
-#         print("[TimeChat] Loaded!")
-
-#     def load_video_custom(self, video_path, n_fms=32):
-#         vr = VideoReader(video_path, ctx=cpu(0))
-#         total_frames = len(vr)
-#         frame_indices = np.linspace(0, total_frames - 1, n_fms, dtype=int)
-#         frames_batch = vr.get_batch(frame_indices)
-        
-#         if hasattr(frames_batch, 'asnumpy'):
-#             frames = frames_batch.asnumpy()
-#         else:
-#             frames = frames_batch.numpy()
-        
-#         video_list = []
-#         for frame in frames:
-#             pil_image = Image.fromarray(frame)
-#             processed_frame = self.processor(pil_image) 
-#             video_list.append(processed_frame)
-        
-#         video_tensor = torch.stack(video_list, dim=1) 
-#         video_tensor = video_tensor.unsqueeze(0).float().to(DEVICE)
-#         return video_tensor
-
-#     def ask(self, video_path, prompt):
-#         try:
-#             video_tensor = self.load_video_custom(video_path)
-#             with torch.no_grad():
-#                 image_emb, _ = self.model.encode_videoQformer_visual(video_tensor)
-            
-#             img_list = [image_emb]
-#             conv = self.default_conversation.copy()
-#             conv.append_message(conv.roles[0], "<Video><ImageHere></Video>")
-#             self.chat_wrapper.ask(prompt, conv)
-            
-#             answer_text, _ = self.chat_wrapper.answer(conv, img_list, max_new_tokens=300, num_beams=1, top_p=0.9)
-#             return answer_text
-#         except Exception as e:
-#             print(f"TimeChat Error on {video_path}: {e}")
-#             return ""
-
-#     def unload(self):
-#         del self.model
-#         del self.chat_wrapper
-#         gc.collect()
-#         torch.mps.empty_cache()
-#         print("[TimeChat] Unloaded.")
-
 # ==============================================
-# 1.1 WRAPPER CHO TIMECHAT (Multi-Task: Caption & Score)
+# 1. WRAPPER CHO TIMECHAT (FIXED FP32)
 # ==============================================
 class TimeChatWrapper:
     def __init__(self, checkpoint_path="checkpoints/timechat_7b.pth"):
@@ -146,7 +73,11 @@ class TimeChatWrapper:
         }
         
         self.model = TimeChat.from_config(model_config)
-        self.model = self.model.float().to(DEVICE).eval()
+        print("[TimeChat] Converting to Float32 on CPU...")
+        self.model = self.model.float()
+        print(f"[TimeChat] Moving to {DEVICE}...")
+        self.model = self.model.to(DEVICE).eval()
+        
         self.chat_wrapper = self.Chat(self.model, self.processor, device=DEVICE)
         print("[TimeChat] Loaded!")
 
@@ -171,12 +102,9 @@ class TimeChatWrapper:
         video_tensor = video_tensor.unsqueeze(0).float().to(DEVICE)
         return video_tensor
 
-    def ask(self, video_path, prompt, video_tensor=None):
+    def ask(self, video_path, prompt):
         try:
-            # Nếu chưa có tensor thì load, nếu có rồi (cache) thì dùng lại để tiết kiệm thời gian
-            if video_tensor is None:
-                video_tensor = self.load_video_custom(video_path)
-                
+            video_tensor = self.load_video_custom(video_path)
             with torch.no_grad():
                 image_emb, _ = self.model.encode_videoQformer_visual(video_tensor)
             
@@ -191,42 +119,6 @@ class TimeChatWrapper:
             print(f"TimeChat Error on {video_path}: {e}")
             return ""
 
-    def analyze_video(self, video_path):
-        # Load video 1 lần dùng cho cả 2 task
-        try:
-            video_tensor = self.load_video_custom(video_path)
-        except Exception as e:
-            print(f"Error loading video {video_path}: {e}")
-            return "", 5.0
-
-        # Task 1: Caption
-        caption_prompt = "Describe the main events and visual style of this video in detail."
-        caption = self.ask(video_path, caption_prompt, video_tensor)
-        
-        # Task 2: Scoring (Prompt Engineering để ép model chấm điểm)
-        # TimeChat dựa trên Vicuna, nó có khả năng đánh giá tốt nếu prompt đúng.
-        score_prompt = (
-            "Act as a professional video critic. Rate the aesthetic quality, lighting, and composition "
-            "of this video on a scale from 1 to 10. "
-            "Return ONLY the number (e.g., 7.5). Do not explain."
-        )
-        score_text = self.ask(video_path, score_prompt, video_tensor)
-        
-        # Parse điểm số từ text trả về
-        try:
-            # Tìm số thực đầu tiên trong chuỗi (ví dụ: "I give it a 7.5" -> 7.5)
-            match = re.search(r"[-+]?\d*\.\d+|\d+", score_text)
-            if match:
-                score = float(match.group())
-                # Clip điểm trong khoảng 1-10
-                score = max(1.0, min(10.0, score))
-            else:
-                score = 5.0 # Fallback
-        except:
-            score = 5.0
-            
-        return caption, score
-
     def unload(self):
         del self.model
         del self.chat_wrapper
@@ -235,13 +127,13 @@ class TimeChatWrapper:
         print("[TimeChat] Unloaded.")
 
 # ==============================================
-# 2. WRAPPER CHO DOVER (FORCE CPU ONLY)
+# 2. WRAPPER CHO DOVER (STRICT CPU MODE)
 # ==============================================
 class DOVERWrapper:
     def __init__(self, checkpoint_path="./checkpoints/DOVER_plus_plus.pth"):
         from dover.models import DOVER
         
-        print("[DOVER] Loading (Force CPU due to Conv3D limitation on MPS)...")
+        print("[DOVER] Loading on CPU (Strict Mode)...")
         dover_config = {
             "resize": {
                 "type": "conv_tiny", 
@@ -257,24 +149,24 @@ class DOVERWrapper:
         
         if os.path.exists(checkpoint_path):
             print(f"[DOVER] Loading weights from {checkpoint_path}...")
+            # Load weights to CPU explicitly
             state_dict = torch.load(checkpoint_path, map_location='cpu')
             new_state_dict = {}
             for k, v in state_dict.items():
                 name = k.replace("module.", "") if k.startswith("module.") else k
                 new_state_dict[name] = v
-            msg = self.model.load_state_dict(new_state_dict, strict=False)
-        else:
-            print(f"[DOVER] WARNING: Checkpoint not found at {checkpoint_path}")
-
-        # --- QUAN TRỌNG: FORCE CPU ---
-        self.device = "cpu" 
-        self.model = self.model.float().to(self.device).eval()
+            self.model.load_state_dict(new_state_dict, strict=False)
         
-        self.mean = torch.tensor([0.485, 0.456, 0.406]).view(1, 3, 1, 1, 1).float().to(self.device)
-        self.std = torch.tensor([0.229, 0.224, 0.225]).view(1, 3, 1, 1, 1).float().to(self.device)
-        print("[DOVER] Loaded on CPU!")
+        # FORCE MODEL TO CPU
+        self.model = self.model.float().to(CPU_DEVICE).eval()
+        
+        # Define normalization params on CPU
+        self.mean = torch.tensor([0.485, 0.456, 0.406]).view(1, 3, 1, 1, 1).float().to(CPU_DEVICE)
+        self.std = torch.tensor([0.229, 0.224, 0.225]).view(1, 3, 1, 1, 1).float().to(CPU_DEVICE)
+        print("[DOVER] Loaded!")
 
     def _process_video(self, video_path, num_frames=32):
+        # Đảm bảo mọi xử lý ở đây đều trên CPU
         vr = VideoReader(video_path, ctx=cpu(0))
         total_frames = len(vr)
         indices = np.linspace(0, total_frames-1, num_frames, dtype=int)
@@ -285,11 +177,13 @@ class DOVERWrapper:
         else:
             frames = frames_batch.numpy()
         
+        # Numpy -> Tensor (CPU)
         frames = torch.from_numpy(frames).permute(3, 0, 1, 2).float() / 255.0
-        frames = frames.unsqueeze(0).to(self.device) # CPU
+        frames = frames.unsqueeze(0).to(CPU_DEVICE) 
         
         frames = (frames - self.mean) / self.std
         
+        # Interpolate trên CPU (Hỗ trợ đầy đủ 3D)
         resize_view = torch.nn.functional.interpolate(frames, size=(num_frames, 224, 224), mode='trilinear')
         fragments_view = torch.nn.functional.interpolate(frames, size=(num_frames, 224, 224), mode='trilinear')
 
@@ -299,6 +193,7 @@ class DOVERWrapper:
         try:
             inputs = self._process_video(video_path)
             with torch.no_grad():
+                # Model chạy trên CPU
                 scores = self.model(inputs, inference=True, reduce_scores=False, pooled=True)
                 
                 if isinstance(scores, list) and len(scores) >= 2:
@@ -309,8 +204,17 @@ class DOVERWrapper:
                     aes, tech = val, val
                 else:
                     aes, tech = 0.0, 0.0
-                    
-            return {"aesthetic": aes, "technical": tech}
+            
+            # DOVER trả về thang điểm 0-1 (hoặc logits), ta scale lên 10 cho dễ nhìn
+            # DOVER++ thường trả về điểm trong khoảng [-1, 1] hoặc [0, 1] tùy dataset
+            # Ta dùng sigmoid để chuẩn hóa về 0-1 rồi nhân 10
+            def sigmoid(x): return 1 / (1 + np.exp(-x))
+            
+            # DOVER output thường là raw logits, cần sigmoid để ra xác suất/điểm
+            aes_score = sigmoid(aes) * 10
+            tech_score = sigmoid(tech) * 10
+            
+            return {"aesthetic": round(aes_score, 2), "technical": round(tech_score, 2)}
         except Exception as e:
             print(f"DOVER Error on {video_path}: {e}")
             return {"aesthetic": 0.0, "technical": 0.0}
@@ -570,35 +474,88 @@ class QAlignWrapper:
         print("[Q-Align] Unloaded.")
     
 # ==============================================
-# 3. WRAPPER CHO LOCAL LLM (FIXED MODEL & SAVING)
+# 3. WRAPPER CHO INTERNVIDEO (Feature Extraction)
+# ==============================================
+class InternVideoWrapper:
+    def __init__(self):
+        print("[InternVideo] Loading...")
+        # Load InternVideo model (giả sử user đã clone repo InternVideo vào third-party)
+        # Nếu cấu trúc phức tạp, ta dùng bản rút gọn hoặc CLIP-Video nếu có
+        # Ở đây ta dùng một implementation đơn giản nếu có thể import
+        try:
+            # Thử import từ thư mục third-party
+            # Lưu ý: InternVideo code khá phức tạp, nếu import lỗi ta sẽ dùng CLIP làm fallback
+            from InternVideo.InternVideo2.multi_modality.models.internvideo2_stage2_audiovisual import InternVideo2_Stage2_audiovisual
+            # Setup config (giả lập) - Phần này tùy thuộc vào file config của InternVideo
+            # Để đơn giản và tránh lỗi import sâu, ta dùng CLIP-Large làm fallback cho embedding
+            # nếu không load được native InternVideo.
+            self.use_clip_fallback = True 
+        except:
+            self.use_clip_fallback = True
+
+        if self.use_clip_fallback:
+            print("[InternVideo] Native import failed/complex. Using CLIP-Large-Video fallback for embeddings.")
+            from transformers import CLIPModel, CLIPProcessor
+            self.model = CLIPModel.from_pretrained("openai/clip-vit-large-patch14").to(DEVICE).eval()
+            self.processor = CLIPProcessor.from_pretrained("openai/clip-vit-large-patch14")
+        
+        print("[InternVideo] Loaded!")
+
+    def get_embedding(self, video_path):
+        try:
+            vr = VideoReader(video_path, ctx=cpu(0))
+            # Lấy frame giữa
+            frame = vr[len(vr)//2].asnumpy()
+            image = Image.fromarray(frame)
+            
+            inputs = self.processor(images=image, return_tensors="pt").to(DEVICE)
+            with torch.no_grad():
+                emb = self.model.get_image_features(**inputs)
+                emb = emb / emb.norm(p=2, dim=-1, keepdim=True)
+            
+            # Return list float để save vào json
+            return emb.cpu().numpy().tolist()[0]
+        except Exception as e:
+            print(f"Embedding Error: {e}")
+            return None
+
+    def unload(self):
+        del self.model
+        gc.collect()
+        torch.mps.empty_cache()
+        print("[InternVideo] Unloaded.")
+
+
+# ==============================================
+# 4. WRAPPER CHO LOCAL LLM
 # ==============================================
 class LocalLLMWrapper:
-    # SỬ DỤNG MODEL MLX-COMMUNITY ĐỂ TỐI ƯU CHO MAC
-    # Dùng bản 7B để nhẹ và nhanh. Nếu máy >32GB RAM có thể đổi sang 32B.
-    def __init__(self, model_path="mlx-community/Qwen2.5-32B-Instruct-4bit"):
+    def __init__(self, model_path="mlx-community/Qwen2.5-7B-Instruct-4bit"):
         from mlx_lm import load, generate
         print(f"[Local LLM] Loading {model_path}...")
-        
-        # Load model
-        self.model, self.tokenizer = load(model_path)
+        self.model, self.tokenizer = load(model_path, tokenizer_config={"trust_remote_code": True})
         self.generate_fn = generate
         print("[Local LLM] Loaded!")
 
     def generate_rationale(self, info_dict):
+        aes = info_dict.get('aesthetic_score', {}).get('aesthetic', 0)
+        tech = info_dict.get('aesthetic_score', {}).get('technical', 0)
+        
         prompt = f"""<|im_start|>system
 You are an expert video quality analyst.<|im_end|>
 <|im_start|>user
-Generate a rationale for this video evaluation:
-- Content: {info_dict.get('caption', 'N/A')}
-- Aesthetic Score: {info_dict.get('aesthetic_score', {}).get('aesthetic', 0)}/10
-- Motion (ECR): {info_dict.get('ecr', 0.0)}
+Analyze this video based on the metrics:
+1. Content: {info_dict.get('caption', 'N/A')}
+2. Aesthetic Score: {aes}/10 (Color, Composition)
+3. Technical Score: {tech}/10 (Lighting, Sharpness)
+4. Motion (ECR): {info_dict.get('ecr', 0.0)}
 
-Why did it receive this score? (Max 2 sentences)<|im_end|>
+Explain WHY the video got these scores. Be critical but constructive. (2 sentences)<|im_end|>
 <|im_start|>assistant
 """
         try:
             response = self.generate_fn(
-                self.model, self.tokenizer, prompt=prompt, max_tokens=512, verbose=False
+                self.model, self.tokenizer, prompt=prompt, max_tokens=256, verbose=False
             )
             return response.strip()
         except Exception as e:
@@ -635,36 +592,22 @@ def process_dataset_multi_pass(csv_file, video_folder, output_file):
         if count == 50:
             break 
 
-    # # --- PASS 1: TimeChat ---
-    # print("\n=== PASS 1: TimeChat ===")
-    # timechat = TimeChatWrapper()
-    # for vid_id, data in tqdm(results.items()):
-    #     desc = timechat.ask(data['video_path'], "Describe the first 5 seconds in detail.")
-    #     results[vid_id]['caption'] = desc
-    # timechat.unload()
-    # --- PASS 1: TimeChat (Caption & Score) ---
-    print("\n=== PASS 1: TimeChat Analysis ===")
+    # --- PASS 1: TimeChat ---
+    print("\n=== PASS 1: TimeChat ===")
     timechat = TimeChatWrapper()
-    
     for vid_id, data in tqdm(results.items()):
-        caption, score = timechat.analyze_video(data['video_path'])
-        
-        results[vid_id]['caption'] = caption
-        results[vid_id]['aesthetic_score'] = {
-            "aesthetic": score,
-            "technical": score # TimeChat chấm tổng quát
-        }
-        print(f"Video {vid_id} | Score: {score} | Caption len: {len(caption)}")
-        
+        desc = timechat.ask(data['video_path'], "Describe the visual content and lighting of this video in detail.")
+        results[vid_id]['caption'] = desc
     timechat.unload()
     
-    # # --- PASS 2: DOVER --- đang lỗi
-    # print("\n=== PASS 2: DOVER ===")
-    # dover = DOVERWrapper()
-    # for vid_id, data in tqdm(results.items()):
-    #     score = dover.predict(data['video_path'])
-    #     results[vid_id]['aesthetic_score'] = score
-    # dover.unload()
+   # --- PASS 2: DOVER (Scoring - CPU Strict) ---
+    print("\n=== PASS 2: DOVER Scoring (CPU) ===")
+    dover = DOVERWrapper()
+    for vid_id, data in tqdm(results.items()):
+        score = dover.predict(data['video_path'])
+        results[vid_id]['aesthetic_score'] = score
+        print(f"Video {vid_id}: {score}")
+    dover.unload()
     # # --- PASS 2: Aesthetic (CLIP) --- không phù hợp với video
     # print("\n=== PASS 2: Aesthetic Scoring ===")
     # scorer = AestheticScorerWrapper()
@@ -681,9 +624,16 @@ def process_dataset_multi_pass(csv_file, video_folder, output_file):
     #     # In ra để debug xem điểm có thay đổi không
     #     print(f"Video {vid_id}: {score}")
     # scorer.unload()
+    # # --- PASS 3: InternVideo/CLIP (Embedding) --- đang xem xét
+    # print("\n=== PASS 3: Feature Extraction ===")
+    # embedder = InternVideoWrapper()
+    # for vid_id, data in tqdm(results.items()):
+    #     emb = embedder.get_embedding(data['video_path'])
+    #     results[vid_id]['video_emb'] = emb # Saved as list
+    # embedder.unload()
 
-    # --- PASS 3: Local LLM ---
-    print("\n=== PASS 3: Local LLM Rationale ===")
+    # --- PASS 4: Local LLM ---
+    print("\n=== PASS 4: Local LLM Rationale ===")
     llm = LocalLLMWrapper()
     
     final_data = []
@@ -694,8 +644,7 @@ def process_dataset_multi_pass(csv_file, video_folder, output_file):
         data['rationale'] = rationale
         final_data.append(data)
         
-        # LƯU NGAY LẬP TỨC SAU MỖI VIDEO
-        # Để tránh mất dữ liệu nếu crash
+        # LƯU NGAY LẬP TỨC SAU MỖI VIDEO để tránh mất dữ liệu nếu crash
         with open(output_file, 'w') as f:
             json.dump(final_data, f, indent=4)
             

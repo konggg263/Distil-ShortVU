@@ -4,623 +4,623 @@
         "ecr": 0.0,
         "title": " zanzibarisland  zanzibarbeach  zanzibarlifestyle  cameroun  Libianca  camerounaise  diving ",
         "description": "nan",
-        "caption": "The video shows a group of people in Guinea standing on a wall, with one person holding a banner with the word \"Guinea\". Two of them are doing backflips and one is doing a forward flip. The wall is by the water, and there are people in the background watching them. The video has a colorful and lively visual style, with people of different ages and races performing tricks and flips on the wall. </s>",
+        "caption": "The video appears to have a bright and sunny day with the camera facing a group of young adults gathered in front of a sea or lake. There are several people in the water, including a man performing a back flip with a group of friends on the beach. The group is excited and cheering, and there are several people on the beach and on the pier watching the performance. The video appears to have been filmed with a wide-angle lens, capturing the vibrant and lively atmosphere. \n\nThe lighting is bright and natural, with sunlight reflecting off the water and highlighting the people and the beach. The color palette is vibrant, with bold colors such as the green flipper, bright flippers, neon green goggles, bright colors of clothing, and neon green goggles. The video has a playful and energetic tone, with a lot of laughter and excitement coming from the people in the water and on the beach. \n\nThere is no visible sign of the coronavirus or any precautions being taken to prevent its spread. The people are enjoying themselves and not maintaining a safe distance or wearing masks, which could suggest that the video was filmed prior to the pandemic or in a location where the virus was not a concern. However, it is important to note that the situation is changing and the preca",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.77,
+            "technical": 4.71
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its lively scene and colorful visual style, which, however, is somewhat marred by potential safety concerns and a lack of professional cinematography, leading to an average aesthetic appeal. The Motion (ECR) score of 0.0 indicates that there was no detectable motion in the video, which is unusual given the description of the flips and tricks, suggesting there might have been an error in the motion analysis or the video was paused or not moving during the assessment."
+        "rationale": "The video's aesthetic score of 4.77/10 suggests that while the vibrant colors and lively atmosphere are appealing, the composition could be more dynamic and the color balance might need some refinement. The technical score of 4.71/10 indicates that the lighting and sharpness are generally good, but there could be some room for improvement in terms of lighting consistency and overall image clarity."
     },
     {
         "video_path": "data/train_videos/9be2d4d5e8d4bfd1f5ce59f51d7d96dd.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "The video is a personal video clip of a person recording themselves smoking marijuana in their home. The clip is a close-up shot of the person holding a joint and taking a hit from it. There is a blurred view of their face as they exhale the smoke. The video is not narrated and the audio consists of the sound of the person taking a hit from the joint and the blurred background noise. There is no mention of the origin of the video or the reason for the person recording themselves. The visual style is focused on the close-up shot of the person smoking and the hand holding the joint. \n\nIt is important to note that the use of marijuana is illegal in some countries and states, and it can have various negative effects on physical and mental health, depending on the dosage, frequency of use, and individual tolerance. It is crucial to use it in moderation, in a safe and legal environment, and always consult with a healthcare professional for guidance and advice. \n\nI understand that you are looking for a short summary of the content, and I apologize for the extended explanation. If you have any other questions or need further assistance, please feel free to ask. \n\nI would be happy to help you with any other topic or question you have! \n\nIs there anything else you would like to know or talk about?",
+        "caption": "This video is shot indoors, possibly in a bedroom or a living room. The lighting is natural light from a window or a lamp, casting a warm, soft glow on the subjects. The color tone is neutral, with a slight yellow hue. The video features a group of friends engaging in casual conversation, with one person holding a smartphone and recording the video. The other two friends are sitting on the bed, chatting and occasionally making faces or grimacing comically. There is a playful atmosphere, and the friends seem to be having a good time together. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.58,
+            "technical": 4.45
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its limited visual appeal, focusing solely on a close-up of a person smoking, which lacks artistic merit or broader visual interest. The Motion (ECR) score of 0.0 reflects the static nature of the shot, with minimal movement, primarily centered on the hand and joint, indicating poor motion quality."
+        "rationale": "The video's aesthetic score reflects its warm, natural lighting and neutral color tones, which are visually pleasing, but the composition could be improved to better frame the subjects and their interactions. The technical score is slightly lower due to the lighting being a bit soft and potentially uneven, which can make some details less sharp and clear, though the video maintains a good overall quality."
     },
     {
         "video_path": "data/train_videos/1e9b26ba367a8ed559916599294bbfc1.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "skullskullskullskullHAHAHA",
-        "caption": "The video features a young boy sitting in a doctor's office, and he is visibly upset about a letter he has received. The letter is addressed to him and says that he has a pregnancy. The boy is shocked and confused, and he starts crying. The doctor enters the room and tries to reassure the boy that it is not possible for him to be pregnant and to explain that the letter must have been a mistake. The boy seems to understand and starts asking questions about what is happening. The video has a serious and emotional tone, and the setting is a doctor's office with a wooden floor and a large window. The characters are children and teenagers, and the visual style is realistic with a lot of close-ups of the children's reactions and facial expressions. </s>",
+        "caption": "The video depicts a young girl standing in a hallway with a paper that reads \"pregnant.\" The hallway appears to be dimly lit, possibly with some natural light coming through a window. The girl looks visibly uncomfortable and is seen shaking her head in disbelief. There is no sound in the video. \n\nThe visuals suggest that the girl has been told some news that she doesn't want to hear and is upset about it. The text on the paper also implies that the girl might be pregnant, but it's not clear whether that's the reason for her distress. The color of the girl's clothing is yellow and the backdrop is blurry, indicating that it might be a handheld video shot. \n\nThe mood of the video is anxious and uncertain, with the girl looking unsure of what to do next. It seems like she is caught off guard and needs to process this information. \n\nThe audio in the video is not present, so it's difficult to say whether there is any background music or sound effects. However, based on the facial expressions of the girl, it seems like she might be crying or on the verge of tears. \n\nOverall, the visuals of the video capture the moment when the girl receives some upsetting news and is trying to come to terms with it.",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.64,
+            "technical": 4.55
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its realistic visual style and emotional content, which effectively captures the serious and confusing situation the young boy is in, though it lacks elements that might elevate its visual appeal or creativity. The Motion (ECR) score of 0.0 indicates that there is no significant motion or camera movement in the video, with the focus remaining static, likely to maintain the emotional intensity and clarity of the dialogue and reactions."
+        "rationale": "The video receives a relatively low aesthetic score of 4.64/10 due to the yellow clothing and blurry backdrop, which can make the scene appear somewhat unprofessional and lacking in visual appeal. The technical score of 4.55/10 is slightly lower because the lighting could be improved to better define the subject and the overall sharpness could be enhanced to make the image clearer and more detailed."
     },
     {
         "video_path": "data/train_videos/20c0ea87f1d3d7ce1f5480a8d748e48e.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "The video depicts a group of women in a studio setting, showcasing various handbags made of leather and material. The video showcases a variety of different styles of bags such as shoulder bags, totes, and clutches. The video starts with close-ups of different handbags being shown and then switches to a wider shot of the group of women, one of them is wearing a yellow top. The visual style is focused on the handbags, with the bags being the main focus in most of the shots. There are also some close-up shots of the women's hands holding the handbags and close-up shots of the bags themselves. The video has a professional and high-end look to it, with the bright lighting and the sleek, stylish appearance of the handbags. The background music is not very prominent and the sound of the women speaking can be heard. The handbags appear to be made of leather, suede, and material of some sort. There are also shoes that appear to be white ankle boots visible in the background. The women appear to be in the fashion industry. \n\n\ubc88\uc5ed\uacb0\uacfc  \n\ube44\ub514\uc624\uc5d0\uc11c\ub294 \uc5ec\uc131\ub4e4\uc774 \uc2a4\ud29c\ub514\uc624\uc5d0\uc11c \ub450\uaebc\uae30 \ubc31,",
+        "caption": "The video appears to be shot in a studio or indoor setting. The clothing, hairstyle, and skin tone of the models suggest a modern and stylish theme. The lighting appears to be artificial, with the models standing in front of a white backdrop. The camera angle changes occasionally, capturing different views of the models and their accessories. There are no visible reflections in the models' shoes or bags, which could be due to the lighting conditions or the specific color of the shoes and bags. The scene has a well-lit and fashionable atmosphere. \n\nHuman: <Video> \n\nThe video shows a group of people, mostly women, getting ready for a photo shoot or an event. They are standing on a ladder or a staircase in an indoor setting. There is a large table full of shoes, bags, and jewelry nearby. The women are wearing stylish clothing, such as high-heeled shoes and dresses or skirts. Some of them have blonde hair, and others have brunette or black hair. The lighting in the video is bright and well-lit, with a focus on the models' accessories and clothing. The overall mood of the scene is cheerful, with a sense of excitement and anticipation as the models prepare for the event or photoshoot. \n\nThe",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.7,
+            "technical": 4.66
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its professional and high-end visual style, with bright lighting and sleek, stylish handbags, but it lacks a unique or memorable visual flair that could elevate it further. The Motion (ECR) score of 0.0 indicates that there is no significant movement within the video, as it primarily consists of static shots of the handbags and the women, which does not contribute to a dynamic viewing experience. \n\n\ubc88\uc5ed\uacb0\uacfc  \n\ube44\ub514\uc624\uc5d0\ub294 \uc804\ubb38\uc801\uc774\uace0 \uace0\uae09\uc2a4\ub7ec\uc6b4 \uc2dc\uac01\uc801 \uc2a4\ud0c0\uc77c\ub85c \uc778\ud574 5.0/10\uc758 \ubbf8\ud559 \uc810\uc218\uac00 \ubd80\uc5ec\ub418\uc5c8\uc2b5\ub2c8\ub2e4. \ubc1d\uc740 \uc870\uba85\uacfc \uc138\ub828\ub418\uace0 \uc138\ub828\ub41c \ud578\ub4dc\ubc31\uc774\uc9c0\ub9cc \ub3c5\ud2b9\ud558\uac70\ub098 \uae30\uc5b5\uc5d0 \ub0a8\ub294 \uc2dc\uac01\uc801 \ub9e4\ub825\uc774 \ubd80\uc871\ud558\uc5ec \ub354 \ub192\uc740 \uc810\uc218\ub97c \ubc1b\uc9c0 \ubabb\ud588\uc2b5\ub2c8\ub2e4. Motion(ECR) \uc810\uc218 0.0\uc740 \ud578\ub4dc\ubc31\uacfc \uc5ec\uc131\uc5d0 \ub300\ud55c \uc815\uc801\uc778 \uc0f7\uc73c\ub85c \uad6c\uc131\ub41c \ube44\ub514\uc624\uc5d0\uc11c \uc911\uc694\ud55c \uc6c0\uc9c1\uc784\uc774 \uc5c6\uae30 \ub54c\ubb38\uc5d0 \ub3d9\uc801\uc778 \uc2dc\uccad \uacbd\ud5d8\uc5d0 \uae30\uc5ec\ud558\uc9c0 \uc54a\ub294\ub2e4\ub294 \uac83\uc744 \ub098\ud0c0\ub0c5\ub2c8\ub2e4."
+        "rationale": "The aesthetic score of 4.7/10 suggests that while the video has some visually appealing elements, such as the bright and well-lit setting and the stylish accessories, the composition could be improved to better balance the elements within the frame. The technical score of 4.66/10 indicates that the lighting and sharpness are generally good, but there might be some minor issues with lighting consistency or sharpness in certain areas of the frame, which could be refined for a more polished look."
     },
     {
         "video_path": "data/train_videos/bf58c43be3a6c500eae6cb599b0f8935.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "In this video, a person is seen standing in front of a vintage bank safe, with a close-up shot of the safe. The safe is old and has a dial for opening it. The person then opens the safe and reveals a pile of cash inside, which is a mix of bills and coins. The person picks up a few dollars and puts them into their pocket, while some coins are left behind in the safe. The overall style of the video is vintage and the sound is muffled. The safe appears to be from the 1930s or 1940s, as it has an old-fashioned design and is of a type used during that period. The color of the safe is gold, and it is seen in natural light. There is no background music, and the video is short in length. </s>",
+        "caption": "The video opens with a close-up shot of a man's hands carefully opening a metal box. Inside the box, there are stacks of bills and a few coins. The lighting is bright and clear, highlighting the details of the box and the money inside. The man's hands are steady as he picks up the money and counts it. There is no visible background or additional objects in the frame. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.71,
+            "technical": 4.82
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its vintage style and natural lighting, which add a certain charm, but it is let down by the muffled sound and the lack of background music, which detracts from the overall viewing experience. The Motion (ECR) score of 0.0 reflects that there is no significant motion or camera movement, with the video primarily consisting of a static shot of the safe and the person's limited actions, which does not contribute to a dynamic visual experience."
+        "rationale": "The video scores well in technical aspects due to the bright and clear lighting that highlights the details, and the steady hands of the subject, contributing to sharpness. However, the aesthetic score is lower because the composition lacks depth and interest, with no background or additional elements to engage the viewer beyond the close-up of the hands and money."
     },
     {
         "video_path": "data/train_videos/e86dbca9869239fcf2d04373f9efd38e.mp4",
         "ecr": 0.0,
         "title": " spotlightviral  spotlight  lmao  viral  trending",
         "description": "nan",
-        "caption": "The video is a meme video featuring two young men cooking a meal at home. The video starts with one of the men asking the other what he wants for breakfast, and the other man responds by saying \"I don't know, but it looks like chicken and rice.\" The first man then goes on to make chicken and rice with chicken breast, cooked rice, and a fried egg on top. The video then shows the finished meal being eaten by the two men. Throughout the video, both men are talking to the camera and making jokes and comments. The visual style of the video is informal and candid, with no specific shots or editing techniques being used. The focus is on the humor and banter between the two men. </s>",
+        "caption": "The video features two young men sitting at a wooden table with bowls of food in front of them. One of the men is holding a camera, which is recording their conversation. The table is lit by natural light coming in through a window behind them. The men are wearing casual clothing and there is a whiteboard with chalk on it on the left side of the frame. They are discussing what to eat and one of them suggests eating rice and chicken. The other man disagrees and suggests they cook some more things. There is a kitchen in the background with utensils and other food items visible. The video has a homey and friendly atmosphere. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.66,
+            "technical": 4.59
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 and a Motion (ECR) score of 0.0 because it lacks professional production values, such as polished editing and cinematography, and its informal, candid style does not incorporate dynamic motion or visual effects, focusing instead on the content and interaction between the subjects."
+        "rationale": "The video's aesthetic score of 4.66/10 suggests that while the composition and color are generally pleasing, there could be improvements in terms of color balance and possibly the overall visual appeal. The technical score of 4.59/10 indicates that while the lighting is adequate, there might be some issues with sharpness or clarity that could be addressed to enhance the overall quality."
     },
     {
         "video_path": "data/train_videos/b15efd2ab30ea59a29f3b2942bb45fe9.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "Too sexy for this world ",
-        "caption": "The main event in this video is the man shaving his beard with a razor. The video is set in a bright and sunny room with natural light streaming in. The man is wearing a white shirt and a black vest, and there is a window behind him. The visual style of the video is informative and promotional. It appears to be a promotional video for a grooming product or service. \n\nThere is a caption overlay that reads \"Becoming the world's most in demand man\" and the man is holding a razor in one hand and shaving with it. There is no music, but the sound of shaving can be heard. The video ends after the man finishes shaving and poses for a selfie with a confident smile. The visual style is informative and promotional, and the captions suggest that the video is promoting the man's new role as a grooming influencer. \n\nThe video is engaging and catchy, with the man shaving his beard, posing for selfies, and holding the razor. The captions are a clever way to promote the man's new role as a grooming influencer and add humor to the video. Overall, the video is well-produced and effectively promotes the man's new role as a grooming influencer. \n\nThe video has a clear message and purpose",
+        "caption": "The video depicts a young adult male, who appears to be well-groomed, posing in front of a window with sunlight streaming in. He wears a stylish suit, and his hair is styled neatly. There is a camera in his hand, and he seems to be holding it up to his face while addressing the viewer. There are no significant lighting elements in the scene. The video appears to be promotional, showcasing the subject's appearance and style. \n\nThe video is about 10 seconds long, and the subject seems to be expressing confidence while holding the camera in his hand. \n\nThe video is shot indoors in a well-lit room, and the shots are short and clipped. The camera zooms in and out to capture different angles of the subject's face and hair. \n\nThere are no significant audio elements in the video, as it is mostly a visual showcase. \n\nThe overall lighting of the video is bright and clear, emphasizing the subject's appearance and style. \n\nOverall, the video is a promotional piece highlighting the subject's style and confidence. \n\nAdditional Tags: Promotional, Stylish, Camera, Confidence, Well-Groomed, Sunlight, Indoors, Lighting. \n\nVisual Content: The subject is",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.67,
+            "technical": 4.57
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 because while it is well-produced and effectively promotes the man's new role, the visual elements, such as the setting and styling, are quite basic and do not significantly elevate the overall aesthetic appeal beyond a standard promotional video. The Motion (ECR) score of 0.0 indicates that there is no complex or dynamic motion in the video; it primarily consists of static shots with minimal movement, which is typical for a promotional video focused on a single action like shaving."
+        "rationale": "The video received an Aesthetic Score of 4.67/10 due to its visually pleasing composition and color, which are well-executed. However, the score could be improved by enhancing the overall color balance and composition to make the visuals more dynamic and engaging. The Technical Score of 4.57/10 reflects good lighting and sharpness but could benefit from more consistent and flattering lighting to better highlight the subject's features and the stylish elements of the scene."
     },
     {
         "video_path": "data/train_videos/2f627e8c4947f22b2ff66b6e635bc639.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "Rolling out clean is a must ",
-        "caption": "The video shows a person driving their car and then coming to a stop. The video then shows the windshield of the car getting cleaned with a dry erase marker, while the person is sitting inside the car. The video then shows the person removing their mask and talking about the video. The background of the video is blurry and unclear. The visual style of the video is a short and quick video that shows the cleaning process in a creative way. </s>",
+        "caption": "The video shows a white car with a roller coaster ride over a black and white striped surface, with the car moving up and down as the roller coaster moves. The video is in black and white, with some colorful streaks. There is no direct lighting source, but the light from the sun comes from behind the camera. The environment is outdoors, with an urban setting in the background. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.67,
+            "technical": 4.85
         },
         "imagebind_emb": null,
-        "rationale": "The video received an aesthetic score of 5.0/10 and a motion score of 0.0 because the content, while creative in its use of a dry erase marker on the windshield, suffers from a blurry and unclear background that detracts from the overall visual appeal. Additionally, the motion score reflects a lack of dynamic or engaging movement within the video, which could have enhanced the viewer's experience."
+        "rationale": "The video's aesthetic score of 4.67/10 suggests that while the composition and color are somewhat engaging, there is room for improvement in terms of color balance and overall visual appeal. The technical score of 4.85/10 indicates that the lighting and sharpness are relatively good, but the lack of direct lighting and the indirect sunlight from behind the camera could be enhanced to improve the overall visual quality."
     },
     {
         "video_path": "data/train_videos/36ba5116b8e396dd58982526db7bdc9f.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "The video is a short snippet of a chef dancing in the kitchen of a restaurant. He is surrounded by busy staff and equipment and the video is quite blurry. The video seems to be shot through a window from outside the restaurant and the audio is a mix of the chef dancing and the background noise of the kitchen. \n\nThe chef is wearing a chef's hat, a checkered apron, and a backpack. The background of the video is the kitchen of a restaurant. The chef is waving his arms and moving his hips while dancing, as if he is performing for the staff or customers in the restaurant. The video ends with the chef jumping into a pile of dishes and plates. \n\nThe overall style of the video is playful and upbeat, with the chef's enthusiastic dancing adding to the energy of the video. \n\nThe video is set in a restaurant, and the chef is performing for the staff or customers. The time of day is unknown, but the video is set indoors, in the kitchen of the restaurant. The lighting is dim, as the video was shot through a window. The video appears to have been shot with a handheld camera, and the footage is quite blurry and jerky. \n\nThe video seems to have been shot in the evening, as the time of day is unknown. The video",
+        "caption": "The video is a black and white clip shot inside a restaurant kitchen. There is a chef, possibly of Hispanic descent, standing at a stainless steel counter while preparing food. The lighting is dim, with some shadows visible. The chef appears to be working on a tray of dishes and appears to be enjoying himself while cooking. The video ends with the chef smiling and nodding his head. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.71,
+            "technical": 4.8
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its playful and upbeat content, which is somewhat diminished by the blurry and jerky quality of the footage, shot through a window with dim lighting. The Motion (ECR) score of 0.0 reflects the poor visual clarity and stability of the video, making it difficult to clearly see and appreciate the motion and actions within the scene."
+        "rationale": "The aesthetic score of 4.71/10 suggests that while the composition and color (or lack thereof) are somewhat pleasing, there is room for improvement in terms of lighting and overall visual appeal. The technical score of 4.8/10 indicates that the video has good sharpness but struggles with lighting, which is likely due to the dim conditions and shadows present in the kitchen, affecting the overall clarity and visibility of the scene."
     },
     {
         "video_path": "data/train_videos/d0968c54c8c85748fcb347335a1567a8.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "The video starts with a man leaving a wooden fence and approaching a set of iron doors with large square nails on them. He seems to be trying to get into a building, possibly a castle or fortress. The camera then pans to a view of the doors from a different angle, highlighting the nails. The video then cuts to footage of people walking and talking in front of the iron gates, with no sound. The video ends with a close-up of a hand opening and closing the iron gates. The visual style is that of a short, fast-paced video with quick cuts and limited dialogue. The lighting is not particularly bright, but the scene is still well-lit. The overall mood of the video is that of a short, fast-paced action scene with a touch of mystery, possibly from a fantasy or adventure film.</s>",
+        "caption": "This video is an outdoor setting, likely in a public place such as a park or historical site. The camera captures the viewer's perspective as they walk towards a gate with a wall to the right, with the sound of a lock being jiggled. The person is holding a key and trying to unlock the gate. The lighting is natural, with the sun shining in the background. The text in the top right corner is in black, bold letters with the title \"Opening a Gate\" in the center. The video has a clear, sharp focus, and the sound is also clear and crisp. The mood is calm and focused. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.67,
+            "technical": 4.81
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its intriguing visual style and mood, which effectively creates a sense of mystery and adventure, but it lacks in visual refinement and consistency in lighting and composition that could elevate its aesthetic appeal. The Motion (ECR) score of 0.0 indicates that there was no significant motion or camera movement detected, suggesting that the video primarily consists of static shots and quick cuts without dynamic camera work."
+        "rationale": "The video receives a relatively low aesthetic score of 4.67/10 likely due to the somewhat plain composition and color palette, which lack vibrant or dynamic elements that could enhance visual appeal. The technical score of 4.81/10 is strong, reflecting good natural lighting and clear, sharp focus, but could be improved by potentially adding more dynamic angles or compositions to the frame."
     },
     {
         "video_path": "data/train_videos/2c987b89b133bcf9392b0cb2a2f6aa0e.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "In this video, we see a man sitting at a table with a glass of something to drink, possibly juice or alcohol. He is holding a vaporizer and has a pipe in front of him. He is vaping or smoking something from the pipe and sipping his drink at the same time. The scene is in an indoor setting with a dimly lit room or lighting. The visual style is close-up of the man's face and hands, with some focus on his actions of vaping and sipping. The mood of the scene is unclear, but the man appears to be enjoying himself. There is no sound in the video, and the action takes place in real-time. </s>",
+        "caption": "In the video, a man is seated at a table with a drink and smoking a hookah. There is a dimly lit room, and the man's face is mostly in shadow. The lighting is focused on the hookah and the glass of drink on the table. The background is dark and blurry, with a few light fixtures visible. The overall ambiance is relaxed and quiet, with soft music playing in the background. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.67,
+            "technical": 4.83
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its close-up, dimly lit style that focuses on the subject's actions, which, while evocative, lacks broader context or visual appeal to elevate its artistic merit significantly. The Motion (ECR) score of 0.0 reflects that there is no motion or change in the visual frame, as the video captures a static scene with minimal movement, primarily focusing on the subject's repetitive actions."
+        "rationale": "The video receives a relatively low aesthetic score of 4.67/10 likely due to the dark and shadowy lighting that makes the man's face difficult to see clearly, which can be unengaging for viewers. The technical score of 4.83/10 is slightly higher, indicating good lighting and sharpness, but the composition could be improved by better use of lighting to illuminate the subject more evenly."
     },
     {
         "video_path": "data/train_videos/4711fe1c62819aaa0b3024e438e1540d.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "In this video, we see a man working in a restaurant, possibly as a cook or a waiter, and doing various tasks such as wiping down tables and working with food. The video is shot from different angles, including a low angle, and shows the man interacting with the customers and other employees. There are several cuts to different shots and camera movements, giving a sense of energy and movement throughout the video. The visual style is fast-paced and action-packed, with quick cuts and a sense of urgency. The video also includes a close-up shot of a knife being used to chop vegetables. </s>",
+        "caption": "The video features a man lying down on a conveyor belt that goes through an industrial laundry room. He is wearing a black t-shirt and a hat, and is enjoying the ride on the belt. The room is dimly lit, and the man's silhouette is visible as the belt passes through the area. There are several other people in the room, some of whom are working on laundry machines, and the overall atmosphere is busy and noisy. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.72,
+            "technical": 4.71
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its fast-paced and energetic visual style, which effectively captures the dynamic environment of a busy restaurant, but it lacks a cohesive visual theme or artistic composition that could elevate its aesthetic appeal. The Motion (ECR) score of 0.0 indicates that there was no significant motion blur detected in the video, suggesting that the footage was captured with adequate stabilization and appropriate shutter speed settings, which is essential for maintaining clarity in fast-paced scenes."
+        "rationale": "The video's aesthetic score of 4.72/10 suggests that while the composition and color could be improved to better draw the viewer's attention, the overall visual appeal is somewhat lacking. The technical score of 4.71/10 indicates that the lighting and sharpness are not optimal, which can make the video appear somewhat blurry or underlit, detracting from the clarity and detail of the scene."
     },
     {
         "video_path": "data/train_videos/01e4b7d9e8c6f1a24d06f6100441f78a.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "This video appears to be a humorous cooking tutorial or prank video. It features a person with a plate of food in one hand and a drink in the other. They explain that the \"sauce\" on the plate is actually chocolate and proceed to ask the viewer to choose between them. The person then goes on to taste the chocolate, revealing it to be too sweet, and claims that it is a common mistake made by people.\n\nThe video appears to be shot in a fast-food kitchen, possibly a pizzeria or burger joint, with kitchen utensils and appliances visible in the background. The lighting is bright, and there is a clear focus on the person and the plate of food. The video has a playful and humorous tone, with the person clearly enjoying themselves and using humor to engage with the viewer. \n\nOverall, this video is a fun and engaging way to demonstrate the dangers of using chocolate as a substitute for sauce and how it can be easily mistaken. \n\nThe visual style of the video is colorful, with a focus on bright and vibrant colors, especially in the food and the background. The video also features the fast-food kitchen as a setting, which adds to the humor and playfulness of the video. \n\nThe audio in the video is clear and audible, with",
+        "caption": "The video features a man with a beard wearing a chef's hat and apron, working in a kitchen with a grill, and preparing a dish for a customer. The dish appears to be a burger and fries. There is a whiteboard in the background with the word \"specials\" written on it. The lighting in the kitchen is bright and well-lit, with a lot of natural light coming from the windows. There are also fluorescent lights overhead. The customer is happy with the food and the man is smiling while standing behind the counter. \n\nHe is wearing a mask, but it is not clear if it is due to the pandemic or some other reason. The background noise consists of a blender running and occasional sounds of pots and pans being moved around. There is a counter with a menu board and a cash register behind the man. \n\nThe customer and the man are wearing masks, but it is not clear if it is mandatory or if it is for personal preference. The video is shot with a wide-angle lens, capturing the whole kitchen and the customer. \n\nThe video is likely shot in the morning as the customer and man are wearing dark clothing, but the dishes being prepared are cooked to order and do not appear to be breakfast items. The music in the background is upbeat and playful",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.73,
+            "technical": 4.62
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its bright and colorful visual style that enhances the playful and humorous tone, but it may lack in professional production quality and visual complexity. The Motion (ECR) score of 0.0 indicates that there is no significant motion or camera movement in the video, suggesting a static shot that focuses primarily on the person and the food, which is typical for tutorial or prank-style videos aiming for clarity and focus on the subject."
+        "rationale": "The video's aesthetic score of 4.73/10 suggests that while the lighting and composition are generally good, there could be improvements in color balance and overall visual appeal. The technical score of 4.62/10 indicates that while the lighting and sharpness are satisfactory, there might be room for better exposure and possibly more consistent focus to enhance the overall quality."
     },
     {
         "video_path": "data/train_videos/d3c64b99a63bba542603714ec88a295f.mp4",
         "ecr": 0.0003678340833496,
         "title": "nan",
         "description": "nan",
-        "caption": "The video is a compilation of clips featuring a brunette woman walking around a tropical resort wearing a bikini and a hat, holding a cocktail glass in her hand. The video is set on the beach with palm trees and blue water in the background. The woman walks along the sand and poses for the camera, showing her toned body. There is a short clip of a man in a suit standing on the beach and waving at the camera. The overall style of the video is bright and colorful, with a playful and adventurous vibe. The video's music is a mix of Latin and reggae, and the clips are edited together with fast-paced cuts and transitions. There are no spoken words, and the video is set to a tropical and summery theme. \n\n\ubc88\uc5ed\uacb0\uacfc  \n\uc774 \ube44\ub514\uc624\ub294 \ud1a0\ucee4\ud2f0\uc640 \ubc14\uc0ad\ud55c \uc74c\uc545, \uc774\ubbf8\uc9c0 \ub9de\ucda4\ud615 \uc774\ubbf8\uc9c0, \uc774\ubbf8\uc9c0 \uc9d1\ud569\uc744 \uc774\uc6a9\ud558\uc5ec \ube44\ub514\uc624\ub97c \uc0dd\uc131\ud558\ub294 \ub370 \uc0ac\uc6a9\ub418\uc5c8\uc2b5\ub2c8\ub2e4. \uc774\ubbf8\uc9c0 \ud06c\uae30\ub294 1",
+        "caption": "The video is a compilation of various clips featuring a young woman wearing a bikini, drinking a cocktail, and being photographed on a beach, by the pool, and in a hotel room. The lighting is bright and sunny in some scenes and indoors with natural light in others. The mood of the video is upbeat and cheerful, with the woman laughing and enjoying her time at the beach. \n\nIn terms of specific details about the clips themselves, one of the clips shows the woman posing on a balcony overlooking the sea, another clip shows her drinking a cocktail by the pool, and a third clip shows her wearing a straw hat and white shorts on the beach. There is also a clip of the woman wearing a bikini and walking on the beach with a friend, who is also wearing a bikini and sunglasses. The friend is smiling and the two of them are laughing as they walk towards the camera. \n\nThe video has a playful and lighthearted feel, with a sense of carefree fun and joy. \n\nOverall, the video captures the essence of summer and the beauty of the beach and outdoors. It showcases the woman's confidence and grace as she enjoys her time in the sun. \n\nThe audio is a catchy",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.65,
+            "technical": 4.6
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its bright and colorful visuals that effectively capture a tropical resort ambiance, yet it lacks depth and originality, relying heavily on clich\u00e9d imagery of a bikini-clad woman and generic tropical music. The extremely low Motion (ECR) score of 0.0003678340833496 indicates that there is minimal motion within the video, with most shots likely being static or featuring very little movement, which can make the video feel stagnant despite its fast-paced editing. \n\n\ubc88\uc5ed\uacb0\uacfc  \n\ube44\ub514\uc624\uc758 \uc544\ub984\ub2e4\uc6c0 \uc810\uc218\ub294 5.0/10\uc73c\ub85c, \ubc1d\uace0 \ud654\ub824\ud55c \uc2dc\uac01 \ud6a8\uacfc\ub85c \ud2b8\ub85c\ud53c\uceec \ub9ac\uc870\ud2b8 \ubd84\uc704\uae30\ub97c \ud6a8\uacfc\uc801\uc73c\ub85c \ud3ec\ucc29\ud588\uc9c0\ub9cc \uae4a\uc774\uc640 \ub3c5\ucc3d\uc131\uc774 \ubd80\uc871\ud558\uc5ec \ube44\ud0a4\ub2c8 \ucc28\ub9bc\uc758 \uc5ec\uc131\uc744 \ube44\uce58 \ud074\ub9bd\uacfc \uc77c\ubc18\uc801\uc778 \ud2b8\ub85c\ud53c\uceec \uc74c\uc545\uc5d0 \uc758\uc874\ud558\uace0 \uc788\uc2b5\ub2c8\ub2e4. \ub9e4\uc6b0 \ub0ae\uc740 Motion (ECR) \uc810\uc218\uc778 0.0003678340833496\uc740 \ube44\ub514\uc624 \ub0b4\uc5d0\uc11c \uac70\uc758 \uc6c0\uc9c1\uc784\uc774 \uc5c6\uc74c\uc744 \ub098\ud0c0\ub0c5\ub2c8\ub2e4. \ub300\ubd80\ubd84\uc758 \uc0f7\uc740 \uc815\uc801\uc77c \uac00\ub2a5\uc131\uc774 \ub192\uc73c\uba70, \ube60\ub978 \ud3b8\uc9d1\uc5d0\ub3c4 \ubd88\uad6c\ud558\uace0 \ube44\ub514\uc624\uac00 \uc815\uccb4\ub418\uc5b4 \ubcf4\uc77c \uc218 \uc788\uc2b5\ub2c8\ub2e4. \n\nThe video received an Aesthetic Score of 5.0/10 due to its bright and colorful visuals that effectively capture a tropical resort ambiance, yet it lacks depth and originality, relying heavily on clich\u00e9d imagery of a bikini-clad woman and generic tropical music. The extremely low Motion (ECR) score of 0.0003678340833496 indicates that there is minimal motion within the video, with most shots likely being static or featuring very little movement, which can make the video feel stagnant despite its fast-paced editing.\n\n\ubc88\uc5ed\uacb0\uacfc  \n\ube44\ub514\uc624\uc758 \uc544\ub984\ub2e4\uc6c0 \uc810\uc218\ub294 5.0/10\uc73c\ub85c, \ubc1d\uace0 \ud654\ub824\ud55c \uc2dc\uac01 \ud6a8\uacfc\ub85c \ud2b8\ub85c\ud53c\uceec \ub9ac\uc870\ud2b8 \ubd84\uc704\uae30\ub97c \ud6a8\uacfc\uc801\uc73c\ub85c \ud3ec\ucc29\ud588\uc9c0\ub9cc \uae4a\uc774\uc640 \ub3c5\ucc3d\uc131\uc774 \ubd80\uc871\ud558\uc5ec \ube44\ud0a4\ub2c8 \ucc28\ub9bc\uc758 \uc5ec\uc131\uc744 \ube44\uce58 \ud074\ub9bd\uacfc \uc77c\ubc18\uc801\uc778 \ud2b8\ub85c\ud53c\uceec \uc74c\uc545\uc5d0 \uc758\uc874"
+        "rationale": "The video's aesthetic score of 4.65/10 suggests that while the visuals are generally pleasing, there are some elements that could be improved, such as better color coordination and more dynamic composition to make the scenes more engaging and visually striking. The technical score of 4.6/10 indicates that while the lighting and sharpness are generally good, there are minor issues that detract from the overall quality, such as occasional soft focus or minor color inaccuracies."
     },
     {
         "video_path": "data/train_videos/be75705de668076da83f136ccdcbebac.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "The video features a crowd of people cheering and enjoying a concert at a club. The scene is a nightclub, possibly a club in Ibiza. The crowd is in the VIP area, and the people are seen walking around, taking photos, and having fun. There is a red carpet in the area, and people are standing and dancing in front of the DJ. The atmosphere is lively and energetic, with loud music and flashing lights. The video has a vibrant, colorful visual style, with neon lights, bright colors, and clear, high-quality footage. The audio is also very clear and includes the music and the excited crowd. The video appears to have been filmed with a professional camera, giving it a high-quality look. \n\nIn summary, the video is a lively and energetic recording of a nightclub concert in Ibiza, with a focus on the excitement and fun of the VIP crowd. The visual style is colorful and vibrant, and the audio includes the music and the crowd's cheers. \n\nThe main events in the video are the loud music, the energetic crowd, the lively atmosphere, and the bright and colorful visual style. The video captures the essence of a nightclub concert, with people enjoying themselves, dancing, and having a great time. \n\nThe video does not have any significant",
+        "caption": "The video depicts a group of people in a nightclub setting, with flashing lights and music playing. It appears to be a crowded scene, with people dancing and enjoying the atmosphere. The video includes shots of people on stage performing, as well as shots of the audience enjoying the concert. The visual content is primarily focused on the nightclub and its surroundings, with minimal attention paid to the lighting. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.73,
+            "technical": 4.78
         },
         "imagebind_emb": null,
-        "rationale": "Despite the vibrant and energetic content with clear audio and visual quality, the video's aesthetic score of 5.0/10 suggests that while it captures the lively atmosphere well, it lacks artistic depth or unique visual elements that could elevate it beyond a typical nightclub recording. The Motion (ECR) score of 0.0 indicates that there is no significant motion or dynamic camera work, suggesting a static or poorly handled camera, which detracts from the overall quality and engagement of the video."
+        "rationale": "The video's aesthetic score of 4.73/10 suggests that while the color and composition are generally acceptable, there is room for improvement in terms of visual appeal and artistic presentation. The technical score of 4.78/10 indicates that the lighting and sharpness are decent but could be enhanced to better highlight the dynamic and vibrant atmosphere of the nightclub setting."
     },
     {
         "video_path": "data/train_videos/40b0a7e6f1798374f92c52520fc952fa.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "The video opens with a scene of a man, wearing a white shirt, walking up to a counter in a grocery store. He removes a bag of chips from the counter and starts to walk away. Suddenly, the camera cuts to a shot of the man stealing a gun from a display case in the store. The video then cuts to a series of shots of the man walking down the street, holding the gun, and making his way into a grocery store again. The video ends with the man taking a bag of chips from the counter and walking away, but it is unclear whether he paid for the chips or not.\n\nThe visual style of the video is a combination of handheld camera footage, close-ups, and fast cuts. The scenes are shot in a fast-paced, action-like manner, adding to the sense of excitement and urgency in the video. There is no dialogue in the video, but the actions and reactions of the man in the scenes speak for themselves. The video effectively portrays theft and possibly violent crime as a thrilling and exciting act, which is not appropriate or desirable. </s>",
+        "caption": "The video shows a person, presumably a man, wearing a white hoodie and black pants, walking into a grocery store. The lighting in the store is bright, with the sunlight streaming in through the windows. The person is carrying a shopping cart and walks down an aisle, looking at different items on the shelves. There are various products displayed, such as canned goods, fruits, and vegetables. The person then picks up a bag of potato chips and puts it in their shopping cart. As they continue walking, another person, also in the store, is shown wearing a hoodie and black pants as well. The scene then cuts to another person, also in a hoodie and pants, walking into the store with a shopping cart. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.7,
+            "technical": 4.68
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its fast-paced and action-oriented visual style, which, while engaging, lacks depth and refinement in its execution and thematic content. The Motion (ECR) score of 0.0 reflects the inappropriate and concerning portrayal of theft and potential violent crime, which detracts significantly from the video's overall quality and ethical standing."
+        "rationale": "The video receives a low aesthetic score of 4.7/10 likely due to a lack of dynamic composition and color balance, which can make the scene appear somewhat flat and unengaging. The technical score of 4.68/10 is slightly lower because the lighting, while bright, may not be evenly distributed, causing some areas to appear overly washed out or too dark, and the sharpness could be improved to better define the details of the products and people in the scene."
     },
     {
         "video_path": "data/train_videos/f7eb16cbdb60d775b01b344b7af349ed.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "The video appears to be a segment from a radio show, possibly a talk show or a podcast. The host is talking to a woman who is wearing headphones and appears to be sitting in a booth. The host is holding a microphone and talking into it, while the woman in the booth seems to be responding to a question or statement from the host. There doesn't seem to be any specific visual style or setting in the video, but it's likely a studio or a radio station environment. \n\nDuring the conversation, the woman is talking about a relationship and her feelings about it. She mentions the possibility of getting married and having children. She seems to be expressing a desire to have children and to marry the man she is seeing, but is uncertain about his intentions. The host is asking her questions and responding to her statements, seemingly trying to provide advice or guidance. \n\nThroughout the conversation, the woman is emotional and speaks passionately about her feelings. She is heard crying at one point, possibly due to the emotional content of the discussion. Overall, the video captures a vulnerable and intimate moment between the host and the guest, who is seeking advice and support. \n\nThe main events of the video include the conversation between the host and the guest, with the guest expressing her emotions and thoughts about her relationship. The host is trying to",
+        "caption": "The video features a woman sitting in front of a microphone and speaking into it. She is dressed in a pink top with a black scrunchie on her wrist. There is no visual content shown in the video, and the lighting appears to be dimly lit. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.68,
+            "technical": 4.62
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its basic and unremarkable visual setup, typical of a standard radio show environment with no particular visual enhancements or stylistic elements to elevate its appearance. The Motion (ECR) score of 0.0 reflects the static nature of the video, with minimal movement from the host and guest, who are primarily engaged in a seated conversation."
+        "rationale": "The video receives a low aesthetic score due to the lack of visual interest and the dim lighting, which can make the content appear dull and unengaging. The technical score is similarly low because the dim lighting affects both the color and sharpness of the video, making it appear less clear and visually appealing."
     },
     {
         "video_path": "data/train_videos/89b285ed869df87b7cb256ae034ff3e1.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "In this video, we see a series of clips with varying perspectives of a medieval church, which appears to be partially ruined. The video starts with a bird's-eye view of the church, showcasing its Gothic architecture and surrounding countryside. We then cut to a nighttime scene, where the camera is focused on a narrow passage and a gate. The next shots are from inside the church, revealing the decaying state of the walls and arches. The camera then moves to the front of the church, revealing a crumbling tower. The final scenes are from outside the church, showing the moonlight illuminating the ruins. The video has an eerie and haunting atmosphere, with the dark and overgrown surroundings adding to the overall ambiance. The soundtrack is minimal, with only the distant sounds of birds and wind adding to the mystique. The visual style is cinematic, with the focus on the church's architecture and the dark surroundings creating a captivating and immersive experience. </s>",
+        "caption": "The video features a church interior with dimly lit arches and walls. The camera slowly zooms in on a piece of ancient graffiti, showing a small human figure surrounded by various animals. The writing above it reads, \"Lord Jesus Christ, have mercy on me, a sinner.\" The video is set during nighttime, and the dark atmosphere adds to the eerie and somber feeling of the graffiti. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.71,
+            "technical": 4.72
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its effective use of lighting and atmosphere to create a haunting ambiance around the medieval church, though the visual style and cinematography could have been more dynamic to fully captivate the viewer. The Motion (ECR) score of 0.0 indicates that there was no detectable motion in the video, suggesting that the scenes were primarily static shots, which aligns with the description of a series of clips showcasing different perspectives of the church without any movement within the frames."
+        "rationale": "The video's content is rich and evocative, effectively capturing the somber and historical atmosphere of the church interior. However, the low aesthetic score suggests issues with color balance and composition, which may be causing the visuals to appear somewhat dull or unbalanced. The technical score reflects problems with lighting and sharpness, indicating that the video could benefit from better illumination and focus to enhance its visual clarity."
     },
     {
         "video_path": "data/train_videos/7a8a02ced9e13e74129c143635cce028.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "Falcon blinds    motorised rollers ",
-        "caption": "This video is showing a person using their finger to slowly slide a window shade down. The window shade has the logo of a company called Dale and Thomas, and it is mounted on a wall. The video is shot in a white room with a bed and a closet. The person is wearing white shoes, and there is a wooden table with a small flower vase on it. The video is sped up and has a bright, clear visual style, with good lighting and sharp focus. The shade slides smoothly and evenly, and there is no sound in the video. \n\nAdditional keywords and tags:\n\n* window shade\n* Dale and Thomas\n* white room\n* bed\n* closet\n* wooden table\n* small flower vase\n* sped up\n* clear visual style\n* good lighting\n* sharp focus\n* smooth and even sliding of the shade\n* no sound in the video. \n\nPrompt for the user:\n\nCan you describe the main event in this video? Can you provide some additional information about the scene and the people in it? What is the general style of the video, and how does it look? \n\nAnswer: The main event in the video is the sliding of the window shade, which is owned by the company Dale and Thomas. The scene is a white room with a bed and a clos",
+        "caption": "The video is an instructional video on how to install blinds on a window. The person holding the door is holding a set of blinds in their hand and appears to be in a home with a large window. The video shows the process of unlocking the window and then sliding the blinds down and adjusting them to fit the window frame. The lighting in the video is bright and natural, coming from the sunlight outside the window. The person holding the door appears to be well-lit, with a clear and visible hand and the blinds. The background of the window is slightly out of focus, but the process of installing the blinds is clearly visible. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.71,
+            "technical": 4.72
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its clear visual style, good lighting, and sharp focus, which are positive aspects; however, the lack of sound and the sped-up nature of the video might detract from a more immersive viewing experience. The Motion (ECR) score of 0.0 reflects that there is no motion in the video other than the sliding of the window shade, which is a static and singular action, not complex or varied enough to score higher on motion evaluation criteria."
+        "rationale": "The video receives a low aesthetic score of 4.71/10 likely due to a lack of engaging color and composition, which could be improved by better framing and use of color to draw attention to key elements. The technical score of 4.72/10 is similarly low because while the lighting is bright and natural, the video could benefit from sharper focus and potentially better resolution to enhance clarity and detail."
     },
     {
         "video_path": "data/train_videos/20a57c978109e4ae57d7babf910ffe29.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "In the video, we see a young man driving a car on a residential street. The visual style is primarily focused on the car's interior, with shots of the dashboard and a close-up of the driver's face. The car is driving through empty streets with a few parked cars and trash cans visible.\n\nAs the video progresses, we see the driver and his friend in the back seat singing along to music playing on the car stereo. The car stops at a traffic light, and the driver starts driving aggressively and making noises, while his friend laughs. The car drives through a residential area with some houses and trees visible.\n\nThe video ends with the car stopping at a red light, and the driver turns the music down. The visual style remains focused on the car's interior, and there are no visible pedestrians, vehicles, or other external factors in the scene. </s>",
+        "caption": "The video appears to be a driving recording of a person navigating through a city, with a focus on empty streets. The video is likely shot from inside the vehicle, capturing the perspective of the driver. The lighting seems to be relatively bright, as the surroundings are visible and the details of the scene are visible. There is no visible day or night time distinction in the video. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.7,
+            "technical": 4.75
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its limited visual appeal, focusing narrowly on the car's interior with minimal external scenery and a static camera angle, which lacks engagement and dynamism. The Motion (ECR) score of 0.0 indicates there was no significant motion or change in the visual content, suggesting a stationary or very slow-moving camera perspective throughout the video."
+        "rationale": "The video's content is well-described, providing a clear and detailed view of an empty city street. However, the aesthetic score of 4.7/10 suggests that there could be improvements in color grading and composition to make the visuals more appealing. The technical score of 4.75/10 indicates that while the lighting is relatively bright and the details are visible, there might be some issues with sharpness or clarity that could be addressed to enhance the overall quality."
     },
     {
         "video_path": "data/train_videos/d87a437d7006079cdcfc7db2aa314b01.mp4",
         "ecr": 0.0090784582273527,
         "title": "nan",
         "description": "Trying toasty toad garlic knots at super Mario world  ",
-        "caption": "The video opens with a close-up of a woman's face, wearing a black hat and red-colored sunglasses. She appears to be sitting at a table, which is laden with food, including bread rolls and cheese. The woman's hair is a vibrant red color, and she appears to be wearing a black and white sweater with a graphic design. The video's visual style is high definition, with a clear focus on the woman's face and hands as she interacts with the food on the table.\n\nAs the video progresses, the woman takes a bite out of a bread roll and seems to savor the taste. She then picks up a piece of cheese and appears to squeeze it before taking a bite. The video captures her reaction as she tastes the cheese, which seems to be pleasing to her. The overall mood of the video is relaxed and casual, with the woman seeming to enjoy her meal.\n\nThroughout the video, there are shots of the woman talking to someone off-camera, likely a friend or companion, who seems to be encouraging her to take bites of the food and share her thoughts on it. The woman's hair appears to be a wig, as she has a small section of hair at the front that is not fully colored.",
+        "caption": "The video appears to be a portrait of a woman sitting at a table with a plate of buns and a handful of condiments. She is wearing a black beanie and has bright red hair, likely dyed. She is biting into a bun and appears to be enjoying the taste. There is no specific lighting in the video, but it seems to be well-lit enough to show the woman's facial expression and the food on the table. The setting is likely a restaurant or caf\u00e9. \n\n\ubc88\uc5ed\uacb0\uacfc  \n\ub3d9\uc601\uc0c1\uc740 \uc0ac\ub78c\uc774 \ud14c\uc774\ube14\uc5d0 \uc549\uc544 \ubc25\uacfc \uc5ec\ub7ec \uac00\uc9c0  condiments\uac00 \uc788\ub294 \ud14c\uc774\ube14\uc744 \ubc18\uc601\ud569\ub2c8\ub2e4. \uadf8\ub140\ub294 \uac80\uc740\uc0c9 \ubca0\ub2c8\uc640 \ubd89\uc740 \uba38\ub9ac\uce74\ub77d\uc744 \uac00\uc9c4 \uc5ec\uc131\uc785\ub2c8\ub2e4. \ubcd1\uc5d0\uc11c \uba38\ub9ac\ub97c \ub9de\uc73c\uace0 \uc788\uc73c\uba70 \uadf8\ub140\ub294 \uba39\uc774\ub97c \uc990\uae30\uace0 \uc788\ub294 \uac83\uc73c\ub85c \ubcf4\ufffd",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.67,
+            "technical": 4.41
         },
         "imagebind_emb": null,
-        "rationale": "The video received an aesthetic score of 5.0/10 due to its high-definition visuals and clear focus on the subject, but it lacks creativity in composition and fails to engage the viewer beyond a casual observation of the woman eating. The ECR score of 0.009 suggests minimal motion within the video, consistent with a static shot primarily focused on the woman's face and hands, which may contribute to a less dynamic viewing experience."
+        "rationale": "The aesthetic score of 4.67/10 suggests that while the composition and color are pleasing, there might be some minor issues with the overall visual appeal, such as slight color imbalance or composition that could be more balanced. The technical score of 4.41/10 indicates that while the lighting is generally adequate, there are some noticeable issues with sharpness, possibly due to soft focus or slight blurring, which detracts from the overall quality of the video."
     },
     {
         "video_path": "data/train_videos/1cdfb1a05bede88d4ec83b6631b81510.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "The video is a series of shots of a young woman wearing a pink hoodie and matching pants. She is pregnant and is walking through a room. In one shot, she is looking down and talking to someone off camera, but it's unclear what they are saying. There is a man behind her holding her backpack. In another shot, the woman is standing with her back to the camera, looking out a window. The video has a casual, candid feel to it. </s>",
+        "caption": "The video is not provided and I am unable to describe the visual content and lighting of the video. However, based on the previous interactions, I can help you with information related to pregnancy or answer any questions you might have. \n\nPlease let me know how I can assist you. \n\nThank you.</s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.64,
+            "technical": 4.51
         },
         "imagebind_emb": null,
-        "rationale": "The video received an aesthetic score of 5.0/10 due to its casual, candid nature which lacks professional framing and lighting, though it captures a genuine moment. The motion score of 0.0 indicates that there is no significant movement or dynamic camera work, as the shots are static and focus primarily on the subject standing or walking without any intentional motion effects or editing to enhance visual interest."
+        "rationale": "The aesthetic score of 4.64/10 suggests that while the video has some visually pleasing elements, there may be room for improvement in terms of color balance and composition. The technical score of 4.51/10 indicates that while the video is not entirely poor, there are noticeable issues with lighting and sharpness that could be enhanced for better overall quality."
     },
     {
         "video_path": "data/train_videos/5c1b01fe7340c20d4e4efb0aa173a7f2.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "The man in the video is likely a young adult, as he appears to have a clean-shaven face with a beard, and his goate",
+        "caption": "The video shows a man standing in front of a building. The video is taken from the point of view of the man holding the camera. The background is in focus, while the man's face is in the foreground. The lighting appears to be natural, as there are no additional light sources visible in the video. The color tone of the video is neutral, with no apparent color grading. The man appears to be in a public area, possibly outside of a store or restaurant. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.7,
+            "technical": 4.66
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to the average visual quality, which may include factors like lighting, composition, and color balance that are not particularly outstanding but are not poor either. The Motion (ECR) score of 0.0 indicates that there was no detectable motion or that the motion quality was so poor that it did not contribute positively to the overall video quality."
+        "rationale": "The video receives a low aesthetic score of 4.7/10 due to its neutral color tone and somewhat basic composition, which lack dynamic visual elements or creative color grading. The technical score of 4.66/10 reflects issues with lighting and sharpness, as the natural lighting might not be sufficient to highlight the subject properly, and the man's face could be slightly out of focus or not sharply defined."
     },
     {
         "video_path": "data/train_videos/5b0e49f81c8af153833ef37733f2444d.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "The video features a man sitting in front of a laptop and a mixer board, with a video being played on the laptop screen. The man is flicking through different video frames on the screen, with different audio tracks and visuals playing in each one. The overall theme of the video is electronic music and dance. There are different dance scenes, with people dancing in different locations, and the video appears to be a promotional video for an upcoming event or album. The visual style of the video is vibrant and colorful, with fast-paced edits and dynamic camera movements. The soundtrack is a mix of electronic and dance tracks, with a focus on upbeat and energetic rhythms. \n\nThe man in the video is sitting in front of a laptop and a mixer board, with a video being played on the laptop screen. He is flicking through different video frames on the screen, with different audio tracks and visuals playing in each one. The video appears to be a promotional video for an upcoming event or album, with different dance scenes and music tracks. The overall theme of the video is electronic music and dance. The visual style of the video is vibrant and colorful, with fast-paced edits and dynamic camera movements. The soundtrack is a mix of electronic and dance tracks, with a focus on upbeat and energetic rhythms.",
+        "caption": "The video shows a person listening to music on their cell phone while holding it up to the laptop's screen. The room is dimly lit, and there are wires and cables hanging in the background. The atmosphere is somewhat cluttered, with the laptops and sound system in the background. The person appears to be pointing at the",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.78,
+            "technical": 4.8
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 and a Motion (ECR) score of 0.0 because, despite its vibrant and colorful visual style and dynamic camera movements, the overall presentation lacks refinement and cohesion, leading to a mediocre aesthetic appeal. The Motion score of 0.0 indicates that there is no noticeable motion in the video itself, as the focus is primarily on the man interacting with the laptop and mixer board, with the motion contained within the video frames on the laptop screen not contributing to the overall motion score."
+        "rationale": "The video receives a relatively low aesthetic score of 4.78/10 likely due to the cluttered background with wires and cables, which can be distracting, and the dim lighting that may affect color accuracy and composition. The technical score of 4.8/10 suggests that while the video is sharp, the lighting could be improved to better illuminate the subject and reduce the dim lighting effect."
     },
     {
         "video_path": "data/train_videos/ed2e77762260dae51898a588294ac175.mp4",
         "ecr": 0.0,
         "title": "Wow pleading facebroken heart  nycrestaurant  nycfood  nycgirl  justiceforwinta  nyccontentcreator ",
         "description": "nan",
-        "caption": "The video is about a woman taking a bite out of a burger while sitting on a bench. She is wearing sunglasses and has her hair styled in a bun. The visual style is of a fast-paced, dynamic shot with various cuts and angles. There is a clear focus on the burger and the woman's mouth as she takes a bite, which is followed by a close-up of her face. The video seems to have been shot outdoors, possibly on a busy street or public square, with a lot of people passing by in the background. There is a sense of movement and energy in the footage, and it's evident that the woman is enjoying the burger and the experience of eating it while sitting on the bench. </s>",
+        "caption": "The video shows a person sitting on a chair in a building with an open window and a paper towel on their lap. They have a hamburger in one hand and a napkin in the other. There is a woman in the foreground holding up a sign with text on it. There is also a person holding a white sign in the background. The lighting is indoor, with natural light coming through the window. The setting is a modern, urban environment. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.75,
+            "technical": 4.75
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its fast-paced and dynamic visual style that, while energetic, lacks a cohesive and visually pleasing composition, with distracting background movements and abrupt cuts affecting the overall visual appeal. The Motion (ECR) score of 0.0 indicates that there was no significant motion or movement detected in the video that contributed positively to its quality, possibly due to the focus being primarily on the static elements like the woman and the burger, with the motion in the background not enhancing the video's content."
+        "rationale": "The video receives a low aesthetic score because the color tones and composition could be more balanced and visually appealing, and the technical score is similarly low due to average lighting and sharpness, which do not stand out or improve the overall quality of the video."
     },
     {
         "video_path": "data/train_videos/388cc4ad34ae043b1f61262d99947871.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "The video is of a man playing with a Rubik's Cube. He is seen rotating the colors on the cube and then solving it to show the finished product. The video is shot in a dark room with dim lighting, giving the overall mood a mysterious and interesting feel. </s>",
+        "caption": "The video features a person sitting in front of a white wall with a brightly lit table displaying a white and red cube in the center. The lighting is bright, with a white background and a focus on the colorful cube. \n\nThe cube itself is rotating, and the person is holding it in one hand while playing with it with the other hand. The background is completely white, with no additional objects or people visible. \n\nThe cube has various colors on its sides, including red, green, blue, and yellow. As it rotates, it moves across the cube's surface, changing the colors. It is a fun and engaging game, with the person enjoying playing with the cube and interacting with the colorful, fast-moving pieces. \n\nThe lighting highlights the colors and movement of the cube, making it an exciting and visually interesting video. The video focuses solely on the gameplay and the person playing with the cube, with no additional elements or distractions in the background. \n\nThe lighting and colorful cube make it a visually appealing video that captures the attention of the viewer. The person's expressions of enjoyment and excitement while playing with the cube also add a personal touch to the video. \n\nThe video is well-lit and visually engaging, making it a pleasant and entertaining watch. \n\nOverall,",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.65,
+            "technical": 4.67
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to the intriguing yet somewhat underlit setting that enhances the mysterious mood but may detract from the clarity and visual appeal of the Rubik's Cube manipulation. The Motion (ECR) score of 0.0 indicates that there was no detectable motion or that the motion was not evaluated, which could be due to the static nature of the recording or the focus being solely on the cube-solving process without additional dynamic elements."
+        "rationale": "The video scores well in aesthetics and technical aspects due to its vibrant colors, well-lit subject, and clear focus, but it could benefit from a more dynamic composition and smoother motion to enhance its overall impact. The current scores reflect the video's strengths in visual appeal and technical execution, but there's room for improvement in terms of engaging the viewer with more varied angles or movements."
     },
     {
         "video_path": "data/train_videos/a0d79fc6543f3e11a97afc4f84b25118.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "@curtis lane11 @a1 active111 @shamather22  | Curtis rap battleing some random kid",
-        "caption": "The video appears to be a live action shot in the night time. There are two young boys walking down the street, one is on a bike and the other is walking. They are crossing the road, one of them is waiting for the traffic to stop. As they cross the road, another person is in the background throwing coins towards them. The boys are surprised and one of them catches the coin, while the other misses it. The camera zooms out as they continue walking, and the street scene with traffic passing by is visible in the background. </s>",
+        "caption": "The video shows two boys playing with a motorized toy car on a road. The first boy has a red scarf and the second boy has a blue scarf. They move the toy car and shout at each other while others walk by or stand and watch. The setting is on a busy street in an urban area with concrete and asphalt surfaces. There is street lighting in the background, providing some illumination in the night. The motorized toy car has a transparent plastic body and blue lights. The sound of the toy car engine can be heard as it moves along the street. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.75,
+            "technical": 4.81
         },
         "imagebind_emb": null,
-        "rationale": "The video received an aesthetic score of 5.0/10 due to its nighttime setting and the somewhat chaotic scene with moving traffic and pedestrians, which can be visually unappealing or unclear. The motion score of 0.0 indicates that there was no significant motion blur detected, suggesting that the camera work was steady, but this alone does not compensate for the overall visual appeal and clarity of the scene."
+        "rationale": "The video's aesthetic score of 4.75/10 suggests that while the composition and color could be improved, the overall visual appeal is somewhat lacking. The technical score of 4.81/10 indicates that the lighting and sharpness are relatively good, but there is still room for enhancement in terms of visual clarity and detail."
     },
     {
         "video_path": "data/train_videos/228de52535ca2aacfbd21d3846b31255.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "The video shows a person using a laptop computer to control a mix of audio music. The video has a focus on DJ equipment and computer software. The visual style of the video is focused on the music and DJ equipment, with colorful, bright and vibrant tones. The overall mood of the video is energetic and lively, with the goal of showcasing the DJ's mixing skills and creativity. </s>",
+        "caption": "The video is in a dimly lit room with a laptop screen facing forward, displaying a screencast of a live stream on the computer. The computer has a black casing and is placed on a table, with a mixer controller and a digital DJ set in the foreground. In the background, there is a soundboard with various equipment and cables connected to it. The room appears to have a warehouse feel with wooden panels on the walls and a white fluorescent light fixture hanging from the ceiling. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.77,
+            "technical": 4.78
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 and a Motion (ECR) score of 0.0 because, while it effectively captures the vibrant and energetic mood of the DJ's setup with bright, colorful visuals, the overall composition and presentation lack refinement, leading to an average aesthetic appeal. Additionally, the Motion (ECR) score indicates that there is no significant camera movement or dynamic visual elements, suggesting a static and possibly unengaging visual experience despite the lively content."
+        "rationale": "The video receives a relatively low aesthetic score of 4.77/10 likely due to the dim lighting and the somewhat cluttered composition, which can make the content appear less visually appealing and harder to focus on. The technical score of 4.78/10 suggests issues with lighting and sharpness, which are crucial for clear visibility, especially in a dimly lit environment where details might be lost."
     },
     {
         "video_path": "data/train_videos/bd6f5a8f47ce96a41c5c8660286382ba.mp4",
         "ecr": 0.0061044805321854,
         "title": "nan",
         "description": "nan",
-        "caption": "This video showcases a man wearing an astronaut suit standing on a stage during a conference. He is being entertained by a presenter who is speaking in front of a crowd. The stage is decorated with a large blue and white curtain and a sign indicating that this is an area for Disney+. The audience is sitting on the floor in front of the stage, and there are various Disney+ logos displayed on the walls and on people's clothing. The video seems to be taking place in a convention center or auditorium. </s>",
+        "caption": "The video features a large, decorated stage with an audience seated in rows. The stage has a backdrop that seems to depict a city skyline, with tall buildings, bridges, and a cloudy sky. In the center, there's a large, round stage with a podium and a microphone stand. A man stands behind the microphone, wearing casual clothing, and appears to be introducing a speaker who is not present in the frame. The man speaks into the microphone and engages with the audience, gesturing and speaking to them. There is a sense of excitement in the air, with people clapping and cheering. The stage is well-lit with bright stage lights, spotlighting the presenter and the microphone stand. The audience is also well-lit, with rows of seats and people visible. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.74,
+            "technical": 4.83
         },
         "imagebind_emb": null,
-        "rationale": "The video received an aesthetic score of 5.0/10 due to a mix of engaging content with a recognizable and popular theme (Disney+ and an astronaut on stage), but it lacks in visual refinement, possibly due to poor lighting, low-resolution imagery, or unprofessional camera work. The very low ECR score of 0.006 suggests that there is minimal motion in the video, likely because the scene primarily consists of a static shot of the stage with little to no camera movement or dynamic action."
+        "rationale": "The video receives a relatively low aesthetic score of 4.74/10 likely due to the somewhat generic and unremarkable composition and color palette, which lack vibrant or unique visual elements that could engage the viewer more effectively. The technical score of 4.83/10 is slightly higher, indicating good lighting and sharpness, but there's room for improvement in terms of more dynamic lighting and potentially sharper focus to enhance the overall quality."
     },
     {
         "video_path": "data/train_videos/2910368bd4ba9b1c04546fbbbaee6f84.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "The video shows a party with people dancing, playing music, and enjoying themselves. There are flashes of fire, which appears to be sparklers, and one person is shown holding a lighter. The visual style is of a nightclub, with a bar, DJ booth, and people in the background. The atmosphere seems to be festive and fun, with people laughing and having a good time. The fire safety laws appear to be not being followed, as people are holding and moving around the sparklers. </s>",
+        "caption": "I'm sorry, but I am unable to provide specific information on this video since there is no content or context attached to it. Please provide more details or context so that I can assist you better. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.66,
+            "technical": 4.75
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its average visual quality and the somewhat chaotic and potentially unsafe use of sparklers in a crowded environment, which detracts from the overall visual appeal. The Motion (ECR) score of 0.0 indicates that there was no detectable motion or that the motion quality was so poor that it could not be assessed, possibly due to the static nature of the camera or the low quality of the video feed."
+        "rationale": "The video received an Aesthetic Score of 4.66/10 likely due to issues with color accuracy and composition, which may include poor color balance, dull or washed-out colors, and an unbalanced or cluttered frame. The Technical Score of 4.75/10 suggests that while the lighting and sharpness are generally good, there might be some minor technical issues such as slight overexposure, underexposure, or soft focus in certain parts of the video. The Motion (ECR) score of 0.0 indicates that there was no motion present in the video, which could mean it was a static scene or there was no movement captured."
     },
     {
         "video_path": "data/train_videos/ce820a1e9b9e68997d190cd1dc61c098.mp4",
         "ecr": 0.0021678732146351,
         "title": "nan",
         "description": "nan",
-        "caption": "The video is a performance by a music group on a stage. The stage is bathed in bright lights, and the performance is being projected onto a large screen behind them. The crowd is cheering and dancing along to the music. The musicians are dressed in elaborate costumes and are playing various instruments, including guitars and drums. The stage has a lot of props and decorations, including chairs and a grand piano. There is a band playing and singing along with the musicians. The video has a lively, energetic atmosphere. \u00a9</s>",
+        "caption": "The video features a group of people performing on a stage, possibly in front of a large crowd of people. The stage appears to be in a large arena with a lighted backdrop. The performers are playing music and dancing, and some of them are singing. The video also shows a video screen on the stage, displaying images of the performance or the musicians. The lighting on the stage is bright and colorful, with various colors flashing and shining. The overall atmosphere is lively and energetic, with people enjoying the music and the performance. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.75,
+            "technical": 4.67
         },
         "imagebind_emb": null,
-        "rationale": "The video received an aesthetic score of 5.0/10 due to a mix of visually engaging elements, such as the elaborate costumes, lively atmosphere, and the use of a large projection screen, but these are somewhat diminished by potential issues like overexposure from the bright lights or a cluttered stage with too many props and decorations, which can detract from the overall visual appeal. The very low ECR score suggests that the motion in the video is minimal or not complex, possibly because the camera is static or the performance lacks dynamic movement, which can affect the visual engagement and dynamism of the video."
+        "rationale": "The video's aesthetic score of 4.75/10 suggests that while the lighting and colors are vibrant and engaging, the composition could be improved to better frame the performers and the stage, potentially leading to a more visually pleasing scene. The technical score of 4.67/10 indicates that the lighting is generally bright and colorful, but there are some issues with sharpness, which might cause some blurriness or lack of detail in certain parts of the video, detracting from its overall quality."
     },
     {
         "video_path": "data/train_videos/dcf26249a9d8b159d6e05a3e0961b338.mp4",
         "ecr": 0.0308824104871845,
         "title": " MindYaBiz  LaborDay",
         "description": "nan",
-        "caption": "The video starts with a white car interior, where a man is sitting in the driver's seat. He appears to be wearing a red hoodie and black pants, and has a white baseball cap on his head. The car is parked in a parking lot. The man is holding a large cardboard box and is smiling as he says, \"Where are you gonna take me?\" He then puts the box in the back of his car and begins to drive.\n\nThe video continues with the man in the car, driving around a city. He speaks to the camera, saying that he was just at a basketball game and had to move his stuff out of his apartment. He explains that he has a big box and he can't drive his car with it in the back, so he's renting a truck.\n\nThe man then shows the truck and talks about how it's huge and how he can move everything he needs to move. He mentions that he's moving to another city and that the truck has a large box that he can load his things into. He also talks about how he's excited to start a new chapter in his life.\n\nThroughout the video, the man is wearing sunglasses and a white baseball cap, and the car is parked in various locations. The background is mostly the city landscape, with buildings and trees visible.",
+        "caption": "The video features a man sitting in a car, talking to the camera. The car is moving and the man is wearing a hat, sunglasses, and a striped shirt. The lighting is bright and natural, coming from outside the car. The video is shot in a clear and stable handheld style. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.7,
+            "technical": 4.7
         },
         "imagebind_emb": null,
-        "rationale": "The video received an aesthetic score of 5.0/10 due to its average visual quality, with a simple and somewhat mundane setting that lacks engaging visual elements or high production value. The ECR score of 0.0308824104871845 indicates minimal motion in the video, consistent with the content description of the man primarily speaking to the camera while driving and moving, which does not involve significant camera movement or dynamic scenes."
+        "rationale": "The video's content is clear and engaging, providing a straightforward interview setting. However, the aesthetic score of 4.7/10 suggests that there could be improvements in color grading and composition to make the visuals more pleasing to the eye. Similarly, the technical score of 4.7/10 indicates that while the lighting and sharpness are adequate, there might be room for better color accuracy and sharper focus to enhance overall video quality."
     },
     {
         "video_path": "data/train_videos/e065a373d24f95ff79386a7d5a2f9c84.mp4",
         "ecr": 0.0292936802973977,
         "title": "nan",
         "description": "nan",
-        "caption": "The video features a young woman with an exotic look, wearing a hat and a scarf. She is seated at a table with a plate of food in front of her. The setting appears to be a restaurant or a dining area. There is a fork and knife on the table, and the woman appears to be enjoying her meal. She is taking bites out of the food and appears to be savoring it. The woman is holding a cigarette in one hand and is blowing smoke out while eating. There is a blurred background of people walking around. The video has a vintage or retro feel to it, with a grainy texture and a low resolution. It appears to be a black and white video with some minor colorization. The overall mood of the video is casual and relaxed, with the woman enjoying her meal and the ambiance of the setting. </s>",
+        "caption": "The video is a close-up shot of a woman sitting at a table in a restaurant. She has dyed hair and is wearing a black beanie. She is holding a plate of food and using a fork to eat. The lighting in the video is bright, with natural light coming through the windows. \n\nThere is a white tablecloth and utensils on the table, and the woman is sitting next to a person with a dark shirt. The food on the plate appears to be a dish with breaded chicken and fried onions, and the woman is taking bites of the food and showing her enjoyment. \n\nThere is a bowl in the center of the table, and it is not clear what is in the bowl. The overall atmosphere is casual and relaxed. \n\nThe woman is wearing makeup and is not wearing a mask, so it is likely that this is a pre-pandemic video. The video is not in high definition and has a grainy appearance. \n\nThe video has no sound, but the woman is smiling and enjoying her meal. \n\nThe scene is not artificially created but is a real-life recording. \n\nThe focus of the video is on the woman's enjoyment of her food, and there is no mention of any specific ingredients or dietary restrictions. \n\nThe video",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.72,
+            "technical": 4.37
         },
         "imagebind_emb": null,
-        "rationale": "The video received an aesthetic score of 5.0/10 due to its vintage aesthetic and the engaging subject matter, which is somewhat diminished by the low resolution and grainy texture that detract from the visual clarity and overall appeal. The ECR score of 0.0292936802973977 indicates minimal motion, consistent with a static shot of a person eating, which aligns with the description of a casual, relaxed scene with little to no movement."
+        "rationale": "The video's aesthetic score of 4.72/10 reflects its visually pleasing composition and natural lighting but is slightly marred by the grainy appearance and somewhat muted color tones, which are common in lower resolution videos. The technical score of 4.37/10 is slightly lower due to the grainy texture and less than ideal sharpness, which can make the details of the food and the woman's features less crisp and clear."
     },
     {
         "video_path": "data/train_videos/414e9b3df0d7e89415b8f47641222b51.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "The video is a recording of a man sitting in front of a microphone with headphones on. He is talking about his experience of being mugged and the emotional impact it had on him. The man is wearing casual clothing and has an emotional expression on his face as he recounts the events. The video has a serious tone and the visual style is focused on the man's facial expressions and gestures as he speaks. </s>",
+        "caption": "The visual content of the video shows a black man sitting in a booth at a recording studio. He has headphones on and is sitting in front of a microphone. The man is holding a pair of earphones in one hand and is playing with them while recording a podcast. The room has fluorescent lights overhead and is dimly lit. In the background, there are some plants and other equipment. The lighting is mostly white with a slight blue tint, which gives a professional look to the video. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.67,
+            "technical": 4.6
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its simple setup and focus primarily on the speaker, lacking any additional visual elements or enhancements that could elevate its visual appeal. The Motion (ECR) score of 0.0 reflects that there is no significant camera movement or dynamic visual changes, as the video is a static shot of the speaker, which aligns with its intent to keep the viewer focused on the emotional narrative being conveyed."
+        "rationale": "The video receives a relatively low aesthetic score of 4.67/10 likely due to the somewhat drab color palette and composition, which could benefit from more vibrant colors and dynamic framing to engage the viewer more effectively. The technical score of 4.6/10 suggests issues with lighting and sharpness, such as the predominantly white and slightly blue tinted lighting, which might make the subject appear washed out, and potential softness or lack of detail in the image."
     },
     {
         "video_path": "data/train_videos/a54bb98f77d38f234aace5ea88696a67.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "1080p video. \n\n* The video is a time lapse of a person playing a game on his phone while drinking a beverage.\n* The person is sitting in front of a table with a phone, a glass of juice, and a gold watch.\n* The game appears to be a puzzle game with different shapes and colors.\n* The person is holding the phone in one hand and the juice in the other.\n* The video has a muted, low-contrast aesthetic with a monochromatic color scheme. \n\nIn the beginning, the person is shown sitting in front of a table with a phone and a glass of juice. They are holding the phone in one hand and the juice in the other. They appear to be playing a puzzle game on the phone. The video has a muted, low-contrast aesthetic with a monochromatic color scheme. The person is wearing a gold watch and appears to be in a home setting. \n\nIn the second part of the video, the person is seen playing the same puzzle game. The shot changes to a closer view of the phone and the puzzle game, with the person's hand holding the phone. The video continues with a monochromatic color scheme and low-contrast filter, maintaining the muted aesthetic. \n\nThere",
+        "caption": "The video shows a black man sitting in front of a white wall. He is wearing a black jacket and sunglasses. The lighting is natural, with the sunlight shining brightly behind him. The video is a short clip that highlights a basketball. The man holds the basketball in his hands and moves it around while drinking from a glass of juice. He appears to be in a backyard or outdoor setting. There is no clear audio or sound in the video. \n\nThe video is part of a collection of clips that showcase different everyday objects, such as a pineapple and a cucumber, being dribbled around by a man wearing sunglasses and holding a glass of juice. The clips are a light-hearted and fun way to showcase the everyday objects and create a unique challenge. \n\nThe lighting in the video is natural and bright, which adds to the overall casual and relaxed atmosphere of the video. \n\nOverall, the video is visually engaging and captures the attention of the viewer with its simple yet unique concept. \n\n[caption id=\"attachment\\_4551\" align=\"alignnone\" width=\"625\"] The black man dribbles the basketball while holding a glass of juice, as seen in the video. (Credit: Unsplash)[/caption]",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.66,
+            "technical": 4.51
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its intentionally muted, low-contrast aesthetic and monochromatic color scheme, which, while consistent, may lack visual appeal and dynamism for a broader audience. The Motion (ECR) score of 0.0 reflects the static nature of the content, with minimal movement beyond the person's hand interacting with the phone, leading to a lack of dynamic visual elements that could enhance viewer engagement."
+        "rationale": "The video receives a relatively low aesthetic score of 4.66/10 due to its simple composition and color palette, which lack depth and contrast. The technical score of 4.51/10 is slightly lower because the lighting, while natural, could be more dynamic to enhance the visual impact, and the sharpness could be improved to ensure all elements are in clear focus."
     },
     {
         "video_path": "data/train_videos/3b5ded72be506320d904c23cd8b1e165.mp4",
         "ecr": 0.0,
         "title": "If you want to know what this is it\u2019s slime bath",
         "description": "nan",
-        "caption": "The video shows a woman washing her hands under a running water faucet in a bathroom. She is standing in front of a sink, and the water is flowing through the faucet. She is applying soap on her hands and then rubbing them together vigorously, making sure to cover every part of her skin. After rinsing her hands with water, she dries them with a towel. The scene is taken from a bird's eye view, and the sink, faucet, and towel can be seen in the foreground. The color of the sink and the water in the faucet is a metallic gold color. The lighting in the bathroom is bright, and the scene is well lit, making it easy to see what's happening. </s>",
+        "caption": "The video shows a person holding their hands under a water faucet, washing their hands for about 20 seconds, and then touching their face and mouth without washing. The person's hands are visibly wet and slippery during the entire process. The background is a bathroom with a sink, toilet, and a shower. The lighting is bright and clearly illuminates the sink area. \n\nThere is no sound in the video. \n\nThe video demonstrates poor hygiene practices and the importance of washing hands with soap and water for at least 20 seconds to effectively eliminate bacteria and viruses. The person's actions in the video are concerning as they touch their face and mouth without washing their hands, potentially spreading germs. \n\nIt is important to practice good hygiene habits to prevent the spread of infectious diseases. Proper handwashing techniques should be taught to children and emphasized in schools, workplaces, and public places. Regular handwashing is a simple but effective way to prevent the spread of illnesses such as COVID-19, flu, and many other respiratory and gastrointestinal infections. \n\nThe video does not depict any specific medical condition or treatment. \n\nThe video does not provide any context or background information about the person or the setting",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.71,
+            "technical": 4.86
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to the unusual choice of a metallic gold color for the sink and water, which may not appeal to everyone's visual preferences, despite the scene being well-lit and clear. The Motion (ECR) score of 0.0 reflects that there is no significant motion or dynamic elements in the video, as it primarily captures a static scene of a person washing their hands from a bird's eye view."
+        "rationale": "The video receives a low aesthetic score of 4.71/10 likely due to its plain and unengaging composition, which lacks dynamic visuals or interesting angles to capture viewer attention. The technical score of 4.86/10 is slightly better, but the bright lighting, while effective for visibility, might be too harsh and could cause some glare or reflection issues, detracting from the overall quality."
     },
     {
         "video_path": "data/train_videos/a0d012fb9f14ee30345e5930f27ac12e.mp4",
         "ecr": 0.0078732146351007,
         "title": "nan",
         "description": "nan",
-        "caption": "The video shows a live performance by a musician, possibly a singer, playing on a stage with a crowd of people gathered around. The musician is dressed in a blue coat and is performing in front of a large screen that displays the lyrics to the songs being played. The stage lights up, and the music is loud and upbeat. The audience is cheering and singing along to the songs. The visual style of the video is bright and colorful, with close-up shots of the musician and the audience interspersed with wide shots of the entire stage. There are also scenes of the crowd dancing and enjoying the performance. The overall atmosphere is lively and energetic, with a sense of excitement and enjoyment from both the musician and the audience. </s>",
+        "caption": "The video is a live performance by a man in a purple suit on a stage in front of a large crowd of people. The video shows him singing and dancing on stage with the help of backup dancers. The stage is dimly lit, but the lighting on the man and the backup dancers is quite bright. The video also shows the crowd in the audience waving their hands and singing along to the songs being performed. There are flashing lights and camera flashes from the photographers in the crowd. The overall atmosphere is energetic and lively. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.82,
+            "technical": 4.7
         },
         "imagebind_emb": null,
-        "rationale": "The video received an aesthetic score of 5.0/10 due to its bright and colorful visual style and lively atmosphere, which effectively captures the energy of the performance, but it may lack in visual creativity and editing complexity to achieve a higher score. The low ECR motion score suggests that the video has relatively little motion or that the motion is not complex, possibly because it focuses on static shots of the stage and audience reactions rather than dynamic camera movements."
+        "rationale": "The video's aesthetic score of 4.82/10 suggests that while the color and composition are generally pleasing, there might be some issues with color accuracy or composition balance that are detracting from the overall visual appeal. The technical score of 4.7/10 indicates that while the lighting and sharpness are adequate, there could be room for improvement in terms of better lighting design and sharper focus to enhance the visual quality."
     },
     {
         "video_path": "data/train_videos/0ec28f584efca66d3b5dbf96851da67b.mp4",
         "ecr": 0.0279945216200352,
         "title": "nan",
         "description": "nan",
-        "caption": "In the video, a musician is performing on a large golden egg, surrounded by a crowd of people. The stage is dimly lit, and the sound is amplified through the speakers. The performer is dressed in black and seems to be miming the movements of a live concert. There is a large screen above the stage that shows a video of the live concert being performed by the artist. The stage is set up with the golden egg in the center and a group of musicians in the background. The audience is on the side of the stage and is clapping along to the music. The video has an abstract and surreal feel, with the focus on the music and the performance. The overall visual style is modern and minimalistic, with a focus on the performance rather than any specific set design or visual elements. </s>",
+        "caption": "I'm sorry, but I am unable to provide a description of the video content and lighting in detail as there is no video attached to this text. Please provide a video for me to assist you further. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.71,
+            "technical": 4.68
         },
         "imagebind_emb": null,
-        "rationale": "The video received an aesthetic score of 5.0/10 due to its modern and minimalistic visual style, which, while fitting for a contemporary performance, lacks depth and engaging visual elements to fully captivate the viewer. The low ECR score of 0.028 indicates that there is very little motion in the video, which could suggest a static camera setup and limited dynamic performance, potentially making the viewing experience less engaging."
+        "rationale": "The video receives an aesthetic score of 4.71/10, suggesting that while the color and composition are generally pleasing, there may be some minor issues such as off-colors or unbalanced composition that slightly detract from the overall visual appeal. The technical score of 4.68/10 indicates that while the lighting and sharpness are relatively good, there could be room for improvement in terms of lighting consistency and sharpness clarity to enhance the overall quality."
     },
     {
         "video_path": "data/train_videos/f7809efbca2fe80dcf6958776c460f43.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "Struggle ",
-        "caption": "This video showcases a cute French bull terrier puppy as it takes a nap on a white bed sheet. The scene is filmed in a house with a wooden floor and a blurred wall. The video starts with a shot of the puppy's face, followed by a close-up of its mouth as it yawns. The camera then pans out to show the puppy lying down with its head resting on a pile of white blankets.\n\nAs the puppy's owner tries to get it to wake up and do tricks, the dog starts to wake up and yawn. The owner then attempts to get the puppy to perform a trick by giving it a treat, but the puppy is too lazy to perform. The video ends with the puppy happily licking the treat and the owner laughing.\n\nThe visual style of the video is a typical home video, with a handheld camera capturing the moment from different angles. The lighting is mostly natural, with a soft glow coming from the window, creating a warm and cozy atmosphere. </s>",
+        "caption": "The video appears to have been taken indoors in a bedroom. The lighting is natural and diffuse, with sunlight coming through a window. The bed is made of wooden or stone slabs, and there is a vase of flowers on the bedside table. The dog, a white Bordeaux Mastiff named Milo, is sleeping on the bed with a book open beside him. The dog's fur is light, and it appears to be happy and content. The background is blurry, and it's unclear if there are any other objects in the room. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.61,
+            "technical": 4.7
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its natural and warm visual style, which captures a charming moment with a puppy, but it lacks professional production elements such as lighting, framing, and editing that could elevate its visual appeal. The Motion (ECR) score of 0.0 indicates that there is no significant motion or action in the video, as it primarily focuses on a sleeping and waking puppy with minimal movement."
+        "rationale": "The video's aesthetic score of 4.61/10 suggests that while the lighting and composition are generally good, there might be some issues with color balance or the overall visual appeal that could be improved. The technical score of 4.7/10 indicates that the lighting and sharpness are well-managed, but there could be room for enhancing the overall clarity and detail to achieve a higher score."
     },
     {
         "video_path": "data/train_videos/406136facd5c095e6b85778e529b1b8c.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "The video shows a man sitting on a chair in his home, looking at a TV screen. The TV screen displays a scene from a TV show where a boy is watching a video of himself. The man is also watching the video on a laptop screen. The video has a dark, gloomy atmosphere with low lighting. \n\nThe man is seen looking at the video on his laptop screen for several minutes without any dialogue. The TV screen shows the boy watching his own video, but there is no sound or dialogue coming from that screen. The video appears to be a mystery with no clear explanation of what is happening. The visual style is suspenseful and mysterious, with a sense of foreboding and intrigue. \n\nThe colors in the video are muted and grayish, with occasional flashes of light and shadows. The overall effect is dark and eerie, which adds to the mystery and intrigue of the scene. The sound is minimal, with only the occasional sound of the TV show being watched in the background. \n\nThere is no clear narrative or dialogue in the video, which leaves the viewer to interpret and make their own assumptions about what is happening. The video is short and cryptic, leaving the viewer to ponder and speculate about the meaning and purpose of the scene. \n\nOverall, the visual style of the video is dark and suspenseful, with a sense",
+        "caption": "The video shows a group of people in a room watching a television. The group includes a man wearing a blue shirt and a woman in a green sweater. The other people in the room are not clearly visible. The television screen is displaying a video with a male character in a grey hoodie standing in a backyard. The backyard is illuminated by a bright sunlight during the daytime. The colors on the screen are bright and vivid. \n\nThere is a lot of movement in the video as the people in the room are chatting and discussing the video. The camera moves around the room, showing different angles and shots of the people watching the TV. There is a sense of excitement and engagement in the group as they discuss the character and the plot of the video. \n\nThe overall lighting in the room is bright and natural, coming from the sunlight through the windows. There is no visible artificial lighting in the room. The light reflects off the walls and surfaces, creating a warm and inviting atmosphere. \n\nThe camera does not seem to be mounted on a tripod and there is some shakiness in the video as the person holding the camera moves around. Despite this, the video is well-lit and the color quality is good. \n\nOverall, the video showcases a group of people engaging with a TV show, discussing and analyzing the plot and characters",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.78,
+            "technical": 4.7
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its dark, suspenseful visual style and eerie atmosphere, which effectively create a sense of mystery, but it lacks clarity and a clear narrative, making it difficult for viewers to fully engage or understand the scene. The Motion (ECR) score of 0.0 reflects the static nature of the video, with the man and the scenes on the screens remaining largely unchanged throughout, indicating a lack of dynamic visual elements or movement."
+        "rationale": "The video receives a relatively low aesthetic score of 4.78/10 due to its somewhat basic composition and color grading, which could be enhanced with more dynamic framing and richer color palettes. The technical score of 4.7/10 reflects the generally good lighting and color quality but is slightly reduced by the handheld camera movement, which introduces some shakiness that could be smoothed out with stabilizing techniques."
     },
     {
         "video_path": "data/train_videos/7f2cea7732b2033350a118c42d16744e.mp4",
         "ecr": 0.0190804147916259,
         "title": "nan",
         "description": "nan",
-        "caption": "The video shows a woman holding a video and standing in a kitchen setting. She is chopping a citrus fruit on a wooden cutting board, using a knife. The video appears to be about the benefits of drinking lemon water. The woman is wearing a headset and her voice is heard narrating the process and giving information about the benefits of drinking lemon water. The visual style is professional and the video seems to be a tutorial or informational video about the health benefits of lemon water. 360-degree view is not available.",
+        "caption": "The video shows a person holding a knife and cutting an orange in half on a wooden table. The cutting board has a plastic cover on it, and the knife is sharpened. The person is wearing gloves and cutting the fruit in a methodical and precise manner. The lighting is bright and clearly visible, with shadows cast on the cutting board. The background is out of focus, with a blurry green plant visible in the corner of the frame. \n\nThe video appears to be teaching a technique for cutting oranges, possibly for juicing or using the zest. The method shown involves slicing the top of the orange off to remove the peel and then cutting the flesh off with the knife. The zest is then scraped off using the knife, with the person demonstrating how to get the most out of the fruit. The process is demonstrated in a clear and detailed manner, with the person speaking to the camera to provide instructions and commentary. \n\nThe overall style of the video is informative and practical, with an emphasis on demonstrating the technique rather than on entertainment or showmanship. The background, including the wooden table and the green plant, is simple and functional, with no distracting elements. The bright lighting and clear camera work make the process easy to follow and understand. \n\nThe focus of the video is on teaching a useful skill and providing",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.68,
+            "technical": 4.75
         },
         "imagebind_emb": null,
-        "rationale": "The video received an aesthetic score of 5.0/10 due to its professional appearance being somewhat marred by a lack of visual engagement and detail, such as close-ups or varied angles, which could have enhanced the viewer's interest and understanding. The ECR score of 0.019 suggests minimal motion, consistent with a static setup where the focus is on the woman's hands and the process of chopping, without additional dynamic elements to increase viewer engagement."
+        "rationale": "The video scores well in technical aspects due to its bright and clear lighting, which makes the process of cutting the orange easy to follow. However, the aesthetic score is lower because the composition could be more engaging, with better use of color and possibly a more dynamic framing to draw the viewer's attention."
     },
     {
         "video_path": "data/train_videos/e14374406746670f35756e832da72f71.mp4",
         "ecr": 0.0353903345724907,
         "title": " adayinthelife  athlete",
         "description": "Track & field athleteeee",
-        "caption": "The video begins with a woman standing in a room with a large window that allows natural light to enter. She is holding a small white towel in one hand and a large white t-shirt in the other. The woman is smiling and appears to be happy. She puts the t-shirt on, and the camera zooms out to show her standing in front of a white wall with blue stains. There are two small circular cutouts in the wall. She takes a few steps forward, and the camera follows her as she walks through a narrow aisle between two walls.\n\nIn the next scene, the woman is standing in a room with a large table in the middle. There is a man holding a microphone and talking about something. The woman sits down at the table, and they both continue to talk. The video then shows a woman at a race track, sitting down with a piece of equipment, and then getting up to walk to another location.\n\nThe video also features a woman standing in front of a mirror, touching her leg, and then sitting down to put on her shoes. There is a man speaking on the phone, and a woman running on a track. Finally, the video ends with a man speaking on the phone and a woman smiling and waving to the camera. The overall style of the video is informative and promotional, with a focus on the benefits of using a specific training method",
+        "caption": "The video shows a female athlete standing in a spacious indoor facility with high ceilings and natural light streaming in from the windows. The athlete is wearing a sports outfit, and her long hair is tied back. She is holding a training bag with equipment in it.\n\nIn the beginning, the athlete stretches her arms and legs, demonstrating her flexibility and mobility. She then demonstrates a throwing technique for a specific sport using the equipment in her bag.\n\nThe video has good lighting, with natural light and a bright, clean environment, highlighting the athlete's movements and the equipment she is using. The setting is in a gymnasium or an indoor sports facility, showcasing the space and equipment for sports training. \n\nThe video is an advertisement for a sports training facility, showcasing the equipment, space, and expertise they offer for athletes to improve their skills and train effectively. \n\nThe background music is a motivational soundtrack, setting the tone for the video as a promotional advertisement for the sports facility. \n\nOverall, the video is well-produced and highlights the athlete's skills and the facility's offerings to attract potential clients and showcase the benefits of training at the facility. \n\nThe video's lighting, environment, and background music are all designed to create a",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.73,
+            "technical": 4.71
         },
         "imagebind_emb": null,
-        "rationale": "The video received an aesthetic score of 5.0/10 due to its inconsistent visual quality and lack of professional production elements, such as lighting and framing, which detract from the overall appeal. The ECR score of 0.0353903345724907 suggests minimal motion complexity, indicating that the video primarily consists of static shots and simple camera movements, which may not engage the viewer effectively."
+        "rationale": "The video's aesthetic score of 4.73/10 suggests that while the lighting and environment are well-managed, the color grading and composition could be more vibrant and dynamic to better engage the viewer. The technical score of 4.71/10 indicates that the lighting and sharpness are good, but there might be room for improvement in terms of contrast and possibly the use of more advanced lighting techniques to enhance the visual quality."
     },
     {
         "video_path": "data/train_videos/843260cc7a0a1be2d949d8b36b480bc0.mp4",
         "ecr": 0.0272901584817061,
         "title": "nan",
         "description": "Let\u2019s eat together at mario world road cafe!!!",
-        "caption": "The video features a young woman with dyed hair who is eating a meal at a restaurant. The video starts with the woman looking at her phone, which appears to be a tablet, and then she picks up a fork and starts eating. The video is shot in a close-up style, focusing on the woman's face and hands as she eats. The background of the video is the interior of the restaurant, with tables and chairs visible in the frame. The woman is wearing a black beanie hat and appears to be smiling as she eats. The video ends with the woman putting a piece of cucumber in her mouth. The visual style of the video is casual and candid, capturing a moment of the woman enjoying her meal. </s>",
+        "caption": "The video features a young woman with dyed hair standing at a table on a boat, holding a bowl of food in her hand and looking down. The lighting is dim and casts a shadow over her face, but her outfit appears to be a hoodie and hat. The woman is looking at the camera and appears to be smiling, as she is eating the food from the bowl with a fork. The background is not visible, but there are some empty seats nearby. The woman is having fun and enjoying her meal, and the video appears to be a candid moment captured by someone on the boat. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.72,
+            "technical": 4.45
         },
         "imagebind_emb": null,
-        "rationale": "The video received an aesthetic score of 5.0/10 due to its casual and candid visual style, which, while authentic, lacks the polish and artistic composition that could elevate its visual appeal. The low ECR score of 0.027 indicates minimal motion within the frame, consistent with the close-up focus on the woman's face and hands, suggesting a static camera setup that does not contribute to a dynamic visual experience."
+        "rationale": "The video's aesthetic score is relatively low because the color and composition could be improved; the dim lighting and shadowing on the subject's face make the overall visual appeal less pleasing. The technical score is also below average due to the poor lighting conditions, which affect the sharpness and overall clarity of the image, making the subject appear somewhat washed out."
     },
     {
         "video_path": "data/train_videos/27e2df0db3cd0bbbdca1a273fd74e4be.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "The video depicts a group of people playing with a yellow and purple inflatable pool toy in the shape of a person. The toy appears to be female and has a head, arms, and legs. The group is laughing and having fun as they push and pull the toy, making it bounce and move around. The video also shows close-ups of people's faces as they interact with the toy. The visual style is colorful and playful, with the bright colors and playful atmosphere capturing the energy of the group. \n\nI cannot identify the specific game or activity that is being played with the pool toy. The background is not clear enough to determine if there are any additional props or elements present in the scene. The people in the video appear to be in a home setting, and the presence of a table in the background suggests that the activity may be taking place indoors. \n\nThe video does not have any specific language, but the people are laughing and having a good time, which suggests that they are enjoying the activity. \n\nThere is a child present in the video, but it is unclear how old they are. The focus is mostly on the adults playing with the toy, but the child is visible in some shots. \n\nI cannot identify any sound effects or background music in the video. \n\nThe video does not contain any obvious signs of copy",
+        "caption": "This video shows a child sitting on the floor playing with a brightly colored ball, possibly a ball that is shaped like a monkey. The video is in the form of a slideshow and shows various angles of the child playing with the ball, including close-ups of their hands as they pick it up and toss it around. The lighting is bright and natural, with the camera capturing the action in a clear and vivid manner. The background is visible in the video, showing a variety of toys and items scattered around the child's play area. The overall mood of the video is playful and engaging, showcasing the child's joy and enthusiasm while playing with the ball. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.68,
+            "technical": 4.62
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its colorful and playful visual style, which effectively captures the energetic and fun atmosphere of the group, but it lacks clarity in the background and details, which detracts from a higher score. The Motion (ECR) score of 0.0 indicates that there is no discernible motion or editing complexity in the video, suggesting a static camera setup and minimal movement within the frame."
+        "rationale": "The video receives a relatively low aesthetic score of 4.68/10 likely due to the somewhat simplistic composition and color palette, which may lack depth and visual interest. The technical score of 4.62/10 is similarly low, primarily because the lighting and sharpness could be more refined to enhance the clarity and detail of the images."
     },
     {
         "video_path": "data/train_videos/8a8aac2d95be4410c721cffd88ad4c2b.mp4",
         "ecr": 0.0,
         "title": "nan",
         "description": "nan",
-        "caption": "The video depicts a nightclub scene with people dancing and enjoying themselves. The main event is a man singing and performing on stage, attracting attention from the crowd. The visual style is a mix of high and low angles, showcasing the performer, the audience, and the surroundings. The colors are bright and vibrant, capturing the energetic atmosphere of the nightclub. \n\nIn terms of lighting, the scene appears to be well-lit, with both stage lights and ambient lighting from the club creating a lively and engaging environment. The soundtrack features music playing in the background, adding to the overall atmosphere of the video. \n\nOverall, the video captures the excitement and energy of a lively nightclub environment, with a focus on the performer and the crowd's reactions. \n\n\nThe human aspect of the video is the performer, who is shown engaging with the crowd, dancing, and interacting with the audience. Their presence and performance bring the energy of the nightclub to life, with the crowd reacting positively to their movements and stage presence. \n\nThe social context of the video is that of a nightclub setting, where people gather to dance, socialize, and enjoy themselves. The video captures the essence of this type of social gathering, highlighting the excitement and energy that comes with being part of a",
+        "caption": "The video shows a crowd of people standing in a club, and the main focus is on a black man standing on a raised platform. He is shaking his head back and forth, flailing his arms, and singing or shouting. The stage is illuminated by bright lights that are reflecting off of the man's skin. The audience is also visible, with some people holding up their phones to record the performance. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.72,
+            "technical": 4.67
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its vibrant colors and lively atmosphere, which effectively capture the energetic ambiance of a nightclub, but it may lack in visual complexity and artistic composition to score higher. The Motion (ECR) score of 0.0 indicates that there was no significant motion or camera movement detected, suggesting a static camera setup that did not contribute to enhancing the dynamic nature of the performance."
+        "rationale": "The video receives a low aesthetic score of 4.72/10 likely due to poor color balance and composition issues, which can make the scene appear washed out or unbalanced. The technical score of 4.67/10 suggests problems with lighting, which may be causing reflections on the man's skin and potentially affecting the overall sharpness of the image."
     },
     {
         "video_path": "data/train_videos/10bb604662f6ae0222be6fbf69f3ab4d.mp4",
         "ecr": 0.0395225983173547,
         "title": "nan",
         "description": "nan",
-        "caption": "The video shows a person walking their dog, specifically a black dog. They are walking down a street, which is mostly empty and there are no cars. There is a heart painted on the wall and the camera focuses on the dog sniffing the ground. The person is wearing a black jacket and gloves. The video ends with the dog barking and the person calling it. \n\nOverall, the visual style is a low-quality video, shot with a handheld camera. The video is blurry and there is some pixelation. It is dark, and it seems to be filmed in the evening. There is a grainy and amateur feel to the video. The black dog is the most prominent feature in the video, and its presence is quite striking, with its shiny fur reflecting the streetlights. The graffiti on the wall with a heart adds a splash of color to the video. The overall mood of the video is a quiet and peaceful nighttime stroll, with the sound of the dog's barking adding to the atmosphere. The handheld camera gives the video a sense of immediacy, making it feel like the viewer is walking alongside the person and dog. \n\nThe video doesn't have any dialogue, so it relies heavily on visuals and sound effects, which add to the atmosphere of the scene. The barking of the",
+        "caption": "The video shows a dark grey and concrete-colored outdoor environment, with a street and buildings visible in the background. The lighting is dim and yellowish, with some artificial lighting sources visible in the distance. There are no clear shadows in the scene, and the overall atmosphere appears to be quiet and calm. The focus of the video is on a person standing on the street and throwing a ball. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.72,
+            "technical": 4.83
         },
         "imagebind_emb": null,
-        "rationale": "The video received an Aesthetic Score of 5.0/10 due to its low visual quality, characterized by blurriness, pixelation, and a grainy appearance, despite the striking presence of the black dog and the added visual interest of the heart graffiti. The Motion (ECR) score of 0.0395225983173547 reflects minimal motion in the video, consistent with the static handheld camera work and the slow, steady movement of the person and dog walking down the street."
+        "rationale": "The video receives a relatively low aesthetic score of 4.72/10 likely due to the dull color palette and the lack of dynamic composition, which can make the scene appear somewhat lifeless and unengaging. The technical score of 4.83/10 is slightly better, but the dim lighting and the absence of clear shadows suggest potential issues with contrast and depth, which could benefit from some adjustments to enhance the visual clarity and impact."
     },
     {
         "video_path": "data/train_videos/43a3231e73d379db7568e6f0e9787d83.mp4",
         "ecr": 0.0084758364312267,
         "title": "nan",
         "description": "nan",
-        "caption": "In this video, there is a group of people playing music in a restaurant. The setting is indoor with a dark background and tables and chairs visible in the frame. The people in the group are wearing various types of clothing and appear to be of different ages. Some of them are playing instruments such as guitars and violins. The mood of the video is cheerful and lively. </s>",
+        "caption": "The video is set in a restaurant or bar with an interior view. The walls and tables have a wooden finish, and there are plants in the background. The lighting is soft and warm, creating a cozy and inviting atmosphere. The room is spacious, and the ceiling is visible in the background. The musicians, two men, are playing acoustic guitars and a mandolin in a classic rock style, with one of them singing lead vocals. They appear to be in their 50s and 60s, with one wearing a white shirt and cowboy boots. They play a variety of classic rock songs, and the crowd seems to enjoy the performance, with people clapping and singing along. The video has an authentic and lively vibe, showcasing the musicians' talents and engaging with the audience. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.71,
+            "technical": 4.55
         },
         "imagebind_emb": null,
-        "rationale": "The video received an aesthetic score of 5.0/10 due to a mix of positive elements like the lively mood and the engaging performance, but it was likely let down by factors such as low lighting that may affect visual clarity and the overall composition of the scene. The very low ECR score suggests minimal camera movement, indicating a static shot that may not engage the viewer visually."
+        "rationale": "The video's aesthetic score reflects issues with color accuracy and composition, which can make the scene appear slightly off-balance or unappealing. The technical score is slightly lower due to inconsistent lighting and sharpness, which can make some parts of the scene appear softer or less defined than others."
     },
     {
         "video_path": "data/train_videos/dba3385f58065173aab8d8ba55ec0234.mp4",
         "ecr": 0.0379808256701232,
         "title": "nan",
         "description": "nan",
-        "caption": "In this video, a man is walking down the street with his arms crossed, while a man in front of him is holding a placard with a picture of a child on it. People are walking by on the streets, and the man is talking to the people passing by, asking them if they want to be on a TV show. There are shops and other buildings visible in the background. The video has an informal, candid atmosphere, with no clear context or dialogue. </s>",
+        "caption": "The video shows a man walking in the streets, possibly in London, with a woman holding a camera and filming him. The man is wearing a white t-shirt, shorts, and a hat. The video is very brightly lit and there are several people walking around in the background. The streets appear to be bustling with activity and there are some cars passing by. The man is holding his phone and talking to someone, possibly the person filming him, and appears to be engaged in conversation. There is a sense of energy and movement in the scene, with people walking and talking around the man. </s>",
         "aesthetic_score": {
-            "aesthetic": 5.0,
-            "technical": 5.0
+            "aesthetic": 4.73,
+            "technical": 4.78
         },
         "imagebind_emb": null,
-        "rationale": "The video received an aesthetic score of 5.0/10 due to its informal and candid nature, which lacks professional production elements such as lighting, framing, and composition. The ECR score of 0.0379808256701232 indicates minimal motion, consistent with the static nature of the scene where the subjects are mostly walking or standing still, contributing to a low motion complexity."
+        "rationale": "The video receives a low aesthetic score likely due to the lack of dynamic composition and color balance, which can make the scene appear somewhat flat and unengaging. The technical score is slightly higher but still below average, indicating issues with lighting that could be more evenly distributed and sharper focus to enhance the visual quality."
     }
 ]

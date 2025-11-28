@@ -1,0 +1,7 @@
+// {
+//     "python.analysis.extraPaths": [
+//         "./third-party/TimeChat",
+//         "./third-party/DOVER",
+//         "./third-party/ImageBind"
+//     ]
+// }

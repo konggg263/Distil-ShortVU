@@ -7,9 +7,8 @@ dependencies:
   - python=3.9
   - pip
   - ffmpeg
-  - git
-  - numpy=1.25.2
-  - pandas=2.1.1
+  - numpy
+  - pandas
   - scikit-learn
   - scipy
   - matplotlib

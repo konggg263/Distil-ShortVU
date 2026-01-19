@@ -298,13 +298,19 @@ class AestheticScorerWrapper:
                 embeddings = embeddings / embeddings.norm(p=2, dim=-1, keepdim=True)
                 # Predict score
                 scores = self.mlp(embeddings)
-            
+
             # Average score over frames
             avg_score = scores.mean().item()
-            
+
+            # Normalize model output to 0-10 using a sigmoid (robust to raw logits)
+            def sigmoid(x):
+                return 1.0 / (1.0 + np.exp(-x))
+
+            norm = sigmoid(avg_score)
+            scaled = norm * 10.0
+
             # Return format giống DOVER để không phải sửa prompt LLM nhiều
-            # Aesthetic = điểm thật, Technical = 0 (hoặc dùng điểm này luôn)
-            return {"aesthetic": round(avg_score, 2), "technical": round(avg_score, 2)}
+            return {"aesthetic": round(scaled, 2), "technical": round(scaled, 2)}
             
         except Exception as e:
             print(f"Aesthetic Error on {video_path}: {e}")
@@ -570,7 +576,7 @@ Explain WHY the video got these scores. Be critical but constructive. (2 sentenc
 # ==============================================
 # 4. MAIN PIPELINE
 # ==============================================
-def process_dataset_multi_pass(csv_file, video_folder, output_file):
+def process_dataset_multi_pass(csv_file, video_folder, output_file, pass2_mode='combined'):
     df = pd.read_csv(csv_file)
     results = {}
     
@@ -589,7 +595,7 @@ def process_dataset_multi_pass(csv_file, video_folder, output_file):
                 "aesthetic_score": {},
                 "imagebind_emb": None
             }
-        if count == 50:
+        if count == 500:
             break 
 
     # --- PASS 1: TimeChat ---
@@ -600,14 +606,14 @@ def process_dataset_multi_pass(csv_file, video_folder, output_file):
         results[vid_id]['caption'] = desc
     timechat.unload()
     
-   # --- PASS 2: DOVER (Scoring - CPU Strict) ---
-    print("\n=== PASS 2: DOVER Scoring (CPU) ===")
-    dover = DOVERWrapper()
-    for vid_id, data in tqdm(results.items()):
-        score = dover.predict(data['video_path'])
-        results[vid_id]['aesthetic_score'] = score
-        print(f"Video {vid_id}: {score}")
-    dover.unload()
+    # --- PASS 2: DOVER (Scoring - CPU Strict) ---
+    # print("\n=== PASS 2: DOVER Scoring (CPU) ===")
+    # dover = DOVERWrapper()
+    # for vid_id, data in tqdm(results.items()):
+    #     score = dover.predict(data['video_path'])
+    #     results[vid_id]['aesthetic_score'] = score
+    #     print(f"Video {vid_id}: {score}")
+    # dover.unload()
     # # --- PASS 2: Aesthetic (CLIP) --- không phù hợp với video
     # print("\n=== PASS 2: Aesthetic Scoring ===")
     # scorer = AestheticScorerWrapper()
@@ -615,15 +621,126 @@ def process_dataset_multi_pass(csv_file, video_folder, output_file):
     #     score = scorer.predict(data['video_path'])
     #     results[vid_id]['aesthetic_score'] = score
     # scorer.unload()
-    # # --- PASS 2: Q-Align (OneAlign) --- đang lỗi
-    # print("\n=== PASS 2: Q-Align Scoring ===")
-    # scorer = QAlignWrapper()
-    # for vid_id, data in tqdm(results.items()):
-    #     score = scorer.predict(data['video_path'])
-    #     results[vid_id]['aesthetic_score'] = score
-    #     # In ra để debug xem điểm có thay đổi không
-    #     print(f"Video {vid_id}: {score}")
-    # scorer.unload()
+    # --- PASS 2: Scoring (stable fallback) ---
+    # Q-Align (OneAlign) wrapper has proven fragile in this environment
+    # (remote code requirements, custom forward signatures and video arg shapes).
+    # Use the CLIP-based Aesthetic scorer by default for robust, local scoring.
+    print(f"\n=== PASS 2: Scoring mode='{pass2_mode}' ===")
+
+    # Helper inits
+    aest_scorer = None
+    dover_scorer = None
+    qalign_scorer = None
+
+    if pass2_mode in ['combined', 'clip', 'dover']:
+        try:
+            aest_scorer = AestheticScorerWrapper()
+        except Exception as e:
+            print(f"[Pass2] Failed to init AestheticScorer: {e}")
+            aest_scorer = None
+
+    if pass2_mode in ['combined', 'dover']:
+        try:
+            dover_scorer = DOVERWrapper()
+        except Exception as e:
+            print(f"[Pass2] Failed to init DOVERWrapper (CPU): {e}. Technical scoring will fallback to aesthetic.")
+            dover_scorer = None
+
+    if pass2_mode == 'qalign':
+        try:
+            qalign_scorer = QAlignWrapper()
+        except Exception as e:
+            print(f"[Pass2] Failed to init QAlignWrapper: {e}")
+            qalign_scorer = None
+
+    for vid_id, data in tqdm(results.items()):
+        aes_val = 5.0
+        tech_val = 5.0
+        source = {}
+
+        if pass2_mode == 'none':
+            # Skip scoring, leave defaults
+            source['mode'] = 'none'
+
+        elif pass2_mode == 'clip':
+            # Only CLIP aesthetic
+            if aest_scorer is not None:
+                try:
+                    a_score = aest_scorer.predict(data['video_path'])
+                    aes_val = float(a_score.get('aesthetic', aes_val))
+                    tech_val = aes_val
+                    source['aesthetic_source'] = 'clip_mlp'
+                except Exception as e:
+                    print(f"[Pass2] CLIP scoring failed for {vid_id}: {e}")
+                    source['aesthetic_source'] = 'error'
+
+        elif pass2_mode == 'dover':
+            # Only DOVER (technical and aesthetic if available)
+            if dover_scorer is not None:
+                try:
+                    d_score = dover_scorer.predict(data['video_path'])
+                    aes_val = float(d_score.get('aesthetic', aes_val))
+                    tech_val = float(d_score.get('technical', aes_val))
+                    source['technical_source'] = 'dover'
+                except Exception as e:
+                    print(f"[Pass2] DOVER failed for {vid_id}: {e}")
+                    source['technical_source'] = 'error'
+
+        elif pass2_mode == 'qalign':
+            # Try Q-Align (best-effort): model expected to return textual rating
+            if qalign_scorer is not None:
+                try:
+                    q_score = qalign_scorer.predict(data['video_path'])
+                    # qalign wrapper returns aesthetic/technical or raw_rating
+                    aes_val = float(q_score.get('aesthetic', aes_val))
+                    tech_val = float(q_score.get('technical', aes_val))
+                    source['qalign'] = 'used'
+                except Exception as e:
+                    print(f"[Pass2] QAlign scoring failed for {vid_id}: {e}")
+                    source['qalign'] = 'error'
+
+        elif pass2_mode == 'combined':
+            # Combined: aesthetic from CLIP, technical from DOVER if available
+            if aest_scorer is not None:
+                try:
+                    a_score = aest_scorer.predict(data['video_path'])
+                    aes_val = float(a_score.get('aesthetic', aes_val))
+                    source['aesthetic_source'] = 'clip_mlp'
+                except Exception as e:
+                    print(f"[Pass2] Aesthetic scoring failed for {vid_id}: {e}")
+                    source['aesthetic_source'] = 'error'
+
+            if dover_scorer is not None:
+                try:
+                    d_score = dover_scorer.predict(data['video_path'])
+                    tech_val = float(d_score.get('technical', d_score.get('aesthetic', tech_val)))
+                    source['technical_source'] = 'dover'
+                except Exception as e:
+                    print(f"[Pass2] DOVER scoring failed for {vid_id}: {e}. Falling back to aesthetic.")
+                    tech_val = aes_val
+                    source['technical_source'] = 'fallback_to_aesthetic'
+
+        # Final assignment
+        results[vid_id]['aesthetic_score'] = {"aesthetic": round(aes_val, 2), "technical": round(tech_val, 2)}
+        results[vid_id]['pass2_sources'] = source
+        print(f"Video {vid_id}: {results[vid_id]['aesthetic_score']} (sources: {source})")
+
+    # Unload scorers safely
+    try:
+        if aest_scorer is not None:
+            aest_scorer.unload()
+    except Exception:
+        pass
+    try:
+        if dover_scorer is not None:
+            dover_scorer.unload()
+    except Exception:
+        pass
+    try:
+        if qalign_scorer is not None:
+            qalign_scorer.unload()
+    except Exception:
+        pass
     # # --- PASS 3: InternVideo/CLIP (Embedding) --- đang xem xét
     # print("\n=== PASS 3: Feature Extraction ===")
     # embedder = InternVideoWrapper()
@@ -651,9 +768,64 @@ def process_dataset_multi_pass(csv_file, video_folder, output_file):
     llm.unload()
     print(f"Done! Saved to {output_file}")
 
+
+def json_to_excel(json_path):
+    """Convert a JSON file (list of dicts) to an Excel file in the same folder.
+
+    The function will flatten nested dictionaries (pandas.json_normalize) so
+    fields like 'aesthetic_score.aesthetic' and 'pass2_sources.*' become columns.
+    """
+    if not os.path.exists(json_path):
+        print(f"JSON file not found: {json_path}")
+        return None
+
+    try:
+        with open(json_path, 'r') as f:
+            data = json.load(f)
+
+        # If the JSON is a dict with a top-level list under some key, try to detect it
+        if isinstance(data, dict) and len(data) == 1:
+            first_key = list(data.keys())[0]
+            if isinstance(data[first_key], list):
+                data = data[first_key]
+
+        # Ensure it's a list of records
+        if not isinstance(data, list):
+            print(f"Unexpected JSON structure, expected a list of records: {type(data)}")
+            return None
+
+        # Flatten nested dicts into columns
+        df = pd.json_normalize(data)
+
+        # Choose excel path next to json file
+        excel_path = os.path.splitext(json_path)[0] + '.xlsx'
+        df.to_excel(excel_path, index=False)
+        print(f"Saved Excel: {excel_path}")
+        return excel_path
+    except Exception as e:
+        print(f"Error converting JSON to Excel: {e}")
+        return None
+
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Run multi-pass video pipeline")
+    parser.add_argument('--csv', default="data/train_data.csv", help='CSV file list')
+    parser.add_argument('--videos', default="data/train_videos", help='Folder with videos')
+    parser.add_argument('--out', default="data/train_processed.json", help='Output JSON file')
+    parser.add_argument('--pass2', default='combined', choices=['combined', 'clip', 'dover', 'qalign', 'none'],
+                        help='Which scorer to run for pass 2')
+    parser.add_argument('--xlsx', action='store_true', help='Also convert the output JSON to an XLSX file in the same folder')
+
+    args = parser.parse_args()
+
     process_dataset_multi_pass(
-        csv_file="data/train_data.csv", 
-        video_folder="data/train_videos",
-        output_file="data/train_processed.json"
+        csv_file=args.csv,
+        video_folder=args.videos,
+        output_file=args.out,
+        pass2_mode=args.pass2
     )
+
+    # Optionally convert the produced JSON into an Excel file
+    if args.xlsx:
+        json_to_excel(args.out)

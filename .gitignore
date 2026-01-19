@@ -236,8 +236,10 @@ anaconda3/
 
 # --- Dữ liệu & Model (QUAN TRỌNG: Không bao giờ up lên git) ---
 # Checkpoints của model (File .bin, .pth thường > 1GB)
+data/
 checkpoints/
 weights/
+third-party/
 *.pth
 *.pt
 *.bin

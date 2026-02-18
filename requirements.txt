@@ -1,43 +1,72 @@
-accelerate==0.27.2
+# Core dependencies - Fixed versions for compatibility
+# IMPORTANT: torch 2.1.2 requires numpy<2.0
+numpy>=1.23,<2.0
+torch==2.1.2
+torchaudio==2.1.2
+torchvision==0.16.2
+
+# Transformers ecosystem - compatible with torch 2.1.2
+transformers>=4.37.2,<4.45
+tokenizers>=0.14,<0.20
+huggingface-hub>=0.19.3,<1.0
+safetensors>=0.4.1
+accelerate>=0.27.2,<1.0
+
+# Vision & Video processing
 eva-decord==0.6.1
-fastapi==0.122.0
-ffmpeg==1.4
-ffmpy==1.0.0
-gitdb==4.0.12
+opencv-python-headless>=4.8.0,<4.10  # Compatible with numpy<2.0
+pillow>=10.0.0
+timm>=0.6.13
+pytorchvideo  # For ImageBind
+
+# Quality scoring - install with: pip install pyiqa --no-deps
+# pyiqa
+
+# ML & Scientific computing
+scipy>=1.10.0
+scikit-learn>=1.0.0
+scikit-video==1.1.11
+pandas>=2.0.0
+fsspec<=2025.10.0  # Required by datasets
+
+# MLX (Mac only - comment out if not on Mac)
+# mlx>=0.30.0
+# mlx-lm>=0.28.3
+# mlx-metal>=0.30.0
+
+# Web frameworks
+fastapi>=0.100.0
+uvicorn>=0.20.0
 gradio==3.24.1
 gradio_client==2.0.0
-huggingface-hub==0.36.0
-icecream==2.1.8
-importlib_metadata==8.7.0
-iopath==0.1.10
-matplotlib==3.10.7
-mlx==0.30.0
-mlx-lm==0.28.3
-mlx-metal==0.30.0
-numpy==1.26.4
-omegaconf==2.3.0
-onnx==1.19.1
-opencv-python==4.12.0.88
-pandas==2.1.1
-pillow==12.0.0
-protobuf
-pycocotools==2.0.6
-PyYAML==6.0.3
-requests==2.32.5
-scikit-learn==1.7.2
-scikit-video==1.1.11
-scipy==1.15.3
-semantic-version==2.10.0
-sentence-transformers==2.2.2
-sentencepiece==0.2.1
-sympy==1.14.0
-timm==0.6.13
-tokenizers==0.15.2
-torch==2.1.2
-torchaudio==2.9.1
-torchvision==0.16.2
-tqdm==4.67.1
-transformers==4.37.2
-uvicorn==0.38.0
-wandb==0.23.0
-openpyxl
+
+# Utilities
+tqdm>=4.60.0
+requests>=2.28.0
+PyYAML>=6.0
+sentencepiece>=0.1.96
+icecream>=2.1.0
+omegaconf>=2.3.0
+iopath>=0.1.10
+importlib_metadata>=4.0.0
+gitdb>=4.0.0
+semantic-version>=2.10.0
+
+# NLP
+sentence-transformers>=2.2.2
+
+# Visualization & monitoring
+matplotlib>=3.5.0
+wandb>=0.15.0
+
+# Multimedia
+ffmpeg==1.4
+ffmpy>=0.3.0
+
+# Data & serialization
+protobuf>=3.20.0
+pycocotools>= 2.0.0
+openpyxl>=3.0.0
+
+# Other
+sympy>=1.10.0

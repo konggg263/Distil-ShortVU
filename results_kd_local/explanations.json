@@ -1,0 +1,633 @@
+{
+  "summary": {
+    "n_samples": 20,
+    "visual_dominant_pct": 20.0,
+    "avg_visual_importance": 34.9,
+    "avg_text_importance": 65.1,
+    "avg_predicted_ecr": 0.047194,
+    "avg_aesthetic_10": 5.22,
+    "avg_technical_10": 4.24
+  },
+  "explanations": [
+    {
+      "video_id": "bce9de2d43de5225ab28480f7cd4da4b",
+      "predicted_ecr": 0.04048,
+      "ecr_level": "moderate (0.03–0.05)",
+      "modality_ablation": {
+        "ecr_full": 0.04048,
+        "ecr_visual_only": 0.038785,
+        "ecr_text_only": 0.042516,
+        "visual_drop": -0.002037,
+        "text_drop": 0.001695
+      },
+      "relative_importance": {
+        "visual_pct": 54.6,
+        "text_pct": 45.4,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 6.6,
+        "technical_score_10": 5.8,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5885,
+        "active_dims": "165/256"
+      },
+      "metadata": {
+        "title": "Sub heavy equals sign your crush will text you today  Pixy  FlyWithMe",
+        "caption": "a basketball ball is in the middle of a room"
+      },
+      "true_ecr": 0.0262962238309528
+    },
+    {
+      "video_id": "0d3cd1fde938467b1f380c334133caad",
+      "predicted_ecr": 0.044513,
+      "ecr_level": "moderate (0.03–0.05)",
+      "modality_ablation": {
+        "ecr_full": 0.044513,
+        "ecr_visual_only": 0.03985,
+        "ecr_text_only": 0.044855,
+        "visual_drop": -0.000342,
+        "text_drop": 0.004663
+      },
+      "relative_importance": {
+        "visual_pct": 6.8,
+        "text_pct": 93.2,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 4.2,
+        "technical_score_10": 3.4,
+        "quality_verdict": "Cả thẩm mỹ và kỹ thuật đều cần cải thiện"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5825,
+        "active_dims": "166/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a young boy is sitting in a chair with a cat"
+      },
+      "true_ecr": 0.0696145568381921
+    },
+    {
+      "video_id": "614171d69f1e13c4805a1285f7fb78df",
+      "predicted_ecr": 0.039776,
+      "ecr_level": "moderate (0.03–0.05)",
+      "modality_ablation": {
+        "ecr_full": 0.039776,
+        "ecr_visual_only": 0.039424,
+        "ecr_text_only": 0.040704,
+        "visual_drop": -0.000928,
+        "text_drop": 0.000353
+      },
+      "relative_importance": {
+        "visual_pct": 72.5,
+        "text_pct": 27.5,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 5.8,
+        "technical_score_10": 4.9,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5916,
+        "active_dims": "164/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a person holding a piece of paper with a text"
+      },
+      "true_ecr": 0.0215222070045
+    },
+    {
+      "video_id": "1b55b76bd6c7e622eaa89c21ead5aa43",
+      "predicted_ecr": 0.049097,
+      "ecr_level": "moderate (0.03–0.05)",
+      "modality_ablation": {
+        "ecr_full": 0.049097,
+        "ecr_visual_only": 0.042026,
+        "ecr_text_only": 0.046497,
+        "visual_drop": 0.0026,
+        "text_drop": 0.007071
+      },
+      "relative_importance": {
+        "visual_pct": 26.9,
+        "text_pct": 73.1,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 3.3,
+        "technical_score_10": 2.4,
+        "quality_verdict": "Cả thẩm mỹ và kỹ thuật đều cần cải thiện"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5726,
+        "active_dims": "162/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a bride and groom dancing at a wedding reception"
+      },
+      "true_ecr": 0.0464253570729798
+    },
+    {
+      "video_id": "0a519b1446e3fc68dae00960b187483c",
+      "predicted_ecr": 0.054197,
+      "ecr_level": "high (0.05–0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.054197,
+        "ecr_visual_only": 0.04553,
+        "ecr_text_only": 0.047143,
+        "visual_drop": 0.007054,
+        "text_drop": 0.008667
+      },
+      "relative_importance": {
+        "visual_pct": 44.9,
+        "text_pct": 55.1,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 3.5,
+        "technical_score_10": 2.9,
+        "quality_verdict": "Cả thẩm mỹ và kỹ thuật đều cần cải thiện"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5678,
+        "active_dims": "161/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a house with a tree in the yard"
+      },
+      "true_ecr": 0.0701858736059479
+    },
+    {
+      "video_id": "c100024b54a23fb77ee918748835ce77",
+      "predicted_ecr": 0.041266,
+      "ecr_level": "moderate (0.03–0.05)",
+      "modality_ablation": {
+        "ecr_full": 0.041266,
+        "ecr_visual_only": 0.039564,
+        "ecr_text_only": 0.042179,
+        "visual_drop": -0.000912,
+        "text_drop": 0.001702
+      },
+      "relative_importance": {
+        "visual_pct": 34.9,
+        "text_pct": 65.1,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 5.2,
+        "technical_score_10": 4.1,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5869,
+        "active_dims": "168/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a man in a suit and tie is standing in a room"
+      },
+      "true_ecr": 0.0646761886127959
+    },
+    {
+      "video_id": "9f70c76f3ee5c3194a7a5a0b1779dc0a",
+      "predicted_ecr": 0.042654,
+      "ecr_level": "moderate (0.03–0.05)",
+      "modality_ablation": {
+        "ecr_full": 0.042654,
+        "ecr_visual_only": 0.037192,
+        "ecr_text_only": 0.046363,
+        "visual_drop": -0.00371,
+        "text_drop": 0.005461
+      },
+      "relative_importance": {
+        "visual_pct": 40.4,
+        "text_pct": 59.6,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 4.2,
+        "technical_score_10": 3.2,
+        "quality_verdict": "Cả thẩm mỹ và kỹ thuật đều cần cải thiện"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5814,
+        "active_dims": "166/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a group of people dancing in a room"
+      },
+      "true_ecr": 0.0885149677166895
+    },
+    {
+      "video_id": "6c5419d6b47fd30cf297947bcbe43c81",
+      "predicted_ecr": 0.052124,
+      "ecr_level": "high (0.05–0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.052124,
+        "ecr_visual_only": 0.046296,
+        "ecr_text_only": 0.044256,
+        "visual_drop": 0.007868,
+        "text_drop": 0.005827
+      },
+      "relative_importance": {
+        "visual_pct": 57.4,
+        "text_pct": 42.6,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 6.6,
+        "technical_score_10": 5.2,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5781,
+        "active_dims": "162/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a man is riding a bike through a field"
+      },
+      "true_ecr": 0.0702641361768734
+    },
+    {
+      "video_id": "95951055b07d641c1520fb7f729aadf7",
+      "predicted_ecr": 0.042691,
+      "ecr_level": "moderate (0.03–0.05)",
+      "modality_ablation": {
+        "ecr_full": 0.042691,
+        "ecr_visual_only": 0.03953,
+        "ecr_text_only": 0.043775,
+        "visual_drop": -0.001085,
+        "text_drop": 0.003161
+      },
+      "relative_importance": {
+        "visual_pct": 25.5,
+        "text_pct": 74.5,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 6.9,
+        "technical_score_10": 5.8,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5851,
+        "active_dims": "165/256"
+      },
+      "metadata": {
+        "title": "Amazon try on haul ",
+        "caption": "a woman in a black top and pants is standing in front of a mirror"
+      },
+      "true_ecr": 0.0675953825083154
+    },
+    {
+      "video_id": "07dc95491eb957c9d48b85b4d1c310ea",
+      "predicted_ecr": 0.062497,
+      "ecr_level": "high (0.05–0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.062497,
+        "ecr_visual_only": 0.046738,
+        "ecr_text_only": 0.051745,
+        "visual_drop": 0.010752,
+        "text_drop": 0.015759
+      },
+      "relative_importance": {
+        "visual_pct": 40.6,
+        "text_pct": 59.4,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 4.8,
+        "technical_score_10": 4.1,
+        "quality_verdict": "Cả thẩm mỹ và kỹ thuật đều cần cải thiện"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5597,
+        "active_dims": "159/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a car driving down a road with a view of the ocean"
+      },
+      "true_ecr": 0.0518098219526511
+    },
+    {
+      "video_id": "f8add14fb627dd72fa348dfab0a75d89",
+      "predicted_ecr": 0.049514,
+      "ecr_level": "moderate (0.03–0.05)",
+      "modality_ablation": {
+        "ecr_full": 0.049514,
+        "ecr_visual_only": 0.041994,
+        "ecr_text_only": 0.04726,
+        "visual_drop": 0.002254,
+        "text_drop": 0.00752
+      },
+      "relative_importance": {
+        "visual_pct": 23.1,
+        "text_pct": 76.9,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 4.1,
+        "technical_score_10": 3.6,
+        "quality_verdict": "Cả thẩm mỹ và kỹ thuật đều cần cải thiện"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5692,
+        "active_dims": "162/256"
+      },
+      "metadata": {
+        "title": " baby  newborn  babygirl  outfitoftheday",
+        "caption": "a baby in a blue and pink dress"
+      },
+      "true_ecr": 0.0078810408921933
+    },
+    {
+      "video_id": "27e2df0db3cd0bbbdca1a273fd74e4be",
+      "predicted_ecr": 0.046479,
+      "ecr_level": "moderate (0.03–0.05)",
+      "modality_ablation": {
+        "ecr_full": 0.046479,
+        "ecr_visual_only": 0.039844,
+        "ecr_text_only": 0.046813,
+        "visual_drop": -0.000334,
+        "text_drop": 0.006636
+      },
+      "relative_importance": {
+        "visual_pct": 4.8,
+        "text_pct": 95.2,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 5.1,
+        "technical_score_10": 4.4,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5771,
+        "active_dims": "166/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a woman in a purple bikini is laying on the floor"
+      },
+      "true_ecr": 0.0
+    },
+    {
+      "video_id": "0f4f003c7d4acfc508d2c6c5b0e9c025",
+      "predicted_ecr": 0.058378,
+      "ecr_level": "high (0.05–0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.058378,
+        "ecr_visual_only": 0.044925,
+        "ecr_text_only": 0.050258,
+        "visual_drop": 0.00812,
+        "text_drop": 0.013454
+      },
+      "relative_importance": {
+        "visual_pct": 37.6,
+        "text_pct": 62.4,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 2.4,
+        "technical_score_10": 1.9,
+        "quality_verdict": "Cả thẩm mỹ và kỹ thuật đều cần cải thiện"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5568,
+        "active_dims": "156/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a crowd of people watching a concert"
+      },
+      "true_ecr": 0.0447270592838974
+    },
+    {
+      "video_id": "17f6a5cee4ab41a1720121571b22baa3",
+      "predicted_ecr": 0.044172,
+      "ecr_level": "moderate (0.03–0.05)",
+      "modality_ablation": {
+        "ecr_full": 0.044172,
+        "ecr_visual_only": 0.041928,
+        "ecr_text_only": 0.042728,
+        "visual_drop": 0.001444,
+        "text_drop": 0.002244
+      },
+      "relative_importance": {
+        "visual_pct": 39.2,
+        "text_pct": 60.8,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 7.0,
+        "technical_score_10": 5.8,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5872,
+        "active_dims": "162/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a man with a beard and a black jacket"
+      },
+      "true_ecr": 0.0582586577969086
+    },
+    {
+      "video_id": "49e2ae74c79c4eb9bd96589c1eed6457",
+      "predicted_ecr": 0.051516,
+      "ecr_level": "high (0.05–0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.051516,
+        "ecr_visual_only": 0.043258,
+        "ecr_text_only": 0.047514,
+        "visual_drop": 0.004001,
+        "text_drop": 0.008257
+      },
+      "relative_importance": {
+        "visual_pct": 32.6,
+        "text_pct": 67.4,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 6.7,
+        "technical_score_10": 5.3,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5792,
+        "active_dims": "160/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a football game is being played on the field"
+      },
+      "true_ecr": 0.0743572686362747
+    },
+    {
+      "video_id": "61a565a53df7cb4080eb2c9f8bea3ae5",
+      "predicted_ecr": 0.046068,
+      "ecr_level": "moderate (0.03–0.05)",
+      "modality_ablation": {
+        "ecr_full": 0.046068,
+        "ecr_visual_only": 0.03953,
+        "ecr_text_only": 0.047175,
+        "visual_drop": -0.001107,
+        "text_drop": 0.006537
+      },
+      "relative_importance": {
+        "visual_pct": 14.5,
+        "text_pct": 85.5,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 4.5,
+        "technical_score_10": 3.5,
+        "quality_verdict": "Cả thẩm mỹ và kỹ thuật đều cần cải thiện"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5799,
+        "active_dims": "166/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a dog laying on top of a bed"
+      },
+      "true_ecr": 0.0080766973195069
+    },
+    {
+      "video_id": "c8bc063fc2b6fb89fd3bd0a498b522de",
+      "predicted_ecr": 0.047,
+      "ecr_level": "moderate (0.03–0.05)",
+      "modality_ablation": {
+        "ecr_full": 0.047,
+        "ecr_visual_only": 0.039189,
+        "ecr_text_only": 0.048049,
+        "visual_drop": -0.001049,
+        "text_drop": 0.007811
+      },
+      "relative_importance": {
+        "visual_pct": 11.8,
+        "text_pct": 88.2,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 6.9,
+        "technical_score_10": 5.2,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5819,
+        "active_dims": "161/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a horse is standing in the yard"
+      },
+      "true_ecr": 0.074850322833105
+    },
+    {
+      "video_id": "52d2d68929b04bab10f7f7dfa67d43a2",
+      "predicted_ecr": 0.039311,
+      "ecr_level": "moderate (0.03–0.05)",
+      "modality_ablation": {
+        "ecr_full": 0.039311,
+        "ecr_visual_only": 0.038317,
+        "ecr_text_only": 0.041639,
+        "visual_drop": -0.002328,
+        "text_drop": 0.000993
+      },
+      "relative_importance": {
+        "visual_pct": 70.1,
+        "text_pct": 29.9,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 6.6,
+        "technical_score_10": 5.3,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5886,
+        "active_dims": "161/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a man in a white shirt and a hat is walking down the street"
+      },
+      "true_ecr": 0.0416200352181569
+    },
+    {
+      "video_id": "6cbc729349475971b7a85341370730db",
+      "predicted_ecr": 0.048829,
+      "ecr_level": "moderate (0.03–0.05)",
+      "modality_ablation": {
+        "ecr_full": 0.048829,
+        "ecr_visual_only": 0.042019,
+        "ecr_text_only": 0.046363,
+        "visual_drop": 0.002466,
+        "text_drop": 0.00681
+      },
+      "relative_importance": {
+        "visual_pct": 26.6,
+        "text_pct": 73.4,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 3.7,
+        "technical_score_10": 3.0,
+        "quality_verdict": "Cả thẩm mỹ và kỹ thuật đều cần cải thiện"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5713,
+        "active_dims": "161/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a group of people dancing in a room"
+      },
+      "true_ecr": 0.0391469379769125
+    },
+    {
+      "video_id": "a32ef8bd8a095d0f8689c93b6bdaad89",
+      "predicted_ecr": 0.043313,
+      "ecr_level": "moderate (0.03–0.05)",
+      "modality_ablation": {
+        "ecr_full": 0.043313,
+        "ecr_visual_only": 0.03829,
+        "ecr_text_only": 0.045816,
+        "visual_drop": -0.002502,
+        "text_drop": 0.005023
+      },
+      "relative_importance": {
+        "visual_pct": 33.3,
+        "text_pct": 66.7,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 6.3,
+        "technical_score_10": 4.9,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5845,
+        "active_dims": "167/256"
+      },
+      "metadata": {
+        "title": " tennis |  asmr |  nadal",
+        "caption": "a man is running on a tennis court"
+      },
+      "true_ecr": 0.0688084523576599
+    }
+  ]
+}

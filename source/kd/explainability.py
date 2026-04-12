@@ -33,7 +33,6 @@ from imagebind.models.imagebind_model import ModalityType
 sys.path.insert(0, os.path.dirname(__file__))
 from models import StudentModel, count_params
 
-
 # ================================================================
 # TEMPORAL ABLATION (INFERENCE MODULE)
 # ================================================================
@@ -65,7 +64,8 @@ def find_engaging_hook_frame(video_path: str, student_model: torch.nn.Module,
                                  [0.26862954, 0.26130258, 0.27577711]),
         ])
         tensors = [preprocess(Image.fromarray(f)) for f in f_array]
-        video_tensor = torch.stack(tensors).unsqueeze(0).to(device)
+        vis_device = getattr(visual_encoder, 'device', 'cpu')
+        video_tensor = torch.stack(tensors).unsqueeze(0).to(vis_device)
         with torch.no_grad():
             embs = visual_encoder.model({ModalityType.VISION: video_tensor})
         emb = embs[ModalityType.VISION].cpu().numpy().flatten()
@@ -99,7 +99,8 @@ def find_engaging_hook_frame(video_path: str, student_model: torch.nn.Module,
     
     # captioner.processor and captioner.model expected
     inputs = captioner.processor(images=hook_image, return_tensors="pt")
-    inputs = {k: v.to(device) for k, v in inputs.items()}
+    cap_device = getattr(captioner, 'dev', getattr(captioner, 'device', 'cpu'))
+    inputs = {k: v.to(cap_device) for k, v in inputs.items()}
     with torch.no_grad():
         ids = captioner.model.generate(**inputs, max_new_tokens=40)
     hook_caption = captioner.processor.decode(ids[0], skip_special_tokens=True).strip()

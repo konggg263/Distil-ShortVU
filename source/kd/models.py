@@ -13,9 +13,9 @@ Architecture comparison:
 │ 4 residual blocks (512-d)   │  2 residual blocks (256-d)    │
 │                             │                               │
 │ Output: ECR                 │  Output: ECR                  │
-│                             │        + aesthetic (aux/KD)    │
-│                             │        + technical (aux/KD)    │
-│                             │        + KD projection         │
+│                             │        + aesthetic (aux/KD)   │
+│                             │        + technical (aux/KD)   │
+│                             │        + KD projection        │
 └─────────────────────────────┴───────────────────────────────┘
 
 KD Loss for Student:

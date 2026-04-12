@@ -1,57 +1,73 @@
 # Knowledge Distillation (KD) — Distil-ShortVU
 
-This folder contains the KD pipeline: **Teacher** (full multimodal + quality) → **soft targets** → **Student baseline** vs **Student + KD** → optional **ablation** and **explainability**.
+This folder contains the complete pipeline for our Knowledge Distillation workflow taking a multimodal **Teacher** (understanding both visual, textual, and video quality aspects) and distilling it into a lightweight **Student** model. It also includes comprehensive modules for architectural **ablation** and a novel **explainability engine** (Temporal Ablation).
 
-## Quick start
+---
 
-- **Input:** a features JSON where every sample has `ecr`, `visual_emb`, `text_emb`, and `quality_scores`. Example: `source/kaggle_kd/results/500_videos/features_500.json` (see `source/kaggle_kd/README.md` for where Kaggle outputs live).
-- **Smoke test:** add `--quick` (few epochs; checks that the code runs).
-- **Full runs / reports:** omit `--quick`, increase `--teacher-epochs` and `--student-epochs`, and enable `--explain` plus `--ablation` for a complete experimental bundle.
-- **If Student+KD underperforms the baseline:** try **lowering `--beta`**, **slightly lowering `--alpha`**, and raising student epochs; see **Hyperparameter tuning** below.
-- **Accelerators:** use `--device cuda` or `--device mps` (Apple Silicon).
+## 1. Overall Pipeline & Workflow
 
-## Data format (JSON)
+Deploying deep learning on video datasets is heavily constrained by GPU memory. Therefore, our pipeline is separated into two stages: **1. Heavy Feature Extraction (GPU)** and **2. Efficient Training & Distillation (Local CPU/GPU)**.
 
-Each sample should have:
+```mermaid
+graph TD
+    A[Kaggle GPU: Extract Features<br/>ImageBind + MUSIQ/TOPIQ + BLIP + MiniLM] -->|Export to JSON| B(features_*.json)
+    B --> C[Local CPU/GPU: Distillation]
+    C -->|Train| D(Teacher: 6.1M Params)
+    C -->|Train| E(Student Baseline: 890K Params)
+    D -.->|Soft Targets| F(Student+KD: 890K Params)
+    F --> G[Explainability Engine<br/>Modality & Temporal Ablation]
+    F --> H[Architecture Ablation<br/>Visual-only, Text-only, Concat]
+```
 
-- `ecr` (float, label)
-- `visual_emb` (1024-d, e.g. ImageBind)
-- `text_emb` (384-d, e.g. MiniLM)
-- `quality_scores`: `{ "aesthetic": float, "technical": float }` on scale ~0–10 (Teacher + auxiliary Student losses)
+### Time Estimation (Example for 500-2000 Videos on Mid-range CPU)
+Since feature extraction is done separately, the entire distillation and experiment suite is very fast locally:
+- **Teacher Training (100 epochs)**: ~8 minutes
+- **Student Baseline & KD (120 epochs)**: ~5-10 minutes
+- **Ablation Models**: ~10 minutes
+- **Explainability Export**: < 1 minute
+- **Total Local End-to-End Run**: ~30 minutes.
 
-Optional for explainability / demo: `video_id`, `title`, `caption`.
+---
 
-Example path in repo: `source/kaggle_kd/results/500_videos/features_500.json`.
+## 2. Setup & Data Format
 
-## Setup
-
-From project root:
+From the project root, install all prerequisites:
 
 ```bash
 pip install -r requirements.txt
 ```
+*(Requires PyTorch, scipy, numpy, pandas. You can use `--device mps` for Apple M-series chips or `--device cuda` for Nvidia GPUs).*
 
-You need **PyTorch** and **scipy**. Set device with `--device`: `cpu`, `cuda`, or `mps`.
+Your pre-extracted JSON file must follow this structure for every sample:
+- `ecr`: Engagement label (float)
+- `visual_emb`: 1024-d array (ImageBind)
+- `text_emb`: 384-d array (MiniLM)
+- `quality_scores`: `{ "aesthetic": float, "technical": float }` mapped to a 0–10 scale.
+- Optionally: `video_id`, `title`, `caption`.
 
-## 1. Main experiment (`run_experiment.py`)
+---
 
-### Quick run (smoke test)
+## 3. Training & Running the Experiment E2E
 
+Use the central `run_experiment.py` script. It will sequentially train the Teacher, Student Baseline, and Student with KD.
+
+### Quick Smoke Test
+If you just want to verify the code runs without crashing (uses very few epochs):
 ```bash
 python3 source/kd/run_experiment.py \
   --data source/kaggle_kd/results/500_videos/features_500.json \
-  --save-dir results_kd \
+  --save-dir results_kd_local \
+  --device cpu \
   --quick
 ```
 
-`--quick` uses 15 teacher epochs and 20 student epochs. Use only to verify the code, **not** as final thesis numbers.
-
-### Full run (recommended for reports)
+### Full E2E Experiment (Recommended for Final Reporting)
+This command trains models reliably and exports rigorous explainability and ablation studies:
 
 ```bash
 python3 source/kd/run_experiment.py \
   --data source/kaggle_kd/results/500_videos/features_500.json \
-  --save-dir results_kd \
+  --save-dir results_kd_local \
   --device cpu \
   --teacher-epochs 100 \
   --student-epochs 120 \
@@ -64,124 +80,91 @@ python3 source/kd/run_experiment.py \
   --ablation
 ```
 
-- `--explain`: modality ablation on Student, internal aesthetic/technical scores, LLM-ready prompt → `explanations.json`.
-- `--ablation`: train visual-only, text-only, concat-fusion variants; measure inference ms → `ablation_report.json`. Ablation training uses **half** of `--student-epochs`.
+**Key Arguments:**
+- `--alpha 0.3`: Weight for ECR soft target distillation (Teacher's ECR output).
+- `--beta 0.1`: Weight for Representation KD limit (Cosine similarity between hidden dimensions).
+- `--gamma 0.2` & `--delta 0.2`: Auxiliary task weights for predicting Aesthetic & Technical scores respectively.
+- `--explain`: Automatically computes Modality Ablation (Visual vs Text impact) and prepares LLM Prompts in `explanations.json`.
+- `--ablation`: Automatically kicks off standalone trainings to compare the Gated Cross-Attention to Visual-only, Text-only, and blind Concat-fusion. Results outputed to `ablation_report.json`.
 
-GPU / MPS examples:
+**After it finishes, you will find under `--save-dir`:**
+`teacher_best.pth`, `student_baseline_best.pth`, `student_kd_best.pth`, `ablation_*.pth`, `experiment_report.json` (PLCC, SRCC, MSE metrics), `explanations.json`, and `ablation_report.json`.
 
-```bash
-python3 source/kd/run_experiment.py --data PATH/features.json --device cuda --save-dir results_kd
-python3 source/kd/run_experiment.py --data PATH/features.json --device mps --save-dir results_kd
-```
+---
 
-### CLI reference
+## 4. Sub-modules & Standalone usage
 
-| Argument | Default | Description |
-|----------|---------|-------------|
-| `--data` | required | Path to features JSON |
-| `--save-dir` | `results_kd` | Checkpoints + reports |
-| `--device` | `cpu` | `cpu` / `cuda` / `mps` |
-| `--max-samples` | all | Subsample for debugging |
-| `--teacher-hidden` | 512 | Teacher hidden size |
-| `--teacher-blocks` | 4 | Teacher residual blocks |
-| `--teacher-epochs` | 60 | Teacher epochs |
-| `--teacher-lr` | 3e-4 | Teacher LR |
-| `--student-hidden` | 256 | Student hidden size |
-| `--student-epochs` | 80 | Student epochs (baseline + KD) |
-| `--student-lr` | 5e-4 | Student LR |
-| `--dropout` | 0.1 | Dropout |
-| `--batch` | 32 | Batch size |
-| `--alpha` | 0.5 | Weight for soft ECR (match teacher ECR) |
-| `--beta` | 0.3 | Weight for representation (cosine) KD |
-| `--gamma` | 0.2 | Weight for aesthetic auxiliary |
-| `--delta` | 0.2 | Weight for technical auxiliary |
-| `--quick` | off | Few epochs for smoke test |
-| `--ablation` | off | Run ablation + inference timing |
-| `--explain` | off | Run explainability export |
-| `--explain-n` | 20 | Number of val samples to explain |
+### 4.1 Explainability Engine (`explainability.py`)
 
-### Outputs (under `--save-dir`)
-
-- `teacher_best.pth`, `student_baseline_best.pth`, `student_kd_best.pth`
-- `experiment_report.json` — PLCC, SRCC, KTAU, MSE, MAE, param counts
-- `ablation_report.json` if `--ablation`
-- `explanations.json` if `--explain`
-- `ablation_*.pth` for ablation variants (if saved)
-
-## 2. Hyperparameter tuning (KD)
-
-Student loss (summary):
-
-`L = L_ecr_hard + alpha*L_ecr_soft + beta*L_repr + gamma*L_aes + delta*L_tech`
-
-**When ECR labels are small and low-variance** (e.g. roughly 0–0.12 on your 500-video slice):
-
-1. **Lower `beta`** (try 0.05–0.15): `L_repr` can dominate early; too large `beta` may hurt ECR-focused metrics.
-2. **Slightly lower `alpha`** (0.2–0.4): balance teacher soft targets vs ground-truth ECR.
-3. **Increase `--student-epochs`** (100–150) before concluding KD does not help.
-4. **Strong teacher**: more `--teacher-epochs` or regularization; pick checkpoint by val MSE.
-5. **Learning rates**: try `--student-lr` in `3e-4` … `1e-3`; teacher often stable at `1e-4` … `3e-4`.
-6. **Batch size**: for ~500 samples, 16–32 is typical; very large batches can add noise to small-batch gradients.
-
-Practical order: **enough epochs** → tune **`beta`** → **`alpha`** → **`gamma`, `delta`** (keep aux weights fixed if both heads matter equally for the thesis narrative).
-
-## 3. Standalone explainability (`explainability.py`)
-
-After training:
+You can run Modality Ablation on a pre-extracted JSON feature dictionary:
 
 ```bash
 python3 source/kd/explainability.py \
-  --model results_kd/student_kd_best.pth \
+  --model results_kd_local/student_kd_best.pth \
   --data source/kaggle_kd/results/500_videos/features_500.json \
-  --out results_kd/explanations.json \
-  --n 10 \
-  --prompt \
-  --device cpu
+  --out results_kd_local/explanations.json \
+  --n 10 --prompt --device cpu
 ```
 
-`--prompt` prints a sample LLM prompt. Match `--student-hidden` / `--teacher-hidden` to training (defaults 256 / 512).
+**Temporal Ablation (The Hook Discovery)**
+`explainability.py` also features an Advanced **Inference API** (`find_engaging_hook_frame`) designed to work on **raw MP4 videos**. By sequentially zeroing-out (blacking) frames, the logic mathematically defines which frame affects the expected Engagement Score the most.
 
-## 4. Standalone ablation (`ablation_study.py`)
+**Usage within a Web App Inference backend:**
+```python
+from source.kd.explainability import find_engaging_hook_frame, ExplainabilityEngine
+
+# 1. Discover the Hook (Extract 4 frames, Zero-out sequentially, get max ECR drop)
+hook_info = find_engaging_hook_frame(
+    video_path="path/to/upload_video.mp4", 
+    student_model=student_kd_model,
+    visual_encoder=imagebind_model,
+    captioner=blip2_captioner,
+    text_emb=text_embedding_tensor,
+    device="cuda" # or cpu
+)
+
+# 2. Extract modality contributions
+engine = ExplainabilityEngine(student_kd_model, "cuda")
+explanations = engine.explain(visual_emb, text_emb, video_meta)
+
+# 3. Generate scientifically-grounded Prompt for LLMs (No Hallucination)
+prompt = engine.generate_llm_prompt(explanation=explanations, temporal_ablation=hook_info)
+print(prompt)
+```
+
+### 4.2 Architecture Ablation Study (`ablation_study.py`)
+Compare how the gated fusion architecture measures up to simpler models.
 
 ```bash
 python3 source/kd/ablation_study.py \
   --data source/kaggle_kd/results/500_videos/features_500.json \
-  --kd-model results_kd/student_kd_best.pth \
-  --baseline-model results_kd/student_baseline_best.pth \
-  --teacher-model results_kd/teacher_best.pth \
-  --out results_kd/ablation_report.json \
-  --epochs 60 \
-  --batch 32 \
-  --device cpu
+  --kd-model results_kd_local/student_kd_best.pth \
+  --baseline-model results_kd_local/student_baseline_best.pth \
+  --teacher-model results_kd_local/teacher_best.pth \
+  --out results_kd_local/ablation_report.json \
+  --epochs 60 --batch 32 --device cpu
 ```
 
-You may omit `--kd-model` / `--baseline-model` / `--teacher-model` if you only want to train/compare sub-models from scratch (fewer pretrained baselines).
+---
 
-## 5. Feature extraction (`extract_features.py`)
+## 5. KD Hyperparameter Tuning Guide
 
-For local runs with videos + CSV:
+If you observe that **Student+KD underperforms Student-Baseline** (verify easily through `kd_gain_plcc < 0` in `experiment_report.json`), use the following systematic approach:
 
-```bash
-python3 source/kd/extract_features.py --help
-```
+1. **Lower `beta` (e.g., 0.05 - 0.1):** `L_repr` dominates early during training. Too much restriction prevents tuning towards actual ECR targets. 
+2. **Increase Epochs (e.g., 100 -> 150):** The Student network needs sufficient iterations to learn the KD representations before optimizing its Regression Head effectively.
+3. **Decrease `alpha` (e.g., 0.2):** If your Teacher is weak/unreliable on very small datasets, forcing the Student to mimic a wrong Teacher ruins general performance. Trust the hard ECR label more.
+4. **Learning Rate & Batch Size:** Large batches add stability internally. Stay within `-lr=3e-4 to 1e-3` for students.
 
-On Kaggle, extract once to JSON, then use `run_experiment.py` locally on that JSON.
-
-## 6. End-to-end sanity check (`test_pipeline.py`)
-
-Generates synthetic JSON and runs a quick experiment; see the file for the exact command.
+---
 
 ## File map
 
 | File | Role |
 |------|------|
-| `models.py` | `TeacherModel`, `StudentModel` |
-| `run_experiment.py` | Train + compare + optional ablation/explain |
-| `explainability.py` | Modality ablation, quality heads, LLM prompt |
-| `ablation_study.py` | Visual-only, text-only, concat fusion, inference time |
-| `extract_features.py` | Heavy teachers → JSON features |
-| `test_pipeline.py` | Synthetic quick test |
-
----
-
-**TL;DR:** Run `run_experiment.py` with enough epochs and `--explain` + `--ablation`, then adjust `alpha` and `beta` using section 2.
+| `models.py` | PyTorch architectures for `TeacherModel`, `StudentModel` (Gated Cross-Attention) |
+| `run_experiment.py` | CLI orchestrator (Train + compare + optional ablation/explain) |
+| `explainability.py` | Explainable AI (Modality ablation, Quality heads reading, Temporal hook finding) |
+| `ablation_study.py` | Baseline structural benchmarks & inference benchmarking (latency) |
+| `extract_features.py` | Teacher Embedders → JSON features (Executed mostly on Kaggle GPU) |
+| `test_pipeline.py` | Sandbox for synthetic E2E testing |

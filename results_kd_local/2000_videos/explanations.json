@@ -1,0 +1,633 @@
+{
+  "summary": {
+    "n_samples": 20,
+    "visual_dominant_pct": 80.0,
+    "avg_visual_importance": 67.4,
+    "avg_text_importance": 32.6,
+    "avg_predicted_ecr": 0.049754,
+    "avg_aesthetic_10": 5.49,
+    "avg_technical_10": 4.33
+  },
+  "explanations": [
+    {
+      "video_id": "b7b6779e793573c795ba99a0baaeb40d",
+      "predicted_ecr": 0.071895,
+      "ecr_level": "high (0.05–0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.071895,
+        "ecr_visual_only": 0.023108,
+        "ecr_text_only": 0.027531,
+        "visual_drop": 0.044364,
+        "text_drop": 0.048788
+      },
+      "relative_importance": {
+        "visual_pct": 47.6,
+        "text_pct": 52.4,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 3.7,
+        "technical_score_10": 2.8,
+        "quality_verdict": "Cả thẩm mỹ và kỹ thuật đều cần cải thiện"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.468,
+        "active_dims": "105/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a car with a large screen on the back"
+      },
+      "true_ecr": 0.0894854235961651
+    },
+    {
+      "video_id": "3bc3cffec5acf51e4954bef72a7c97e9",
+      "predicted_ecr": 0.031998,
+      "ecr_level": "moderate (0.03–0.05)",
+      "modality_ablation": {
+        "ecr_full": 0.031998,
+        "ecr_visual_only": 0.019429,
+        "ecr_text_only": 0.013845,
+        "visual_drop": 0.018153,
+        "text_drop": 0.012569
+      },
+      "relative_importance": {
+        "visual_pct": 59.1,
+        "text_pct": 40.9,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 5.7,
+        "technical_score_10": 4.5,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.516,
+        "active_dims": "136/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a man in a white shirt and a man in a white shirt"
+      },
+      "true_ecr": 0.0419174329876736
+    },
+    {
+      "video_id": "a04ca3c6d10c65193a9dd3485040e915",
+      "predicted_ecr": 0.069681,
+      "ecr_level": "high (0.05–0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.069681,
+        "ecr_visual_only": 0.061232,
+        "ecr_text_only": 0.003517,
+        "visual_drop": 0.066164,
+        "text_drop": 0.008449
+      },
+      "relative_importance": {
+        "visual_pct": 88.7,
+        "text_pct": 11.3,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 5.2,
+        "technical_score_10": 4.1,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.4676,
+        "active_dims": "106/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a bag of food sitting on top of a table"
+      },
+      "true_ecr": 0.10149090197613
+    },
+    {
+      "video_id": "85f20eec492c8ff767da6a275857ad50",
+      "predicted_ecr": 0.055495,
+      "ecr_level": "high (0.05–0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.055495,
+        "ecr_visual_only": 0.034394,
+        "ecr_text_only": 0.011001,
+        "visual_drop": 0.044494,
+        "text_drop": 0.021101
+      },
+      "relative_importance": {
+        "visual_pct": 67.8,
+        "text_pct": 32.2,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 6.1,
+        "technical_score_10": 4.9,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.4873,
+        "active_dims": "116/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a woman in a car with a scarf on"
+      },
+      "true_ecr": 0.0619213461162199
+    },
+    {
+      "video_id": "a0d79fc6543f3e11a97afc4f84b25118",
+      "predicted_ecr": 0.085973,
+      "ecr_level": "very high (>0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.085973,
+        "ecr_visual_only": 0.062904,
+        "ecr_text_only": 0.019829,
+        "visual_drop": 0.066144,
+        "text_drop": 0.023069
+      },
+      "relative_importance": {
+        "visual_pct": 74.1,
+        "text_pct": 25.9,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 4.5,
+        "technical_score_10": 4.3,
+        "quality_verdict": "Cả thẩm mỹ và kỹ thuật đều cần cải thiện"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.4604,
+        "active_dims": "104/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a person walking down a sidewalk with a cell"
+      },
+      "true_ecr": 0.0
+    },
+    {
+      "video_id": "4c9f023994cf8f131be1e88f09c3a749",
+      "predicted_ecr": 0.069019,
+      "ecr_level": "high (0.05–0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.069019,
+        "ecr_visual_only": 0.060216,
+        "ecr_text_only": 0.007744,
+        "visual_drop": 0.061275,
+        "text_drop": 0.008803
+      },
+      "relative_importance": {
+        "visual_pct": 87.4,
+        "text_pct": 12.6,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 5.0,
+        "technical_score_10": 4.7,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.4594,
+        "active_dims": "109/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a plane is flying over a runway"
+      },
+      "true_ecr": 0.160626100567404
+    },
+    {
+      "video_id": "3d28abe763a8f974588e31958db3c21b",
+      "predicted_ecr": 0.015631,
+      "ecr_level": "low (<0.03)",
+      "modality_ablation": {
+        "ecr_full": 0.015631,
+        "ecr_visual_only": 0.014521,
+        "ecr_text_only": 0.006962,
+        "visual_drop": 0.008669,
+        "text_drop": 0.00111
+      },
+      "relative_importance": {
+        "visual_pct": 88.7,
+        "text_pct": 11.3,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 7.1,
+        "technical_score_10": 5.6,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5168,
+        "active_dims": "133/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a red house with a small boat in the yard"
+      },
+      "true_ecr": 0.0947994521620035
+    },
+    {
+      "video_id": "520c91aa1c9dae4568c339a95f0e8d58",
+      "predicted_ecr": 0.093048,
+      "ecr_level": "very high (>0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.093048,
+        "ecr_visual_only": 0.066255,
+        "ecr_text_only": 0.011351,
+        "visual_drop": 0.081697,
+        "text_drop": 0.026792
+      },
+      "relative_importance": {
+        "visual_pct": 75.3,
+        "text_pct": 24.7,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 6.5,
+        "technical_score_10": 4.7,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.4646,
+        "active_dims": "98/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a group of people are walking down the street"
+      },
+      "true_ecr": 0.126699276071219
+    },
+    {
+      "video_id": "7aa54d619b313f7f5e07042699e701ae",
+      "predicted_ecr": 0.098752,
+      "ecr_level": "very high (>0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.098752,
+        "ecr_visual_only": 0.043487,
+        "ecr_text_only": 0.015228,
+        "visual_drop": 0.083524,
+        "text_drop": 0.055264
+      },
+      "relative_importance": {
+        "visual_pct": 60.2,
+        "text_pct": 39.8,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 5.5,
+        "technical_score_10": 5.1,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.4518,
+        "active_dims": "102/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a man in a red shirt is on a boat"
+      },
+      "true_ecr": 0.15135981216983
+    },
+    {
+      "video_id": "7e1d89c28fc0b747df5a17cb8b4c66d2",
+      "predicted_ecr": 0.072323,
+      "ecr_level": "high (0.05–0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.072323,
+        "ecr_visual_only": 0.045324,
+        "ecr_text_only": 0.011029,
+        "visual_drop": 0.061294,
+        "text_drop": 0.026999
+      },
+      "relative_importance": {
+        "visual_pct": 69.4,
+        "text_pct": 30.6,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 6.4,
+        "technical_score_10": 5.0,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.4905,
+        "active_dims": "121/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a man in sunglasses and a white shirt"
+      },
+      "true_ecr": 0.0521072197221678
+    },
+    {
+      "video_id": "0ec28f584efca66d3b5dbf96851da67b",
+      "predicted_ecr": 0.005642,
+      "ecr_level": "low (<0.03)",
+      "modality_ablation": {
+        "ecr_full": 0.005642,
+        "ecr_visual_only": 0.003528,
+        "ecr_text_only": 0.013062,
+        "visual_drop": -0.00742,
+        "text_drop": 0.002114
+      },
+      "relative_importance": {
+        "visual_pct": 77.8,
+        "text_pct": 22.2,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 5.4,
+        "technical_score_10": 4.2,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.4976,
+        "active_dims": "127/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a large crowd of people"
+      },
+      "true_ecr": 0.0279945216200352
+    },
+    {
+      "video_id": "03d6ce491ffffc2fdefa6289d4cb7ba4",
+      "predicted_ecr": 0.008015,
+      "ecr_level": "low (<0.03)",
+      "modality_ablation": {
+        "ecr_full": 0.008015,
+        "ecr_visual_only": 0.014422,
+        "ecr_text_only": 0.002662,
+        "visual_drop": 0.005353,
+        "text_drop": -0.006407
+      },
+      "relative_importance": {
+        "visual_pct": 45.5,
+        "text_pct": 54.5,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 3.4,
+        "technical_score_10": 2.5,
+        "quality_verdict": "Cả thẩm mỹ và kỹ thuật đều cần cải thiện"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.4926,
+        "active_dims": "125/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a dog is laying on a bed"
+      },
+      "true_ecr": 0.109520641753082
+    },
+    {
+      "video_id": "b1aa1a85b6b939f06f3c407e293a2b2c",
+      "predicted_ecr": 0.071953,
+      "ecr_level": "high (0.05–0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.071953,
+        "ecr_visual_only": 0.050671,
+        "ecr_text_only": 0.011311,
+        "visual_drop": 0.060642,
+        "text_drop": 0.021282
+      },
+      "relative_importance": {
+        "visual_pct": 74.0,
+        "text_pct": 26.0,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 6.0,
+        "technical_score_10": 4.7,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.4665,
+        "active_dims": "106/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "bella bella hotel bella bella bella bella bella bella bella bella bella bella bella bella bella bella bella bella bella bella"
+      },
+      "true_ecr": 0.106585795343377
+    },
+    {
+      "video_id": "cc67da202890640e72ea489219e34da7",
+      "predicted_ecr": 0.060618,
+      "ecr_level": "high (0.05–0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.060618,
+        "ecr_visual_only": 0.047854,
+        "ecr_text_only": 0.004344,
+        "visual_drop": 0.056274,
+        "text_drop": 0.012764
+      },
+      "relative_importance": {
+        "visual_pct": 81.5,
+        "text_pct": 18.5,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 4.2,
+        "technical_score_10": 3.0,
+        "quality_verdict": "Cả thẩm mỹ và kỹ thuật đều cần cải thiện"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.4761,
+        "active_dims": "114/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a man in a blue hat and white shirt"
+      },
+      "true_ecr": 0.123341811778517
+    },
+    {
+      "video_id": "63532ccef5cee7743a463aac880888c1",
+      "predicted_ecr": 0.008473,
+      "ecr_level": "low (<0.03)",
+      "modality_ablation": {
+        "ecr_full": 0.008473,
+        "ecr_visual_only": 0.005435,
+        "ecr_text_only": 0.011151,
+        "visual_drop": -0.002679,
+        "text_drop": 0.003038
+      },
+      "relative_importance": {
+        "visual_pct": 46.9,
+        "text_pct": 53.1,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 6.5,
+        "technical_score_10": 4.5,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5259,
+        "active_dims": "141/256"
+      },
+      "metadata": {
+        "title": "This is barbie speaking",
+        "caption": "barbie doll in a tulipo tulipo tulipo tulipo tulipo tulipo tulipo tulipo tu"
+      },
+      "true_ecr": 0.118552142437879
+    },
+    {
+      "video_id": "8025ee0431d734a3a21a9bee81bb58dd",
+      "predicted_ecr": 0.04541,
+      "ecr_level": "moderate (0.03–0.05)",
+      "modality_ablation": {
+        "ecr_full": 0.04541,
+        "ecr_visual_only": 0.019091,
+        "ecr_text_only": 0.022852,
+        "visual_drop": 0.022558,
+        "text_drop": 0.026319
+      },
+      "relative_importance": {
+        "visual_pct": 46.2,
+        "text_pct": 53.8,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 6.1,
+        "technical_score_10": 4.7,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.509,
+        "active_dims": "131/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a man in a life jacket is surfing"
+      },
+      "true_ecr": 0.0953707689297593
+    },
+    {
+      "video_id": "6f02d9b30d9288b8d86157dab51e752e",
+      "predicted_ecr": 0.025928,
+      "ecr_level": "low (<0.03)",
+      "modality_ablation": {
+        "ecr_full": 0.025928,
+        "ecr_visual_only": 0.017924,
+        "ecr_text_only": 0.009024,
+        "visual_drop": 0.016905,
+        "text_drop": 0.008004
+      },
+      "relative_importance": {
+        "visual_pct": 67.9,
+        "text_pct": 32.1,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 5.7,
+        "technical_score_10": 4.9,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5138,
+        "active_dims": "136/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a boat with a steering and steerings on the water"
+      },
+      "true_ecr": 0.039397378203874
+    },
+    {
+      "video_id": "4bcf355c925e0806e14139a4296399c3",
+      "predicted_ecr": 0.0595,
+      "ecr_level": "high (0.05–0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.0595,
+        "ecr_visual_only": 0.026639,
+        "ecr_text_only": 0.014462,
+        "visual_drop": 0.045038,
+        "text_drop": 0.032861
+      },
+      "relative_importance": {
+        "visual_pct": 57.8,
+        "text_pct": 42.2,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 5.7,
+        "technical_score_10": 4.3,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.4838,
+        "active_dims": "119/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a cat is playing with a toy in the back seat"
+      },
+      "true_ecr": 0.117706906671884
+    },
+    {
+      "video_id": "70ae8fd486f3681ebdd85bd519d0a7d6",
+      "predicted_ecr": 0.04057,
+      "ecr_level": "moderate (0.03–0.05)",
+      "modality_ablation": {
+        "ecr_full": 0.04057,
+        "ecr_visual_only": 0.021572,
+        "ecr_text_only": 0.010955,
+        "visual_drop": 0.029614,
+        "text_drop": 0.018998
+      },
+      "relative_importance": {
+        "visual_pct": 60.9,
+        "text_pct": 39.1,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 6.4,
+        "technical_score_10": 4.8,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.5001,
+        "active_dims": "126/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a football game is being played at the stadium"
+      },
+      "true_ecr": 0.12900802191352
+    },
+    {
+      "video_id": "c42a312f1bd378d9abe20e5d2a84af29",
+      "predicted_ecr": 0.005151,
+      "ecr_level": "low (<0.03)",
+      "modality_ablation": {
+        "ecr_full": 0.005151,
+        "ecr_visual_only": 0.002721,
+        "ecr_text_only": 0.011389,
+        "visual_drop": -0.006237,
+        "text_drop": 0.002431
+      },
+      "relative_importance": {
+        "visual_pct": 72.0,
+        "text_pct": 28.0,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 4.6,
+        "technical_score_10": 3.3,
+        "quality_verdict": "Cả thẩm mỹ và kỹ thuật đều cần cải thiện"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.4943,
+        "active_dims": "124/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a man is walking in the street"
+      },
+      "true_ecr": 0.0443513989434552
+    }
+  ]
+}

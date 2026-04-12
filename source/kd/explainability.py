@@ -26,9 +26,96 @@ import argparse
 import numpy as np
 import torch
 import torch.nn.functional as F
-
+from PIL import Image
+from decord import VideoReader, cpu
+from torchvision import transforms
+from imagebind.models.imagebind_model import ModalityType
 sys.path.insert(0, os.path.dirname(__file__))
 from models import StudentModel, count_params
+
+
+# ================================================================
+# TEMPORAL ABLATION (INFERENCE MODULE)
+# ================================================================
+def find_engaging_hook_frame(video_path: str, student_model: torch.nn.Module, 
+                             visual_encoder, captioner, text_emb: torch.Tensor, device: str):
+    """
+    Independent Inference module to find the 'Hook' (most engaging frame) of a video.
+    Runs Temporal Ablation by zeroing out each frame sequentially and measuring ECR drop.
+    """
+
+    # 1. Read 4 frames (Uniform Temporal Sampling)
+    vr = VideoReader(video_path, ctx=cpu(0))
+    total_frames = len(vr)
+    if total_frames == 0:
+        return None
+    
+    indices = np.linspace(0, total_frames - 1, 4, dtype=int)
+    frames = vr.get_batch(indices).asnumpy()
+    
+    # helper to embed specific frames
+    def get_visual_emb(f_array):
+        # We must mimic the visual_encoder preprocess logic 
+        # (Assuming visual_encoder.model and transforms are accessible, 
+        # but here we use a generic placeholder or call its internal method if adapted)
+        preprocess = transforms.Compose([
+            transforms.Resize(224), transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize([0.48145466, 0.4578275, 0.40821073],
+                                 [0.26862954, 0.26130258, 0.27577711]),
+        ])
+        tensors = [preprocess(Image.fromarray(f)) for f in f_array]
+        video_tensor = torch.stack(tensors).unsqueeze(0).to(device)
+        with torch.no_grad():
+            embs = visual_encoder.model({ModalityType.VISION: video_tensor})
+        emb = embs[ModalityType.VISION].cpu().numpy().flatten()
+        emb = emb / (np.linalg.norm(emb) + 1e-8)
+        return torch.tensor(emb, dtype=torch.float32).unsqueeze(0).to(device)
+
+    # 2. Get Baseline ECR (Full video)
+    base_visual_emb = get_visual_emb(frames)
+    t_batch = text_emb if text_emb.dim() == 2 else text_emb.unsqueeze(0).to(device)
+    base_out = student_model(base_visual_emb, t_batch)
+    base_ecr = base_out['predicted_ecr'].item()
+    
+    drops = []
+    
+    # 3. Temporal Ablation (Zero-out one frame at a time)
+    for i in range(4):
+        masked_frames = frames.copy()
+        masked_frames[i] = np.zeros_like(masked_frames[i])
+        
+        masked_visual_emb = get_visual_emb(masked_frames)
+        masked_ecr = student_model(masked_visual_emb, t_batch)['predicted_ecr'].item()
+        
+        drops.append(base_ecr - masked_ecr)
+    
+    # 4. Find the most critical frame (largest ECR drop)
+    hook_frame_index = int(np.argmax(drops))
+    max_drop = drops[hook_frame_index]
+    
+    # 5. Generate Caption for that exact frame 
+    hook_image = Image.fromarray(frames[hook_frame_index])
+    
+    # captioner.processor and captioner.model expected
+    inputs = captioner.processor(images=hook_image, return_tensors="pt")
+    inputs = {k: v.to(device) for k, v in inputs.items()}
+    with torch.no_grad():
+        ids = captioner.model.generate(**inputs, max_new_tokens=40)
+    hook_caption = captioner.processor.decode(ids[0], skip_special_tokens=True).strip()
+    
+    video_duration = total_frames / vr.get_avg_fps() if hasattr(vr, 'get_avg_fps') else 10.0
+    frame_time = (indices[hook_frame_index] / total_frames) * video_duration
+    
+    return {
+        "hook_frame_index": hook_frame_index + 1,
+        "hook_time_sec": round(frame_time, 1),
+        "hook_caption": hook_caption,
+        "base_ecr": base_ecr,
+        "ecr_drop_impact": max_drop,
+        "ecr_drop_pct": (max_drop / (base_ecr + 1e-9)) * 100
+    }
+
 
 
 # ================================================================
@@ -149,10 +236,11 @@ class ExplainabilityEngine:
             results.append(exp)
         return results
 
-    def generate_llm_prompt(self, explanation: dict) -> str:
+    def generate_llm_prompt(self, explanation: dict, temporal_ablation: dict = None) -> str:
         """
         Build a strict, grounded prompt for ChatGPT / Claude / Gemini.
         The prompt forbids the LLM from adding reasons not in the JSON data.
+        Optionally takes 'temporal_ablation' output from find_engaging_hook_frame.
         """
         m = explanation
         ri = m["relative_importance"]
@@ -166,28 +254,36 @@ class ExplainabilityEngine:
         dominant_pct = ri["visual_pct"] if dominant == "visual" else ri["text_pct"]
         minor_pct = ri["text_pct"] if dominant == "visual" else ri["visual_pct"]
 
+        temporal_info = ""
+        if temporal_ablation:
+            temporal_info = f"""
+- Phân tích Khoảnh khắc vàng (Temporal Ablation):
+  + Sự thu hút tập trung lớn nhất ở Khung hình số {temporal_ablation['hook_frame_index']} (giây thứ {temporal_ablation['hook_time_sec']}).
+  + Nếu xóa khung hình này, mức độ thu hút giảm {temporal_ablation['ecr_drop_pct']:.1f}%.
+  + Nội dung khung hình này (từ AI): "{temporal_ablation['hook_caption']}"."""
+
         prompt = f"""Bạn là một chuyên gia phân tích nội dung mạng xã hội.
-Hãy dựa VÀO CHÍNH XÁC các số liệu Toán học dưới đây để viết nhận xét cho người tạo nội dung.
+Hãy dựa VÀO CHÍNH XÁC các số liệu Toán học dưới đây để viết nhận xét phân tích cho người tạo nội dung.
 KHÔNG ĐƯỢC tự bịa thêm bất kỳ lý do nào ngoài các số liệu được cung cấp.
 
 [THÔNG TIN VIDEO]
 - Tiêu đề: "{title}"
-- Caption nhận diện trong video: "{caption}"
+- Nội dung chung (caption): "{caption}"
 
-[KẾT QUẢ TỪ HỆ THỐNG DEEP LEARNING]
+[KẾT QUẢ TỪ MÔ HÌNH TRÍ TUỆ NHÂN TẠO KHÔNG THỂ GIẢI THÍCH (XAI)]
 - Điểm thu hút dự đoán (ECR): {m['predicted_ecr']:.4f} — mức: {m['ecr_level']}
-- Đóng góp vào sức hút: {dominant_vi} chiếm {dominant_pct:.1f}%, {minor_vi} chiếm {minor_pct:.1f}%
-  (Khi xóa hình ảnh: ECR giảm {abs(m['modality_ablation']['visual_drop']):.4f}; khi xóa văn bản: ECR giảm {abs(m['modality_ablation']['text_drop']):.4f})
+- Đóng góp vào sức hút (Modality Ablation): {dominant_vi} định hình {dominant_pct:.1f}%, {minor_vi} đóng góp {minor_pct:.1f}%
+  (Cụ thể: Nếu ẩn hình ảnh, ECR giảm {abs(m['modality_ablation']['visual_drop']):.4f}; Nếu ẩn văn bản, ECR giảm {abs(m['modality_ablation']['text_drop']):.4f})
 - Điểm Thẩm mỹ (Aesthetic): {iq['aesthetic_score_10']}/10
 - Điểm Kỹ thuật (Technical): {iq['technical_score_10']}/10
-- Chất lượng tổng thể: {iq['quality_verdict']}
+- Chất lượng tổng thể: {iq['quality_verdict']}{temporal_info}
 
-Hãy viết đúng 3 đoạn:
-1. 📈 Phân tích sức hút (dựa trên ECR và tỷ lệ đóng góp)
-2. 💡 Khuyến nghị cải thiện (dựa trên điểm kỹ thuật và thẩm mỹ)
-3. 🌟 Tổng kết (1 câu ngắn)
+Hãy viết một nhận xét gồm đúng 3 đoạn:
+1. 📈 Phân tích sức hút: Giải thích mức độ thu hút, nhấn mạnh yếu tố {dominant_vi} hay {minor_vi} đóng vai trò quan trọng hơn. Nếu có Phân tích Khoảnh khắc vàng, hãy chỉ ra chính xác giây thứ mấy là phần "Hook" (mồi nhử đắt giá nhất).
+2. 💡 Khuyến nghị cải thiện: Góp ý chi tiết dựa trên điểm Kỹ thuật và Thẩm mỹ.
+3. 🌟 Tổng kết: 1 câu ngắn gọn.
 
-Viết bằng tiếng Việt, lịch sự và chuyên nghiệp."""
+Viết bằng tiếng Việt, giọng điệu chuyên nghiệp, đầy cảm hứng như một chuyên gia tư vấn chiến lược TikTok/Shorts."""
         return prompt
 
     def print_summary(self, explanation: dict):

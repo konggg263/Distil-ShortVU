@@ -240,6 +240,11 @@ data/
 checkpoints/
 weights/
 third-party/
+# --- Large Result Files ---
+source/kaggle_kd/results/**/features_*.json
+# Keep tracking of experiments_report.json, explanations.json etc as they are small.
+
+# --- Models & Weights ---
 *.pth
 *.pt
 *.bin

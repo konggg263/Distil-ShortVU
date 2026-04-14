@@ -66,14 +66,20 @@ class TeacherModel(nn.Module):
         self.text_proj = nn.Sequential(
             nn.Linear(text_dim, hidden_dim), nn.LayerNorm(hidden_dim), nn.GELU(),
         )
-        self.quality_proj = nn.Sequential(
-            nn.Linear(2, hidden_dim), nn.LayerNorm(hidden_dim), nn.GELU(),
-        )
-
+        # Không dùng linear project cho quality ngay từ đầu nữa
+        
+        # Cross attention: Text query Visual
         self.cross_attn = nn.MultiheadAttention(
             hidden_dim, n_heads, dropout=dropout, batch_first=True
         )
         self.attn_norm = nn.LayerNorm(hidden_dim)
+
+        # Fusion layer để kết hợp semantics và quality (hidden_dim + 2 scores -> hidden_dim)
+        self.fusion_proj = nn.Sequential(
+            nn.Linear(hidden_dim + 2, hidden_dim), 
+            nn.LayerNorm(hidden_dim), 
+            nn.GELU()
+        )
 
         self.blocks = nn.Sequential(
             *[ResidualBlock(hidden_dim, dropout) for _ in range(n_blocks)]
@@ -88,14 +94,21 @@ class TeacherModel(nn.Module):
         )
 
     def forward(self, visual_emb, text_emb, quality_scores, ecr_targets=None):
-        v = self.visual_proj(visual_emb)
-        t = self.text_proj(text_emb)
-        q = self.quality_proj(quality_scores)
+        # Đưa về dạng sequence (B, 1, hidden) cho attention
+        v = self.visual_proj(visual_emb).unsqueeze(1) 
+        t = self.text_proj(text_emb).unsqueeze(1)
 
-        tokens = torch.stack([v, t, q], dim=1)  # (B, 3, hidden)
-        attn_out, _ = self.cross_attn(tokens, tokens, tokens)
-        tokens = self.attn_norm(tokens + attn_out)
-        hidden = tokens.mean(dim=1)  # (B, hidden)
+        # Cross Attention: Text (query) chú ý vào Visual (key/value)
+        attn_out, _ = self.cross_attn(query=t, key=v, value=v)
+        
+        # Residual + Norm, sau đó bỏ chiều sequence -> (B, hidden)
+        semantic_feat = self.attn_norm(t + attn_out).squeeze(1)
+
+        # Gắn thêm Quality Scores như một bias thông tin trực tiếp
+        concat_feat = torch.cat([semantic_feat, quality_scores], dim=-1) # (B, hidden + 2)
+        
+        # Ép về lại không gian hidden_dim để Distillation projector của Student vẫn hoạt động được
+        hidden = self.fusion_proj(concat_feat)
 
         hidden = self.blocks(hidden)
         predicted_ecr = self.ecr_head(hidden).squeeze(-1)

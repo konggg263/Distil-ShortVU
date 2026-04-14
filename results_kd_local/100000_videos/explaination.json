@@ -1,0 +1,633 @@
+{
+  "summary": {
+    "n_samples": 20,
+    "visual_dominant_pct": 75.0,
+    "avg_visual_importance": 64.2,
+    "avg_text_importance": 35.8,
+    "avg_predicted_ecr": 0.473976,
+    "avg_aesthetic_10": 6.08,
+    "avg_technical_10": 5.0
+  },
+  "explanations": [
+    {
+      "video_id": "07c404a71e9e9e07121f0130e6df3bce",
+      "predicted_ecr": 0.059729,
+      "ecr_level": "high (0.05–0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.059729,
+        "ecr_visual_only": 0.166937,
+        "ecr_text_only": 0.085761,
+        "visual_drop": -0.026032,
+        "text_drop": -0.107208
+      },
+      "relative_importance": {
+        "visual_pct": 19.5,
+        "text_pct": 80.5,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 5.5,
+        "technical_score_10": 5.1,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.3839,
+        "active_dims": "76/256"
+      },
+      "metadata": {
+        "title": "partying facepartying facepartying facepartying face",
+        "caption": "The video shows: a bottle of wine In the middle: a purple background with a blue background and a white text that reads dark white chocolate biscuits At the end: the wall is white"
+      },
+      "true_ecr": 0.0756172960281745
+    },
+    {
+      "video_id": "eb4ac0491ad02fbe1498098c473a4fac",
+      "predicted_ecr": 0.263204,
+      "ecr_level": "very high (>0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.263204,
+        "ecr_visual_only": 0.28135,
+        "ecr_text_only": 0.248503,
+        "visual_drop": 0.014701,
+        "text_drop": -0.018146
+      },
+      "relative_importance": {
+        "visual_pct": 44.8,
+        "text_pct": 55.2,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 5.8,
+        "technical_score_10": 4.9,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.3707,
+        "active_dims": "58/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a woman with long hair and a rose pattern on her chest"
+      },
+      "true_ecr": 0.3869144981412639
+    },
+    {
+      "video_id": "dc4050fb505e6353603f3b5559717f35",
+      "predicted_ecr": 0.042463,
+      "ecr_level": "moderate (0.03–0.05)",
+      "modality_ablation": {
+        "ecr_full": 0.042463,
+        "ecr_visual_only": 0.468222,
+        "ecr_text_only": 0.127664,
+        "visual_drop": -0.085201,
+        "text_drop": -0.425759
+      },
+      "relative_importance": {
+        "visual_pct": 16.7,
+        "text_pct": 83.3,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 5.7,
+        "technical_score_10": 4.9,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.3961,
+        "active_dims": "68/256"
+      },
+      "metadata": {
+        "title": " facts  adultswim ",
+        "caption": "The video shows: a girl in a red shirt is throwing a ball In the middle: a woman in a red dress standing on a dirt road At the end: i'm that bad person who i'm that i'm that i'm that i'm that i'm that i"
+      },
+      "true_ecr": 0.0
+    },
+    {
+      "video_id": "647118016699bec6a5c6efaa95a673cd",
+      "predicted_ecr": 0.869041,
+      "ecr_level": "very high (>0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.869041,
+        "ecr_visual_only": 0.682356,
+        "ecr_text_only": 0.251315,
+        "visual_drop": 0.617726,
+        "text_drop": 0.186685
+      },
+      "relative_importance": {
+        "visual_pct": 76.8,
+        "text_pct": 23.2,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 7.0,
+        "technical_score_10": 6.1,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.3951,
+        "active_dims": "66/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a man and woman are sitting at a table with a green square"
+      },
+      "true_ecr": 0.6010721972216787
+    },
+    {
+      "video_id": "6a6f7a266d0836c5a676806ae004db9e",
+      "predicted_ecr": 0.770689,
+      "ecr_level": "very high (>0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.770689,
+        "ecr_visual_only": 0.427728,
+        "ecr_text_only": 0.211875,
+        "visual_drop": 0.558813,
+        "text_drop": 0.342961
+      },
+      "relative_importance": {
+        "visual_pct": 62.0,
+        "text_pct": 38.0,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 7.5,
+        "technical_score_10": 5.9,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.4157,
+        "active_dims": "78/256"
+      },
+      "metadata": {
+        "title": " funnyvideos  funnyspotlight  funnysnaps  spotlight  spotlightoftheday  spotlightviral  viral  viralspotlight  viralvideo  pritoleefunnyvideos",
+        "caption": "two young girls sitting in lawn chairs talking to each other girls"
+      },
+      "true_ecr": 0.9513363333985522
+    },
+    {
+      "video_id": "b336d85ec7bcac129da43d908f31dc45",
+      "predicted_ecr": 0.568905,
+      "ecr_level": "very high (>0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.568905,
+        "ecr_visual_only": 0.423554,
+        "ecr_text_only": 0.236366,
+        "visual_drop": 0.332539,
+        "text_drop": 0.145351
+      },
+      "relative_importance": {
+        "visual_pct": 69.6,
+        "text_pct": 30.4,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 4.8,
+        "technical_score_10": 4.1,
+        "quality_verdict": "Cả thẩm mỹ và kỹ thuật đều cần cải thiện"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.3537,
+        "active_dims": "53/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a white alien with a black face and a white face"
+      },
+      "true_ecr": 0.7230522402660927
+    },
+    {
+      "video_id": "e540a81f8373f21947b413a64b408fb3",
+      "predicted_ecr": 0.600259,
+      "ecr_level": "very high (>0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.600259,
+        "ecr_visual_only": 0.519018,
+        "ecr_text_only": 0.224452,
+        "visual_drop": 0.375807,
+        "text_drop": 0.081241
+      },
+      "relative_importance": {
+        "visual_pct": 82.2,
+        "text_pct": 17.8,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 4.2,
+        "technical_score_10": 3.4,
+        "quality_verdict": "Cả thẩm mỹ và kỹ thuật đều cần cải thiện"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.3541,
+        "active_dims": "47/256"
+      },
+      "metadata": {
+        "title": "My morning greets to my cat",
+        "caption": "a man is playing with a dog on the floor"
+      },
+      "true_ecr": 0.3348151046761886
+    },
+    {
+      "video_id": "c9491e83fff0ee0dc195f87e19b59572",
+      "predicted_ecr": 0.758715,
+      "ecr_level": "very high (>0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.758715,
+        "ecr_visual_only": 0.525308,
+        "ecr_text_only": 0.265157,
+        "visual_drop": 0.493558,
+        "text_drop": 0.233407
+      },
+      "relative_importance": {
+        "visual_pct": 67.9,
+        "text_pct": 32.1,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 6.4,
+        "technical_score_10": 5.3,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.3887,
+        "active_dims": "65/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a man and woman standing in a kitchen"
+      },
+      "true_ecr": 0.8044061827431032
+    },
+    {
+      "video_id": "dc42adf2e0855bf5f11e2e40b75ee5a5",
+      "predicted_ecr": 0.722129,
+      "ecr_level": "very high (>0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.722129,
+        "ecr_visual_only": 0.517506,
+        "ecr_text_only": 0.22408,
+        "visual_drop": 0.498049,
+        "text_drop": 0.204624
+      },
+      "relative_importance": {
+        "visual_pct": 70.9,
+        "text_pct": 29.1,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 6.7,
+        "technical_score_10": 5.4,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.4037,
+        "active_dims": "74/256"
+      },
+      "metadata": {
+        "title": "This took me 8 hourspartying face   curlyhairstyles  curlyhair  curls  hairstyles  blackgirl",
+        "caption": "a girl with a black face paint on her face"
+      },
+      "true_ecr": 0.9070084132263744
+    },
+    {
+      "video_id": "14803ab32e2cf22f09e9a77e4136bf4a",
+      "predicted_ecr": 0.07993,
+      "ecr_level": "high (0.05–0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.07993,
+        "ecr_visual_only": 0.376314,
+        "ecr_text_only": 0.10431,
+        "visual_drop": -0.02438,
+        "text_drop": -0.296384
+      },
+      "relative_importance": {
+        "visual_pct": 7.6,
+        "text_pct": 92.4,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 5.6,
+        "technical_score_10": 5.0,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.3904,
+        "active_dims": "67/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "The video shows: a large flat screen In the middle: a man sitting in front of a television At the end: a large flat screen tv"
+      },
+      "true_ecr": 0.2014087262766581
+    },
+    {
+      "video_id": "81cb910f430612b0e12dcd8bf690f583",
+      "predicted_ecr": 0.479393,
+      "ecr_level": "very high (>0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.479393,
+        "ecr_visual_only": 0.437174,
+        "ecr_text_only": 0.199025,
+        "visual_drop": 0.280369,
+        "text_drop": 0.042219
+      },
+      "relative_importance": {
+        "visual_pct": 86.9,
+        "text_pct": 13.1,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 5.5,
+        "technical_score_10": 4.3,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.3658,
+        "active_dims": "51/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a soccer game is being played in a stadium"
+      },
+      "true_ecr": 0.4785834474662492
+    },
+    {
+      "video_id": "a49261e496554741d98bbed690ef9b9d",
+      "predicted_ecr": 0.726555,
+      "ecr_level": "very high (>0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.726555,
+        "ecr_visual_only": 0.485286,
+        "ecr_text_only": 0.233337,
+        "visual_drop": 0.493218,
+        "text_drop": 0.24127
+      },
+      "relative_importance": {
+        "visual_pct": 67.2,
+        "text_pct": 32.8,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 7.8,
+        "technical_score_10": 6.4,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.446,
+        "active_dims": "99/256"
+      },
+      "metadata": {
+        "title": " funny  comedy  snapchatspotlight",
+        "caption": "a young boy is standing in the parking"
+      },
+      "true_ecr": 0.5454353355507728
+    },
+    {
+      "video_id": "b9367c17119d45efecacb989a234ff86",
+      "predicted_ecr": 0.512807,
+      "ecr_level": "very high (>0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.512807,
+        "ecr_visual_only": 0.468085,
+        "ecr_text_only": 0.315763,
+        "visual_drop": 0.197044,
+        "text_drop": 0.044722
+      },
+      "relative_importance": {
+        "visual_pct": 81.5,
+        "text_pct": 18.5,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 6.8,
+        "technical_score_10": 5.3,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.3748,
+        "active_dims": "63/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a man is shopping in a store with a woman"
+      },
+      "true_ecr": 0.1688906280571316
+    },
+    {
+      "video_id": "9bfba84b90bfefe1afff856b4e85ddf0",
+      "predicted_ecr": 0.558198,
+      "ecr_level": "very high (>0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.558198,
+        "ecr_visual_only": 0.511733,
+        "ecr_text_only": 0.352751,
+        "visual_drop": 0.205447,
+        "text_drop": 0.046465
+      },
+      "relative_importance": {
+        "visual_pct": 81.6,
+        "text_pct": 18.4,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 6.5,
+        "technical_score_10": 4.8,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.3811,
+        "active_dims": "63/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a person riding a horse down a dirt road"
+      },
+      "true_ecr": 0.4833809430639796
+    },
+    {
+      "video_id": "1dca3f6ad9c1f72a00fa5e0e9e7aede9",
+      "predicted_ecr": 0.417481,
+      "ecr_level": "very high (>0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.417481,
+        "ecr_visual_only": 0.429258,
+        "ecr_text_only": 0.184816,
+        "visual_drop": 0.232665,
+        "text_drop": -0.011776
+      },
+      "relative_importance": {
+        "visual_pct": 95.2,
+        "text_pct": 4.8,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 6.9,
+        "technical_score_10": 5.6,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.4045,
+        "active_dims": "70/256"
+      },
+      "metadata": {
+        "title": "Olaf Frozen FunkoPop LifeHack  shorts (2)",
+        "caption": "a man holding a box of pokemon toys"
+      },
+      "true_ecr": 0.205940129133242
+    },
+    {
+      "video_id": "d374766f98ea442f0df16d0f56984311",
+      "predicted_ecr": 0.377197,
+      "ecr_level": "very high (>0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.377197,
+        "ecr_visual_only": 0.373009,
+        "ecr_text_only": 0.239466,
+        "visual_drop": 0.137731,
+        "text_drop": 0.004188
+      },
+      "relative_importance": {
+        "visual_pct": 97.0,
+        "text_pct": 3.0,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 5.7,
+        "technical_score_10": 4.6,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.3625,
+        "active_dims": "53/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a woman with long hair and a smile"
+      },
+      "true_ecr": 0.4199960868714537
+    },
+    {
+      "video_id": "d6b7c93f3e0ad07f45c5d9ae8b923a59",
+      "predicted_ecr": 0.73583,
+      "ecr_level": "very high (>0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.73583,
+        "ecr_visual_only": 0.627123,
+        "ecr_text_only": 0.257067,
+        "visual_drop": 0.478763,
+        "text_drop": 0.108707
+      },
+      "relative_importance": {
+        "visual_pct": 81.5,
+        "text_pct": 18.5,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 5.6,
+        "technical_score_10": 4.5,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.3681,
+        "active_dims": "59/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a cartoon character with red hair and a white shirt"
+      },
+      "true_ecr": 0.9441283506163176
+    },
+    {
+      "video_id": "28528ce2660d9ec5da90c8494eda2b56",
+      "predicted_ecr": 0.055748,
+      "ecr_level": "high (0.05–0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.055748,
+        "ecr_visual_only": 0.560721,
+        "ecr_text_only": 0.07707,
+        "visual_drop": -0.021321,
+        "text_drop": -0.504973
+      },
+      "relative_importance": {
+        "visual_pct": 4.1,
+        "text_pct": 95.9,
+        "dominant": "text"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 5.0,
+        "technical_score_10": 4.5,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.3575,
+        "active_dims": "52/256"
+      },
+      "metadata": {
+        "title": "Ronaldo too good? football",
+        "caption": "The video shows: a man with a black shirt and a white shirt In the middle: a soccer player with his mouth open and mouth wide At the end: a black background with a white text that reads, ` ` '"
+      },
+      "true_ecr": 0.2116689493249853
+    },
+    {
+      "video_id": "d01ee54ae40853d2f6dcebdab80a16e3",
+      "predicted_ecr": 0.543155,
+      "ecr_level": "very high (>0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.543155,
+        "ecr_visual_only": 0.506316,
+        "ecr_text_only": 0.26046,
+        "visual_drop": 0.282695,
+        "text_drop": 0.036838
+      },
+      "relative_importance": {
+        "visual_pct": 88.5,
+        "text_pct": 11.5,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 6.5,
+        "technical_score_10": 5.1,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.3814,
+        "active_dims": "54/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a person is using a machine to make potatoes"
+      },
+      "true_ecr": 0.9033378986499706
+    },
+    {
+      "video_id": "c8238d6d764f7f4fefcfa0814d8fbffe",
+      "predicted_ecr": 0.338086,
+      "ecr_level": "very high (>0.08)",
+      "modality_ablation": {
+        "ecr_full": 0.338086,
+        "ecr_visual_only": 0.359708,
+        "ecr_text_only": 0.234078,
+        "visual_drop": 0.104008,
+        "text_drop": -0.021622
+      },
+      "relative_importance": {
+        "visual_pct": 82.8,
+        "text_pct": 17.2,
+        "dominant": "visual"
+      },
+      "internal_quality": {
+        "aesthetic_score_10": 6.2,
+        "technical_score_10": 4.9,
+        "quality_verdict": "Trung bình (có thể cải thiện thêm)"
+      },
+      "gate_analysis": {
+        "gate_mean_activation": 0.3884,
+        "active_dims": "63/256"
+      },
+      "metadata": {
+        "title": "",
+        "caption": "a black and white cat laying on a rug"
+      },
+      "true_ecr": 0.376943846605361
+    }
+  ]
+}

@@ -26,10 +26,27 @@ import argparse
 import numpy as np
 import torch
 import torch.nn.functional as F
-from PIL import Image
-from decord import VideoReader, cpu
-from torchvision import transforms
-from imagebind.models.imagebind_model import ModalityType
+try:
+    from PIL import Image
+    from decord import VideoReader, cpu
+    from torchvision import transforms
+except ImportError:
+    Image = None
+    VideoReader = None
+    transforms = None
+
+try:
+    from imagebind.models.imagebind_model import ModalityType
+except ImportError:
+    # Optional dependency: Only needed for re-encoding frames in find_engaging_hook_frame()
+    class ModalityType:
+        VISION = "vision"
+        TEXT = "text"
+        AUDIO = "audio"
+        DEPTH = "depth"
+        THERMAL = "thermal"
+        IMU = "imu"
+
 sys.path.insert(0, os.path.dirname(__file__))
 from models import StudentModel, count_params
 
@@ -42,7 +59,10 @@ def find_engaging_hook_frame(video_path: str, student_model: torch.nn.Module,
     Independent Inference module to find the 'Hook' (most engaging frame) of a video.
     Runs Temporal Ablation by zeroing out each frame sequentially and measuring ECR drop.
     """
-
+    if Image is None or VideoReader is None:
+        print("[XAI] Error: PIL and decord are required for Temporal Ablation (Hook analysis).")
+        return None
+    
     # 1. Read 4 frames (Uniform Temporal Sampling)
     vr = VideoReader(video_path, ctx=cpu(0))
     total_frames = len(vr)

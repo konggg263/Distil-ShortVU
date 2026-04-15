@@ -1,144 +1,105 @@
 # Distil-ShortVU 🎥
 
-**Distil-ShortVU** distills multimodal video understanding into a lightweight student model that predicts video quality scores (aesthetic, technical) and engagement rate (ECR) from short videos.
+**Distil-ShortVU** is a research framework for distilling heavy, multimodal video understanding models into lightweight, high-performance student models. It focuses on predicting short video engagement (ECR) and internal quality metrics (Aesthetic, Technical) with minimal parameter overhead.
 
-> 🍎 **Note:** This project is optimized for **Apple Silicon (M1/M2/M3)** using Metal Performance Shaders (MPS) for GPU acceleration, avoiding CUDA dependencies.
+> 🍎 **Note:** This project is highly optimized for **Apple Silicon (M1/M2/M3)** using Metal Performance Shaders (MPS), allowing for efficient local training and inference without NVIDIA GPUs.
 
-## 🚀 Features
+---
 
-*   **Multi-Pass Analysis Pipeline:**
-    *   **Pass 1 (TimeChat):** Generates detailed captions and acts as a "Video Critic" to score aesthetic quality (1-10).
-    *   **Pass 2 (Qwen2.5):** Generates a logical rationale explaining *why* the video received its score based on content, motion (ECR), and aesthetics.
-*   **Motion Analysis:** Calculates ECR (Edge Change Ratio) to quantify visual motion.
-*   **Mac Optimization:** Runs natively on macOS using `mps` (Metal).
+## 🚀 Key Features
 
-## 📂 Project Structure
+*   **Multimodal Knowledge Distillation (KD):** Distills a 6.1M parameter Teacher model into an 890K parameter Student model using Gated Cross-Attention.
+*   **Multi-Task Learning:** Simultaneous training on Engagement (ECR) and Auxiliary tasks (Aesthetic & Technical quality).
+*   **Explainability (XAI) Engine:** Mathematically-grounded Modality Ablation and Temporal Hook discovery (identifying the most engaging second of a video).
+*   **Hardware Optimized:** Native support for `mps` on Mac and `cuda` on Linux/Windows.
+*   **Ablation Suite:** Automated benchmarks comparing Gated architectures against Visual-only, Text-only, and blind Concatenation baselines.
+
+---
+
+## 📂 Project Structure (Current)
 
 ```text
-source/
-  ├── pipeline_fast.py     # Optimized data processing pipeline (~4s/video)
-  ├── student_model_v2.py  # Student model architectures (MLP / Transformer / Full)
-  ├── train_v2.py          # Training script
-  ├── run_student_v2.py    # Inference script
-  └── download_data.py     # Data download utility
+source/kd/
+  ├── run_experiment.py     # Main CLI orchestrator (Train + Compare + XAI)
+  ├── models.py             # Architectures (Teacher & Gated-Student)
+  ├── explainability.py     # XAI Engine (Ablation-based insights)
+  ├── ablation_study.py     # Architecture benchmarking logic
+  ├── extract_features.py   # Feature extraction script (usually run on GPU)
+  └── test_pipeline.py      # Quick E2E test suite
 
-checkpoints/               # ImageBind pretrained weights
-checkpoints_v2/            # Trained student model weights
-
-data/
-  ├── train_data.csv       # Video metadata (Id, ECR, Title, Description)
-  ├── train_videos/        # ~105k short videos
-  └── train_processed_v2.json  # Pipeline output (embeddings + scores + captions)
-
-third-party/
-  └── ImageBind/           # Meta AI multimodal embedding model
+results_kd_local/           # Default output directory for experiments
 ```
 
-## 🛠️ Installation
+---
 
-### Prerequisites
-*   Python 3.10
-*   Conda (Anaconda or Miniconda)
-*   macOS with Apple Silicon (Recommended)
+## 🛠️ Installation
 
 ### Setup Environment
 
 ```bash
-# 1. Create and activate conda environment
-conda create -n longvu-env python=3.10
-conda activate longvu-env
+# 1. Create conda environment
+conda create -n distil-shortvu python=3.10
+conda activate distil-shortvu
 
 # 2. Install dependencies
 pip install -r requirements.txt
 ```
 
-**Key dependencies:** `torch==2.1.2`, `numpy==1.26.4`, `transformers==4.44.2`, `pyiqa`, `decord`.
+*Required: `torch==2.1.2`, `torchvision`, `torchaudio`, `transformers`, `scipy`, `numpy`, `pandas`, `decord`.*
 
-## ⚙️ Pipeline & Models
+---
 
-### Feature Extraction
-The pipeline extracts 3 core features per video:
+## ⚙️ Workflow & Pipeline
 
-| Component | Model | Output | Time/video |
-|-----------|-------|--------|------------|
-| **Scoring** | pyiqa (MUSIQ + TOPIQ) | Aesthetic & Technical scores (0-10) | ~2.0s |
-| **Caption** | BLIP base | Text description | ~0.7s |
-| **Embedding** | ImageBind | 1024-dim multimodal vector | ~1.1s |
+The pipeline is split into two stages to optimize for memory constraints:
 
-### Student Models
-Three architectures are available for the student model:
+1.  **Feature Extraction:** Run `extract_features.py` (ideally on Kaggle/GPU) to generate a `features.json` file containing ImageBind embeddings, text embeddings, and quality scores.
+2.  **Local Distillation:** Run `run_experiment.py` on your local machine to train the teacher and distill the student.
 
-| Model | Params | Input | Best For |
-|-------|--------|-------|----------|
-| **StudentMLP** | 1.2M | Precomputed embeddings | Fast training & inference |
-| **StudentTransformer** | 13.5M | Embeddings + optional text | Better accuracy |
-| **ViralStudentV2** | 44M+ | Embeddings or raw video | Full capability |
+### Training the Experiment
 
-### Performance Results (105k training samples)
-
-| Metric | Value |
-|--------|-------|
-| **ECR Pearson Correlation** | **0.633** |
-| ECR Spearman Correlation | 0.625 |
-| ECR Kendall Tau | 0.453 |
-| ECR MAE | 0.174 |
-| Aesthetic Pearson | 0.868 |
-| Technical Pearson | 0.845 |
-| Binary Accuracy (ECR > 0.5) | 0.738 |
-
-## 💻 Usage
-
-### 1. Run Processing Pipeline
-
-The script loads models sequentially to manage memory.
+Run the complete pipeline (Teacher Training -> KD Student Training -> Ablation -> XAI Analysis):
 
 ```bash
-# Process all videos (resumes automatically)
-python source/pipeline_fast.py --csv data/train_data.csv --videos data/train_videos
-
-# Process with limit (e.g., first 1000 videos)
-python source/pipeline_fast.py --csv data/train_data.csv --videos data/train_videos --max 1000
-
-# Process validation set
-python source/pipeline_fast.py --csv data/val_data.csv --videos data/val_videos --out data/val_processed_v2.json
+python3 source/kd/run_experiment.py \
+  --data path/to/features_5000.json \
+  --save-dir results_kd_local \
+  --device mps \
+  --teacher-epochs 100 \
+  --student-epochs 120 \
+  --alpha 0.3 --beta 0.1 --gamma 0.2 --delta 0.2 \
+  --explain --ablation
 ```
 
-### 2. Train Student Model
+**Hyperparameters:**
+*   `--alpha`: Weight for ECR Soft-Target Distillation.
+*   `--beta`: Weight for Representation KD.
+*   `--gamma/--delta`: Weights for Aesthetic/Technical auxiliary tasks.
 
-```bash
-# Train MLP (Recommended - Fastest)
-python source/train_v2.py \
-  --data data/train_processed_v2.json \
-  --val-data data/val_processed_v2.json \
-  --model mlp --epochs 50 --batch 64 --lr 5e-4
+---
 
-# Train Transformer
-python source/train_v2.py \
-  --data data/train_processed_v2.json \
-  --val-data data/val_processed_v2.json \
-  --model transformer --epochs 30 --batch 128 --lr 3e-4
-```
+## 🧠 Explainability (XAI)
 
-### 3. Inference
+The engine provides **Scientifically Grounded** explanations (No Hallucinations):
 
-```bash
-# From precomputed data (Fast)
-python source/run_student_v2.py \
-  --checkpoint checkpoints_v2/student_v2_mlp_best.pth \
-  --data data/val_processed_v2.json \
-  --output data/val_predictions.json
+1.  **Modality Ablation:** Calculates the exact percentage impact of Visual vs. Text features on the final score.
+2.  **Temporal Hook Discovery:** Analytically identifies which specific frame/second contributes most to the video's engagement drop if removed.
+3.  **LLM Prompt Builder:** Automatically formats mathematical findings into a structured prompt for ChatGPT/Gemini to generate human-readable reports.
 
-# From raw video file
-python source/run_student_v2.py \
-  --checkpoint checkpoints_v2/student_v2_mlp_best.pth \
-  --video path/to/video.mp4
-```
+---
 
-## ⚠️ Troubleshooting on Mac
+## 📊 Performance Benchmarks (Example)
 
-*   **Flash Attention Error:** If you encounter errors related to `flash_attn`, ensure you are using the provided wrapper classes in `pipeline.py` which bypasses this requirement for MPS.
-*   **Memory Issues:** The pipeline is designed to load/unload models sequentially. A minimum of **16GB Unified Memory** is recommended. For 8GB machines, ensure all other applications are closed.
+| Model | Params | PLCC (ECR) | SRCC (ECR) | Gap to Teacher |
+|-------|--------|------------|------------|----------------|
+| **Teacher** | 6.1M | 0.428 | 0.395 | - |
+| **Student + KD** | 890K | 0.385 | 0.362 | -4.3% |
+| **Student Baseline** | 890K | 0.321 | 0.310 | -10.7% |
+
+*KD typically recovers ~60% of the performance gap between a simple student and a large teacher.*
+
+---
 
 ## 📝 License
 
-[Your License Here]
+This project is licensed under [Your License]. Developed as part of HCMUS Thesis Research.
